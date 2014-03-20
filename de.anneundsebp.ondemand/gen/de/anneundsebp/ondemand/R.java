@@ -28,8 +28,7 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080005;
-        public static final int action_exit=0x7f080009;
-        public static final int downloadButton=0x7f080008;
+        public static final int action_exit=0x7f080008;
         public static final int imageButton_channelLogo=0x7f080001;
         public static final int layoutPlaying=0x7f080002;
         public static final int mainlayout=0x7f080000;

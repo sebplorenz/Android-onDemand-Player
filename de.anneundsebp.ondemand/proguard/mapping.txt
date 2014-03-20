@@ -6,15 +6,6 @@ de.anneundsebp.ondemand.DownloadChannelLogoTask -> de.anneundsebp.ondemand.b:
     android.graphics.Bitmap doInBackground(java.lang.String[]) -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-de.anneundsebp.ondemand.DownloadTask2 -> de.anneundsebp.ondemand.c:
-    android.content.Context context -> b
-    android.app.ProgressDialog mProgressDialog -> a
-    java.lang.String fileName -> c
-    java.lang.String doInBackground(de.anneundsebp.ondemand.parser.Asset[]) -> a
-    void onPreExecute() -> onPreExecute
-    void onPostExecute(java.lang.Object) -> onPostExecute
-    java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-    void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
 de.anneundsebp.ondemand.MainActivity -> de.anneundsebp.ondemand.MainActivity:
     de.anneundsebp.ondemand.parser.Processor p -> b
     java.util.List results -> c
@@ -48,13 +39,10 @@ de.anneundsebp.ondemand.MainActivity -> de.anneundsebp.ondemand.MainActivity:
     void startPlaying() -> a
     void onBufferingUpdate(android.media.MediaPlayer,int) -> onBufferingUpdate
     void onCompletion(android.media.MediaPlayer) -> onCompletion
-de.anneundsebp.ondemand.MainActivity$1 -> de.anneundsebp.ondemand.d:
-    de.anneundsebp.ondemand.DownloadTask2 val$downloadTask -> a
-    void onCancel(android.content.DialogInterface) -> onCancel
-de.anneundsebp.ondemand.MainActivity$2 -> de.anneundsebp.ondemand.e:
+de.anneundsebp.ondemand.MainActivity$2 -> de.anneundsebp.ondemand.c:
     de.anneundsebp.ondemand.MainActivity this$0 -> a
     void run() -> run
-de.anneundsebp.ondemand.MediaListener -> de.anneundsebp.ondemand.f:
+de.anneundsebp.ondemand.MediaListener -> de.anneundsebp.ondemand.d:
     void startPlaying() -> a
 de.anneundsebp.ondemand.MediaPlayerService -> de.anneundsebp.ondemand.MediaPlayerService:
     android.media.MediaPlayer mp -> a
@@ -66,17 +54,17 @@ de.anneundsebp.ondemand.MediaPlayerService -> de.anneundsebp.ondemand.MediaPlaye
     android.os.IBinder onBind(android.content.Intent) -> onBind
     int onStartCommand(android.content.Intent,int,int) -> onStartCommand
     void onDestroy() -> onDestroy
-de.anneundsebp.ondemand.StepBackwardTask -> de.anneundsebp.ondemand.g:
+de.anneundsebp.ondemand.StepBackwardTask -> de.anneundsebp.ondemand.e:
     de.anneundsebp.ondemand.StepHandler stepHandler -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-de.anneundsebp.ondemand.StepForwardTask -> de.anneundsebp.ondemand.h:
+de.anneundsebp.ondemand.StepForwardTask -> de.anneundsebp.ondemand.f:
     de.anneundsebp.ondemand.StepHandler stepHandler -> a
     de.anneundsebp.ondemand.parser.Category nextCategory -> b
     void setNextCategory(de.anneundsebp.ondemand.parser.Category) -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-de.anneundsebp.ondemand.StepHandler -> de.anneundsebp.ondemand.i:
+de.anneundsebp.ondemand.StepHandler -> de.anneundsebp.ondemand.g:
     void stepUpdate(de.anneundsebp.ondemand.parser.Step) -> a
 de.anneundsebp.ondemand.parser.Asset -> de.anneundsebp.ondemand.a.a:
     java.lang.String name -> a
@@ -98,11 +86,13 @@ de.anneundsebp.ondemand.parser.Step -> de.anneundsebp.ondemand.a.d:
     java.util.List categories -> a
     java.util.List assets -> b
     void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
-de.anneundsebp.ondemand.parser.fm4.Step1 -> de.anneundsebp.ondemand.a.a.a:
+de.anneundsebp.ondemand.parser.fm4.FM4Processor -> de.anneundsebp.ondemand.a.a.a:
+de.anneundsebp.ondemand.parser.fm4.Step1 -> de.anneundsebp.ondemand.a.a.b:
+    java.text.DateFormat dateFormat -> c
     java.util.List getCategories() -> a
-    boolean contains(java.util.List,java.lang.String) -> a
+    java.util.List parseCategories(java.lang.String) -> a
     void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
-de.anneundsebp.ondemand.parser.fm4.Step2 -> de.anneundsebp.ondemand.a.a.b:
+de.anneundsebp.ondemand.parser.fm4.Step2 -> de.anneundsebp.ondemand.a.a.c:
     de.anneundsebp.ondemand.parser.Category category -> c
     void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
-    java.util.List getProgrammeStreamURL(java.lang.String) -> a
+    java.util.List parseCategories(java.lang.String) -> a

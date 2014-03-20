@@ -228,9 +228,9 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 
 	@Override
 	public void onClick(View v) {
-		if (v.getId() == R.id.downloadButton)
-			download((Asset) results.get(((Integer) v.getTag()).intValue()));
-		else 
+//		if (v.getId() == R.id.downloadButton)
+//			download((Asset) results.get(((Integer) v.getTag()).intValue()));
+//		else 
 			if (v.getId() == R.id.playButton) {
 			playingPosition = ((Integer) v.getTag()).intValue();
 			currentlyPlayingResults = results;
@@ -249,10 +249,10 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 	@Override
 	public void stepUpdate(Step step) {
 		adapter.clear();
-		if (!step.categories.isEmpty())
+		if (!(step.categories == null || step.categories.isEmpty()))
 			for (Category c : step.categories)
 				adapter.add(c);
-		if (!step.assets.isEmpty())
+		if (!(step.assets == null || step.assets.isEmpty()))
 			for (Asset a : step.assets)
 				adapter.add(a);
 	}

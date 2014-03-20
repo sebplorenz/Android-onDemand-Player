@@ -53,17 +53,17 @@ public class CatalogAssetArrayAdapter extends ArrayAdapter<Object> {
 //        thumb_image.setImageURI(null);
 //        thumb_image.setImageURI(Uri.parse(image));
         
-        ImageButton downloadButton = (ImageButton) vi.findViewById(R.id.downloadButton);
+//        ImageButton downloadButton = (ImageButton) vi.findViewById(R.id.downloadButton);
         ImageButton playButton = (ImageButton) vi.findViewById(R.id.playButton);
         if (getItem(position) instanceof Asset) {
-	        downloadButton.setTag(Integer.valueOf(position));
-	        downloadButton.setOnClickListener((OnClickListener)getContext());
-	        downloadButton.setVisibility(View.VISIBLE);
+//	        downloadButton.setTag(Integer.valueOf(position));
+//	        downloadButton.setOnClickListener((OnClickListener)getContext());
+//	        downloadButton.setVisibility(View.VISIBLE);
 	        playButton.setTag(Integer.valueOf(position));
 	        playButton.setOnClickListener((OnClickListener)getContext());
 	        playButton.setVisibility(View.VISIBLE);
         } else {
-        	downloadButton.setVisibility(View.INVISIBLE);
+//        	downloadButton.setVisibility(View.INVISIBLE);
         	playButton.setVisibility(View.INVISIBLE);
         }
         return vi;

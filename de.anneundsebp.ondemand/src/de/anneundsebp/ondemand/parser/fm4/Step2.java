@@ -22,11 +22,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import de.anneundsebp.ondemand.parser.Asset;
 import de.anneundsebp.ondemand.parser.Category;
 import de.anneundsebp.ondemand.parser.Step;
 import de.anneundsebp.ondemand.parser.Util;
-
 
 public class Step2 extends Step {
 	
@@ -36,49 +39,42 @@ public class Step2 extends Step {
 	public void process(Map<String, String> context, Category category) {
 		try {
 			this.category = category;
-			String page = Util.loadPage("http://fm4.orf.at/" + category.url);
-			getProgrammeStreamURL(page);
+			String page = Util.loadPage(category.url);
+			parseCategories(page);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
-	List<Asset> getProgrammeStreamURL(String page) {
-		int pos;
-		int start = 0;
-		assets = new ArrayList<Asset>();
-		while ((pos = page.indexOf("data-id", start)) != -1) {
-			start = pos + 1;
-			String dataId = page
-					.substring(pos + 9, page.indexOf("\"", pos + 9));
-			String apiurl = "http://audioapi.orf.at/fm4/json/2.0/playlist/"
-					+ dataId;
-			try {
-				String json = Util.loadPage(apiurl);
-				int jstart = 0;
-				while ((pos = json.indexOf("loopStreamId\":", jstart)) != -1) {
-					jstart = pos +1;
+	
+	List<Asset> parseCategories(String page) {
+		this.assets = new ArrayList<Asset>();
+		try {
+			JSONArray array = new JSONArray(page);
+			for (int i=0; i < array.length() ; i++) {
+				JSONObject o = array.getJSONObject(i);
+				String title = o.getString("title");
+				String sub = this.category.url + "/" + o.getString("programKey");
+				String subpage = Util.loadPage(sub);
+				JSONObject program = new JSONObject(subpage);
+				JSONArray streams = program.getJSONArray("streams");
+				for (int streamCounter = 0; streamCounter < streams.length(); streamCounter++) {
 					Asset a = new Asset();
-					int end = json.indexOf("\"", pos+15);
-					int num = json.indexOf("_", pos+25);
-					num = json.indexOf("_", num+1);
-					num = json.indexOf("_", num+1);
-					num = json.indexOf("_", num+1);
-					num = json.indexOf("_", num+1);
-					a.name = category.name + "_" + json.substring(pos + 15, pos + 26)
-							+ json.substring(num-1, num) 
-							+ json.substring(end-4, end);
-//							json.indexOf("\"", pos + 15));
-					a.url = "http://loopstream01.apa.at/?channel=fm4&ua=flash&id="
-							+ json.substring(pos + 15, json.indexOf("\"", pos + 15));
+					a.name = title;
+					if (streams.length() > 1)
+						a.name += " " + (streamCounter +1);
+					a.url = "http://loopstream01.apa.at/?channel=fm4&id=" + streams.getJSONObject(streamCounter).getString("loopStreamId") + "&offset=0";
 					assets.add(a);
 				}
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 		return assets;
 	}
 }

@@ -18,23 +18,29 @@
 package de.anneundsebp.ondemand.parser.fm4;
 
 import java.net.MalformedURLException;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 
 import de.anneundsebp.ondemand.parser.Category;
 import de.anneundsebp.ondemand.parser.Step;
 import de.anneundsebp.ondemand.parser.Util;
 
-
 public class Step1 extends Step {
+	
+	static DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL);
 
 	List<Category> getCategories() {
 		try {
 			String page = Util
-					.loadPage("http://fm4.orf.at/radio/stories/sendeschema");
+					.loadPage("http://audioapi.orf.at/fm4/json/2.0/broadcasts");
 			return parseCategories(page);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -43,36 +49,22 @@ public class Step1 extends Step {
 		return null;
 	}
 
-	String removeComments(String page) {
-		int start;
-		while ((start = page.indexOf("<!--")) != -1) {
-			int end = page.indexOf("-->", start);
-			String pre = page.substring(0, start);
-			page = pre + page.substring(end + 3, page.length());
-		}
-		return page;
-	}
-
 	List<Category> parseCategories(String page) {
-		page = removeComments(page);
-		Pattern p = Pattern.compile("<area.*?\\/>");
-		categories = new ArrayList<Category>();
-		Matcher m = p.matcher(page);
-		while (m.find()) {
-			String match = m.group();
-			int start = match.indexOf("href=\"");
-			String url = match.substring(start + 6,
-					match.indexOf("\"", start + 6));
-			start = match.indexOf("alt=\"");
-			String title = match.substring(start + 5,
-					match.indexOf("\"", start + 5));
-			if (!contains(categories, title)) {
-				Category cat = new Category();
-				cat.url = url;
-				cat.name = title;
-				categories.add(cat);
+		this.categories = new ArrayList<Category>();
+		try {
+			JSONArray array = new JSONArray(page);
+			for (int i=array.length()-1; i >= 0 ; i--) {
+				Category c = new Category();
+				JSONObject o = array.getJSONObject(i);
+				c.name = dateFormat.format(new Date(Long.parseLong(o.getString("date"))));
+				c.url = "http://audioapi.orf.at/fm4/json/2.0/broadcasts/" + o.getString("day");
+				categories.add(c);
 			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 		return categories;
 	}
 
@@ -85,7 +77,7 @@ public class Step1 extends Step {
 
 	@Override
 	public void process(Map<String, String> context, Category category) {
-		if (categories.isEmpty())
+		if (categories == null)
 			getCategories();
 	}
 }

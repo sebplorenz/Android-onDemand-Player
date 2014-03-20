@@ -8,11 +8,10 @@ _____________________________________________________________________
 
 Interfaces (count = 0):
 
-Constant Pool (count = 90):
+Constant Pool (count = 89):
   - Integer [2130903041]
   - Integer [2131230726]
   - Integer [2131230727]
-  - Integer [2131230728]
   - String [layout_inflater]
   - Class [android/content/Context]
   - Class [android/view/LayoutInflater]
@@ -111,7 +110,7 @@ Methods (count = 3):
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 5, locals = 0, stack = 1):
       [0] aconst_null
-      [1] putstatic #18
+      [1] putstatic #17
         - Fieldref [de/anneundsebp/ondemand/a.a Landroid/view/LayoutInflater;]
       [4] return
       Code attribute exceptions (count = 0):
@@ -126,16 +125,16 @@ Methods (count = 3):
       [2] ldc #1
         - Integer [2130903041]
       [4] aload_2 v2
-      [5] invokespecial #22
+      [5] invokespecial #21
         - Methodref [android/widget/ArrayAdapter.<init> (Landroid/content/Context;ILjava/util/List;)V]
       [8] aload_1 v1
-      [9] ldc #5
+      [9] ldc #4
         - String [layout_inflater]
-      [11] invokevirtual #19
+      [11] invokevirtual #18
         - Methodref [android/content/Context.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [14] checkcast #7
+      [14] checkcast #6
         - Class [android/view/LayoutInflater]
-      [17] putstatic #18
+      [17] putstatic #17
         - Fieldref [de/anneundsebp/ondemand/a.a Landroid/view/LayoutInflater;]
       [20] return
       Code attribute exceptions (count = 0):
@@ -144,112 +143,82 @@ Methods (count = 3):
     Access flags: 0x11
       = public final android.view.View getView(int,android.view.View,android.view.ViewGroup)
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 137, locals = 5, stack = 3):
+    - Code attribute instructions (code length = 93, locals = 4, stack = 3):
       [0] aload_2 v2
       [1] astore_3 v3
       [2] aload_2 v2
       [3] ifnonnull +13 (target=16)
-      [6] getstatic #18
+      [6] getstatic #17
         - Fieldref [de/anneundsebp/ondemand/a.a Landroid/view/LayoutInflater;]
       [9] ldc #1
         - Integer [2130903041]
       [11] aconst_null
-      [12] invokevirtual #20
+      [12] invokevirtual #19
         - Methodref [android/view/LayoutInflater.inflate (ILandroid/view/ViewGroup;)Landroid/view/View;]
       [15] astore_3 v3
       [16] aload_3 v3
       [17] ldc #2
         - Integer [2131230726]
-      [19] invokevirtual #21
+      [19] invokevirtual #20
         - Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [22] checkcast #13
+      [22] checkcast #12
         - Class [android/widget/TextView]
       [25] dup
       [26] astore_2 v2
       [27] aload_0 v0
       [28] iload_1 v1
-      [29] invokevirtual #28
+      [29] invokevirtual #27
         - Methodref [de/anneundsebp/ondemand/a.getItem (I)Ljava/lang/Object;]
-      [32] invokevirtual #30
+      [32] invokevirtual #29
         - Methodref [java/lang/Object.toString ()Ljava/lang/String;]
-      [35] invokevirtual #26
+      [35] invokevirtual #25
         - Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [38] aload_3 v3
-      [39] ldc #4
-        - Integer [2131230728]
-      [41] invokevirtual #21
+      [39] ldc #3
+        - Integer [2131230727]
+      [41] invokevirtual #20
         - Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [44] checkcast #12
+      [44] checkcast #11
         - Class [android/widget/ImageButton]
       [47] astore_2 v2
-      [48] aload_3 v3
-      [49] ldc #3
-        - Integer [2131230727]
-      [51] invokevirtual #21
-        - Methodref [android/view/View.findViewById (I)Landroid/view/View;]
-      [54] checkcast #12
-        - Class [android/widget/ImageButton]
-      [57] astore v4
-      [59] aload_0 v0
-      [60] iload_1 v1
-      [61] invokevirtual #28
+      [48] aload_0 v0
+      [49] iload_1 v1
+      [50] invokevirtual #27
         - Methodref [de/anneundsebp/ondemand/a.getItem (I)Ljava/lang/Object;]
-      [64] instanceof #15
+      [53] instanceof #14
         - Class [de/anneundsebp/ondemand/a/a]
-      [67] ifeq +57 (target=124)
-      [70] aload_2 v2
-      [71] iload_1 v1
-      [72] invokestatic #29
+      [56] ifeq +30 (target=86)
+      [59] aload_2 v2
+      [60] iload_1 v1
+      [61] invokestatic #28
         - Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
-      [75] invokevirtual #24
+      [64] invokevirtual #23
         - Methodref [android/widget/ImageButton.setTag (Ljava/lang/Object;)V]
+      [67] aload_2 v2
+      [68] aload_0 v0
+      [69] invokevirtual #26
+        - Methodref [de/anneundsebp/ondemand/a.getContext ()Landroid/content/Context;]
+      [72] checkcast #8
+        - Class [android/view/View$OnClickListener]
+      [75] invokevirtual #22
+        - Methodref [android/widget/ImageButton.setOnClickListener (Landroid/view/View$OnClickListener;)V]
       [78] aload_2 v2
-      [79] aload_0 v0
-      [80] invokevirtual #27
-        - Methodref [de/anneundsebp/ondemand/a.getContext ()Landroid/content/Context;]
-      [83] checkcast #9
-        - Class [android/view/View$OnClickListener]
-      [86] invokevirtual #23
-        - Methodref [android/widget/ImageButton.setOnClickListener (Landroid/view/View$OnClickListener;)V]
-      [89] aload_2 v2
-      [90] iconst_0
-      [91] invokevirtual #25
+      [79] iconst_0
+      [80] invokevirtual #24
         - Methodref [android/widget/ImageButton.setVisibility (I)V]
-      [94] aload v4
-      [96] iload_1 v1
-      [97] invokestatic #29
-        - Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
-      [100] invokevirtual #24
-        - Methodref [android/widget/ImageButton.setTag (Ljava/lang/Object;)V]
-      [103] aload v4
-      [105] aload_0 v0
-      [106] invokevirtual #27
-        - Methodref [de/anneundsebp/ondemand/a.getContext ()Landroid/content/Context;]
-      [109] checkcast #9
-        - Class [android/view/View$OnClickListener]
-      [112] invokevirtual #23
-        - Methodref [android/widget/ImageButton.setOnClickListener (Landroid/view/View$OnClickListener;)V]
-      [115] aload v4
-      [117] iconst_0
-      [118] invokevirtual #25
+      [83] goto +8 (target=91)
+      [86] aload_2 v2
+      [87] iconst_4
+      [88] invokevirtual #24
         - Methodref [android/widget/ImageButton.setVisibility (I)V]
-      [121] goto +14 (target=135)
-      [124] aload_2 v2
-      [125] iconst_4
-      [126] invokevirtual #25
-        - Methodref [android/widget/ImageButton.setVisibility (I)V]
-      [129] aload v4
-      [131] iconst_4
-      [132] invokevirtual #25
-        - Methodref [android/widget/ImageButton.setVisibility (I)V]
-      [135] aload_3 v3
-      [136] areturn
+      [91] aload_3 v3
+      [92] areturn
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
       - Stack map table attribute (count = 3):
         - [16] Var: [a:de/anneundsebp/ondemand/a][i][T][a:android/view/View], Stack: 
-        - [124] Var: [T][T][a:android/widget/ImageButton][a:android/view/View][a:android/widget/ImageButton], Stack: 
-        - [135] Var: [T][T][T][a:android/view/View], Stack: 
+        - [86] Var: [T][T][a:android/widget/ImageButton][a:android/view/View], Stack: 
+        - [91] Var: [T][T][T][a:android/view/View], Stack: 
 
 Class file attributes (count = 0):
 
@@ -553,823 +522,6 @@ Methods (count = 4):
 Class file attributes (count = 0):
 
 _____________________________________________________________________
-- Program class: de/anneundsebp/ondemand/c
-  Superclass:    android/os/AsyncTask
-  Major version: 0x32
-  Minor version: 0x0
-  Access flags:  0x31
-    = public final class de.anneundsebp.ondemand.c extends android.os.AsyncTask
-
-Interfaces (count = 0):
-
-Constant Pool (count = 245):
-  - String [ ]
-  - String [Download error: ]
-  - String [File downloaded]
-  - String [Saving to ]
-  - String [Server returned HTTP ]
-  - String [Updating Music Library]
-  - String [media/mpeg]
-  - String [power]
-  - Class [[B]
-  - Class [[Lde/anneundsebp/ondemand/a/a;]
-  - Class [[Ljava/lang/Integer;]
-  - Class [[Ljava/lang/Object;]
-  - Class [android/app/ProgressDialog]
-  - Class [android/content/Context]
-  - Class [android/media/MediaScannerConnection]
-  - Class [android/os/AsyncTask]
-  - Class [android/os/Environment]
-  - Class [android/os/PowerManager]
-  - Class [android/os/PowerManager$WakeLock]
-  - Class [android/widget/Toast]
-  - Class [de/anneundsebp/ondemand/a/a]
-  - Class [de/anneundsebp/ondemand/c]
-  - Class [java/io/File]
-  - Class [java/io/FileOutputStream]
-  - Class [java/io/IOException]
-  - Class [java/io/InputStream]
-  - Class [java/io/OutputStream]
-  - Class [java/lang/Class]
-  - Class [java/lang/Exception]
-  - Class [java/lang/Integer]
-  - Class [java/lang/Object]
-  - Class [java/lang/String]
-  - Class [java/lang/StringBuilder]
-  - Class [java/lang/Throwable]
-  - Class [java/net/HttpURLConnection]
-  - Class [java/net/URL]
-  - Long [100]
-  - Fieldref [android/os/Environment.DIRECTORY_MUSIC Ljava/lang/String;]
-  - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
-  - Fieldref [de/anneundsebp/ondemand/a/a.b Ljava/lang/String;]
-  - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-  - Fieldref [de/anneundsebp/ondemand/c.b Landroid/content/Context;]
-  - Fieldref [de/anneundsebp/ondemand/c.c Ljava/lang/String;]
-  - Methodref [android/app/ProgressDialog.dismiss ()V]
-  - Methodref [android/app/ProgressDialog.setIndeterminate (Z)V]
-  - Methodref [android/app/ProgressDialog.setMax (I)V]
-  - Methodref [android/app/ProgressDialog.setMessage (Ljava/lang/CharSequence;)V]
-  - Methodref [android/app/ProgressDialog.setProgress (I)V]
-  - Methodref [android/app/ProgressDialog.show ()V]
-  - Methodref [android/content/Context.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-  - Methodref [android/media/MediaScannerConnection.scanFile (Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V]
-  - Methodref [android/os/AsyncTask.<init> ()V]
-  - Methodref [android/os/AsyncTask.onPreExecute ()V]
-  - Methodref [android/os/AsyncTask.onProgressUpdate ([Ljava/lang/Object;)V]
-  - Methodref [android/os/Environment.getExternalStoragePublicDirectory (Ljava/lang/String;)Ljava/io/File;]
-  - Methodref [android/os/PowerManager.newWakeLock (ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;]
-  - Methodref [android/os/PowerManager$WakeLock.acquire ()V]
-  - Methodref [android/os/PowerManager$WakeLock.release ()V]
-  - Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
-  - Methodref [android/widget/Toast.show ()V]
-  - Methodref [de/anneundsebp/ondemand/c.a ([Lde/anneundsebp/ondemand/a/a;)Ljava/lang/String;]
-  - Methodref [de/anneundsebp/ondemand/c.isCancelled ()Z]
-  - Methodref [de/anneundsebp/ondemand/c.publishProgress ([Ljava/lang/Object;)V]
-  - Methodref [java/io/File.<init> (Ljava/io/File;Ljava/lang/String;)V]
-  - Methodref [java/io/File.getAbsolutePath ()Ljava/lang/String;]
-  - Methodref [java/io/FileOutputStream.<init> (Ljava/io/File;)V]
-  - Methodref [java/io/InputStream.close ()V]
-  - Methodref [java/io/InputStream.read ([B)I]
-  - Methodref [java/io/OutputStream.close ()V]
-  - Methodref [java/io/OutputStream.write ([BII)V]
-  - Methodref [java/lang/Class.getName ()Ljava/lang/String;]
-  - Methodref [java/lang/Exception.toString ()Ljava/lang/String;]
-  - Methodref [java/lang/Integer.intValue ()I]
-  - Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
-  - Methodref [java/lang/Object.getClass ()Ljava/lang/Class;]
-  - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-  - Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
-  - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-  - Methodref [java/net/HttpURLConnection.connect ()V]
-  - Methodref [java/net/HttpURLConnection.disconnect ()V]
-  - Methodref [java/net/HttpURLConnection.getContentLength ()I]
-  - Methodref [java/net/HttpURLConnection.getInputStream ()Ljava/io/InputStream;]
-  - Methodref [java/net/HttpURLConnection.getResponseCode ()I]
-  - Methodref [java/net/HttpURLConnection.getResponseMessage ()Ljava/lang/String;]
-  - Methodref [java/net/URL.<init> (Ljava/lang/String;)V]
-  - Methodref [java/net/URL.openConnection ()Ljava/net/URLConnection;]
-  - NameAndType [<init> ()V]
-  - NameAndType [<init> (Ljava/io/File;)V]
-  - NameAndType [<init> (Ljava/io/File;Ljava/lang/String;)V]
-  - NameAndType [<init> (Ljava/lang/String;)V]
-  - NameAndType [DIRECTORY_MUSIC Ljava/lang/String;]
-  - NameAndType [a ([Lde/anneundsebp/ondemand/a/a;)Ljava/lang/String;]
-  - NameAndType [a Landroid/app/ProgressDialog;]
-  - NameAndType [a Ljava/lang/String;]
-  - NameAndType [acquire ()V]
-  - NameAndType [append (I)Ljava/lang/StringBuilder;]
-  - NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - NameAndType [b Landroid/content/Context;]
-  - NameAndType [b Ljava/lang/String;]
-  - NameAndType [c Ljava/lang/String;]
-  - NameAndType [close ()V]
-  - NameAndType [connect ()V]
-  - NameAndType [disconnect ()V]
-  - NameAndType [dismiss ()V]
-  - NameAndType [getAbsolutePath ()Ljava/lang/String;]
-  - NameAndType [getClass ()Ljava/lang/Class;]
-  - NameAndType [getContentLength ()I]
-  - NameAndType [getExternalStoragePublicDirectory (Ljava/lang/String;)Ljava/io/File;]
-  - NameAndType [getInputStream ()Ljava/io/InputStream;]
-  - NameAndType [getName ()Ljava/lang/String;]
-  - NameAndType [getResponseCode ()I]
-  - NameAndType [getResponseMessage ()Ljava/lang/String;]
-  - NameAndType [getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-  - NameAndType [intValue ()I]
-  - NameAndType [isCancelled ()Z]
-  - NameAndType [makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
-  - NameAndType [newWakeLock (ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;]
-  - NameAndType [onPreExecute ()V]
-  - NameAndType [onProgressUpdate ([Ljava/lang/Object;)V]
-  - NameAndType [openConnection ()Ljava/net/URLConnection;]
-  - NameAndType [publishProgress ([Ljava/lang/Object;)V]
-  - NameAndType [read ([B)I]
-  - NameAndType [release ()V]
-  - NameAndType [scanFile (Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V]
-  - NameAndType [setIndeterminate (Z)V]
-  - NameAndType [setMax (I)V]
-  - NameAndType [setMessage (Ljava/lang/CharSequence;)V]
-  - NameAndType [setProgress (I)V]
-  - NameAndType [show ()V]
-  - NameAndType [toString ()Ljava/lang/String;]
-  - NameAndType [valueOf (I)Ljava/lang/Integer;]
-  - NameAndType [write ([BII)V]
-  - Utf8 [ ]
-  - Utf8 [()I]
-  - Utf8 [()Ljava/io/InputStream;]
-  - Utf8 [()Ljava/lang/Class;]
-  - Utf8 [()Ljava/lang/String;]
-  - Utf8 [()Ljava/net/URLConnection;]
-  - Utf8 [()V]
-  - Utf8 [()Z]
-  - Utf8 [(I)Ljava/lang/Integer;]
-  - Utf8 [(I)Ljava/lang/StringBuilder;]
-  - Utf8 [(I)V]
-  - Utf8 [(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;]
-  - Utf8 [(Landroid/content/Context;)V]
-  - Utf8 [(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
-  - Utf8 [(Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V]
-  - Utf8 [(Ljava/io/File;)V]
-  - Utf8 [(Ljava/io/File;Ljava/lang/String;)V]
-  - Utf8 [(Ljava/lang/CharSequence;)V]
-  - Utf8 [(Ljava/lang/Object;)V]
-  - Utf8 [(Ljava/lang/String;)Ljava/io/File;]
-  - Utf8 [(Ljava/lang/String;)Ljava/lang/Object;]
-  - Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - Utf8 [(Ljava/lang/String;)V]
-  - Utf8 [(Z)V]
-  - Utf8 [([B)I]
-  - Utf8 [([BII)V]
-  - Utf8 [([Lde/anneundsebp/ondemand/a/a;)Ljava/lang/String;]
-  - Utf8 [([Ljava/lang/Object;)Ljava/lang/Object;]
-  - Utf8 [([Ljava/lang/Object;)V]
-  - Utf8 [<init>]
-  - Utf8 [Code]
-  - Utf8 [DIRECTORY_MUSIC]
-  - Utf8 [Download error: ]
-  - Utf8 [File downloaded]
-  - Utf8 [Landroid/app/ProgressDialog;]
-  - Utf8 [Landroid/content/Context;]
-  - Utf8 [Ljava/lang/String;]
-  - Utf8 [Saving to ]
-  - Utf8 [Server returned HTTP ]
-  - Utf8 [StackMapTable]
-  - Utf8 [Updating Music Library]
-  - Utf8 [[B]
-  - Utf8 [[Lde/anneundsebp/ondemand/a/a;]
-  - Utf8 [[Ljava/lang/Integer;]
-  - Utf8 [[Ljava/lang/Object;]
-  - Utf8 [a]
-  - Utf8 [acquire]
-  - Utf8 [android/app/ProgressDialog]
-  - Utf8 [android/content/Context]
-  - Utf8 [android/media/MediaScannerConnection]
-  - Utf8 [android/os/AsyncTask]
-  - Utf8 [android/os/Environment]
-  - Utf8 [android/os/PowerManager]
-  - Utf8 [android/os/PowerManager$WakeLock]
-  - Utf8 [android/widget/Toast]
-  - Utf8 [append]
-  - Utf8 [b]
-  - Utf8 [c]
-  - Utf8 [close]
-  - Utf8 [connect]
-  - Utf8 [de/anneundsebp/ondemand/a/a]
-  - Utf8 [de/anneundsebp/ondemand/c]
-  - Utf8 [disconnect]
-  - Utf8 [dismiss]
-  - Utf8 [doInBackground]
-  - Utf8 [getAbsolutePath]
-  - Utf8 [getClass]
-  - Utf8 [getContentLength]
-  - Utf8 [getExternalStoragePublicDirectory]
-  - Utf8 [getInputStream]
-  - Utf8 [getName]
-  - Utf8 [getResponseCode]
-  - Utf8 [getResponseMessage]
-  - Utf8 [getSystemService]
-  - Utf8 [intValue]
-  - Utf8 [isCancelled]
-  - Utf8 [java/io/File]
-  - Utf8 [java/io/FileOutputStream]
-  - Utf8 [java/io/IOException]
-  - Utf8 [java/io/InputStream]
-  - Utf8 [java/io/OutputStream]
-  - Utf8 [java/lang/Class]
-  - Utf8 [java/lang/Exception]
-  - Utf8 [java/lang/Integer]
-  - Utf8 [java/lang/Object]
-  - Utf8 [java/lang/String]
-  - Utf8 [java/lang/StringBuilder]
-  - Utf8 [java/lang/Throwable]
-  - Utf8 [java/net/HttpURLConnection]
-  - Utf8 [java/net/URL]
-  - Utf8 [makeText]
-  - Utf8 [media/mpeg]
-  - Utf8 [newWakeLock]
-  - Utf8 [onPostExecute]
-  - Utf8 [onPreExecute]
-  - Utf8 [onProgressUpdate]
-  - Utf8 [openConnection]
-  - Utf8 [power]
-  - Utf8 [publishProgress]
-  - Utf8 [read]
-  - Utf8 [release]
-  - Utf8 [scanFile]
-  - Utf8 [setIndeterminate]
-  - Utf8 [setMax]
-  - Utf8 [setMessage]
-  - Utf8 [setProgress]
-  - Utf8 [show]
-  - Utf8 [toString]
-  - Utf8 [valueOf]
-  - Utf8 [write]
-
-Fields (count = 3):
-  - Field:        b Landroid/content/Context;
-    Access flags: 0x2
-      = private android.content.Context b
-  - Field:        a Landroid/app/ProgressDialog;
-    Access flags: 0x1
-      = public android.app.ProgressDialog a
-  - Field:        c Ljava/lang/String;
-    Access flags: 0x2
-      = private java.lang.String c
-
-Methods (count = 6):
-  - Method:       <init>(Landroid/content/Context;)V
-    Access flags: 0x1
-      = public c(android.content.Context)
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 10, locals = 2, stack = 2):
-      [0] aload_0 v0
-      [1] invokespecial #53
-        - Methodref [android/os/AsyncTask.<init> ()V]
-      [4] aload_0 v0
-      [5] aload_1 v1
-      [6] putfield #43
-        - Fieldref [de/anneundsebp/ondemand/c.b Landroid/content/Context;]
-      [9] return
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 0):
-  - Method:       a([Lde/anneundsebp/ondemand/a/a;)Ljava/lang/String;
-    Access flags: 0x82
-      = private varargs java.lang.String a(de.anneundsebp.ondemand.a.a[])
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 477, locals = 14, stack = 8):
-      [0] aload_0 v0
-      [1] getfield #43
-        - Fieldref [de/anneundsebp/ondemand/c.b Landroid/content/Context;]
-      [4] ldc #8
-        - String [power]
-      [6] invokevirtual #51
-        - Methodref [android/content/Context.getSystemService (Ljava/lang/String;)Ljava/lang/Object;]
-      [9] checkcast #18
-        - Class [android/os/PowerManager]
-      [12] dup
-      [13] astore_2 v2
-      [14] iconst_1
-      [15] aload_0 v0
-      [16] invokevirtual #76
-        - Methodref [java/lang/Object.getClass ()Ljava/lang/Class;]
-      [19] invokevirtual #72
-        - Methodref [java/lang/Class.getName ()Ljava/lang/String;]
-      [22] invokevirtual #57
-        - Methodref [android/os/PowerManager.newWakeLock (ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;]
-      [25] dup
-      [26] astore_2 v2
-      [27] invokevirtual #58
-        - Methodref [android/os/PowerManager$WakeLock.acquire ()V]
-      [30] aconst_null
-      [31] astore_3 v3
-      [32] aconst_null
-      [33] astore v4
-      [35] aconst_null
-      [36] astore v5
-      [38] new #36
-        - Class [java/net/URL]
-      [41] dup
-      [42] aload_1 v1
-      [43] iconst_0
-      [44] aaload
-      [45] getfield #41
-        - Fieldref [de/anneundsebp/ondemand/a/a.b Ljava/lang/String;]
-      [48] invokespecial #87
-        - Methodref [java/net/URL.<init> (Ljava/lang/String;)V]
-      [51] dup
-      [52] astore v6
-      [54] invokevirtual #88
-        - Methodref [java/net/URL.openConnection ()Ljava/net/URLConnection;]
-      [57] checkcast #35
-        - Class [java/net/HttpURLConnection]
-      [60] dup
-      [61] astore v5
-      [63] invokevirtual #81
-        - Methodref [java/net/HttpURLConnection.connect ()V]
-      [66] aload v5
-      [68] invokevirtual #85
-        - Methodref [java/net/HttpURLConnection.getResponseCode ()I]
-      [71] sipush 200
-      [74] ificmpeq +67 (target=141)
-      [77] aload v5
-      [79] invokevirtual #85
-        - Methodref [java/net/HttpURLConnection.getResponseCode ()I]
-      [82] sipush 206
-      [85] ificmpeq +56 (target=141)
-      [88] new #33
-        - Class [java/lang/StringBuilder]
-      [91] dup
-      [92] ldc #5
-        - String [Server returned HTTP ]
-      [94] invokespecial #77
-        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [97] aload v5
-      [99] invokevirtual #85
-        - Methodref [java/net/HttpURLConnection.getResponseCode ()I]
-      [102] invokevirtual #78
-        - Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
-      [105] ldc #1
-        - String [ ]
-      [107] invokevirtual #79
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [110] aload v5
-      [112] invokevirtual #86
-        - Methodref [java/net/HttpURLConnection.getResponseMessage ()Ljava/lang/String;]
-      [115] invokevirtual #79
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [118] invokevirtual #80
-        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [121] astore_1 v1
-      [122] goto +3 (target=125)
-      [125] aload v5
-      [127] ifnull +8 (target=135)
-      [130] aload v5
-      [132] invokevirtual #82
-        - Methodref [java/net/HttpURLConnection.disconnect ()V]
-      [135] aload_2 v2
-      [136] invokevirtual #59
-        - Methodref [android/os/PowerManager$WakeLock.release ()V]
-      [139] aload_1 v1
-      [140] areturn
-      [141] aload v5
-      [143] invokevirtual #83
-        - Methodref [java/net/HttpURLConnection.getContentLength ()I]
-      [146] istore v6
-      [148] aload v5
-      [150] invokevirtual #84
-        - Methodref [java/net/HttpURLConnection.getInputStream ()Ljava/io/InputStream;]
-      [153] astore_3 v3
-      [154] getstatic #39
-        - Fieldref [android/os/Environment.DIRECTORY_MUSIC Ljava/lang/String;]
-      [157] invokestatic #56
-        - Methodref [android/os/Environment.getExternalStoragePublicDirectory (Ljava/lang/String;)Ljava/io/File;]
-      [160] astore v7
-      [162] new #23
-        - Class [java/io/File]
-      [165] dup
-      [166] aload v7
-      [168] aload_1 v1
-      [169] iconst_0
-      [170] aaload
-      [171] getfield #40
-        - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
-      [174] invokespecial #65
-        - Methodref [java/io/File.<init> (Ljava/io/File;Ljava/lang/String;)V]
-      [177] astore_1 v1
-      [178] new #24
-        - Class [java/io/FileOutputStream]
-      [181] dup
-      [182] aload_1 v1
-      [183] invokespecial #67
-        - Methodref [java/io/FileOutputStream.<init> (Ljava/io/File;)V]
-      [186] astore v4
-      [188] aload_0 v0
-      [189] aload_1 v1
-      [190] invokevirtual #66
-        - Methodref [java/io/File.getAbsolutePath ()Ljava/lang/String;]
-      [193] putfield #44
-        - Fieldref [de/anneundsebp/ondemand/c.c Ljava/lang/String;]
-      [196] sipush 4096
-      [199] newarray 8
-      [201] astore_1 v1
-      [202] lconst_0
-      [203] lstore v12
-      [205] goto +90 (target=295)
-      [208] aload_0 v0
-      [209] invokevirtual #63
-        - Methodref [de/anneundsebp/ondemand/c.isCancelled ()Z]
-      [212] ifeq +36 (target=248)
-      [215] aload v4
-      [217] invokevirtual #70
-        - Methodref [java/io/OutputStream.close ()V]
-      [220] aload_3 v3
-      [221] ifnull +11 (target=232)
-      [224] aload_3 v3
-      [225] invokevirtual #68
-        - Methodref [java/io/InputStream.close ()V]
-      [228] goto +4 (target=232)
-      [231] pop
-      [232] aload v5
-      [234] ifnull +8 (target=242)
-      [237] aload v5
-      [239] invokevirtual #82
-        - Methodref [java/net/HttpURLConnection.disconnect ()V]
-      [242] aload_2 v2
-      [243] invokevirtual #59
-        - Methodref [android/os/PowerManager$WakeLock.release ()V]
-      [246] aconst_null
-      [247] areturn
-      [248] lload v12
-      [250] iload v7
-      [252] i2l
-      [253] ladd
-      [254] lstore v12
-      [256] iload v6
-      [258] ifle +28 (target=286)
-      [261] aload_0 v0
-      [262] iconst_1
-      [263] anewarray #30
-        - Class [java/lang/Integer]
-      [266] dup
-      [267] iconst_0
-      [268] lload v12
-      [270] ldc2_w #37
-        - Long [100]
-      [273] lmul
-      [274] iload v6
-      [276] i2l
-      [277] ldiv
-      [278] l2i
-      [279] invokestatic #75
-        - Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
-      [282] aastore
-      [283] invokevirtual #64
-        - Methodref [de/anneundsebp/ondemand/c.publishProgress ([Ljava/lang/Object;)V]
-      [286] aload v4
-      [288] aload_1 v1
-      [289] iconst_0
-      [290] iload v7
-      [292] invokevirtual #71
-        - Methodref [java/io/OutputStream.write ([BII)V]
-      [295] aload_3 v3
-      [296] aload_1 v1
-      [297] invokevirtual #69
-        - Methodref [java/io/InputStream.read ([B)I]
-      [300] dup
-      [301] istore v7
-      [303] iconst_m1
-      [304] ificmpne -96 (target=208)
-      [307] aload_0 v0
-      [308] iconst_1
-      [309] anewarray #30
-        - Class [java/lang/Integer]
-      [312] dup
-      [313] iconst_0
-      [314] bipush 101
-      [316] invokestatic #75
-        - Methodref [java/lang/Integer.valueOf (I)Ljava/lang/Integer;]
-      [319] aastore
-      [320] invokevirtual #64
-        - Methodref [de/anneundsebp/ondemand/c.publishProgress ([Ljava/lang/Object;)V]
-      [323] aload_0 v0
-      [324] getfield #43
-        - Fieldref [de/anneundsebp/ondemand/c.b Landroid/content/Context;]
-      [327] iconst_1
-      [328] anewarray #32
-        - Class [java/lang/String]
-      [331] dup
-      [332] iconst_0
-      [333] aload_0 v0
-      [334] getfield #44
-        - Fieldref [de/anneundsebp/ondemand/c.c Ljava/lang/String;]
-      [337] aastore
-      [338] iconst_1
-      [339] anewarray #32
-        - Class [java/lang/String]
-      [342] dup
-      [343] iconst_0
-      [344] ldc #7
-        - String [media/mpeg]
-      [346] aastore
-      [347] aconst_null
-      [348] invokestatic #52
-        - Methodref [android/media/MediaScannerConnection.scanFile (Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V]
-      [351] goto +83 (target=434)
-      [354] dup
-      [355] astore v6
-      [357] invokevirtual #73
-        - Methodref [java/lang/Exception.toString ()Ljava/lang/String;]
-      [360] astore_1 v1
-      [361] aload v4
-      [363] ifnull +8 (target=371)
-      [366] aload v4
-      [368] invokevirtual #70
-        - Methodref [java/io/OutputStream.close ()V]
-      [371] aload_3 v3
-      [372] ifnull +11 (target=383)
-      [375] aload_3 v3
-      [376] invokevirtual #68
-        - Methodref [java/io/InputStream.close ()V]
-      [379] goto +4 (target=383)
-      [382] pop
-      [383] aload v5
-      [385] ifnull +8 (target=393)
-      [388] aload v5
-      [390] invokevirtual #82
-        - Methodref [java/net/HttpURLConnection.disconnect ()V]
-      [393] aload_2 v2
-      [394] invokevirtual #59
-        - Methodref [android/os/PowerManager$WakeLock.release ()V]
-      [397] aload_1 v1
-      [398] areturn
-      [399] astore_1 v1
-      [400] aload v4
-      [402] ifnull +8 (target=410)
-      [405] aload v4
-      [407] invokevirtual #70
-        - Methodref [java/io/OutputStream.close ()V]
-      [410] aload_3 v3
-      [411] ifnull +11 (target=422)
-      [414] aload_3 v3
-      [415] invokevirtual #68
-        - Methodref [java/io/InputStream.close ()V]
-      [418] goto +4 (target=422)
-      [421] pop
-      [422] aload v5
-      [424] ifnull +8 (target=432)
-      [427] aload v5
-      [429] invokevirtual #82
-        - Methodref [java/net/HttpURLConnection.disconnect ()V]
-      [432] aload_1 v1
-      [433] athrow
-      [434] aload v4
-      [436] invokevirtual #70
-        - Methodref [java/io/OutputStream.close ()V]
-      [439] aload_3 v3
-      [440] ifnull +11 (target=451)
-      [443] aload_3 v3
-      [444] invokevirtual #68
-        - Methodref [java/io/InputStream.close ()V]
-      [447] goto +4 (target=451)
-      [450] pop
-      [451] aload v5
-      [453] ifnull +18 (target=471)
-      [456] aload v5
-      [458] invokevirtual #82
-        - Methodref [java/net/HttpURLConnection.disconnect ()V]
-      [461] goto +10 (target=471)
-      [464] astore_1 v1
-      [465] aload_2 v2
-      [466] invokevirtual #59
-        - Methodref [android/os/PowerManager$WakeLock.release ()V]
-      [469] aload_1 v1
-      [470] athrow
-      [471] aload_2 v2
-      [472] invokevirtual #59
-        - Methodref [android/os/PowerManager$WakeLock.release ()V]
-      [475] aconst_null
-      [476] areturn
-      Code attribute exceptions (count = 14):
-      - ExceptionInfo (215 -> 228: 231):
-      - Class [java/io/IOException]
-      - ExceptionInfo (38 -> 122: 354):
-      - Class [java/lang/Exception]
-      - ExceptionInfo (141 -> 215: 354):
-      - Class [java/lang/Exception]
-      - ExceptionInfo (248 -> 351: 354):
-      - Class [java/lang/Exception]
-      - ExceptionInfo (361 -> 379: 382):
-      - Class [java/io/IOException]
-      - ExceptionInfo (38 -> 122: 399):
-      - ExceptionInfo (141 -> 215: 399):
-      - ExceptionInfo (248 -> 361: 399):
-      - ExceptionInfo (400 -> 418: 421):
-      - Class [java/io/IOException]
-      - ExceptionInfo (434 -> 447: 450):
-      - Class [java/io/IOException]
-      - ExceptionInfo (30 -> 135: 464):
-      - ExceptionInfo (141 -> 242: 464):
-      - ExceptionInfo (248 -> 393: 464):
-      - ExceptionInfo (399 -> 464: 464):
-      Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 25):
-        - [125] Var: [T][a:java/lang/String][a:android/os/PowerManager$WakeLock][T][T][a:java/net/HttpURLConnection], Stack: 
-        - [135] Var: -3, Stack: (empty)
-        - [141] Var: [a:de/anneundsebp/ondemand/c][a:[Lde/anneundsebp/ondemand/a/a;][a:android/os/PowerManager$WakeLock][n][n][a:java/net/HttpURLConnection], Stack: 
-        - [208] Var: [a:de/anneundsebp/ondemand/c][a:[B][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][a:java/io/FileOutputStream][a:java/net/HttpURLConnection][i][i][T][T][T][T][l], Stack: 
-        - [231] Var: [T][T][a:android/os/PowerManager$WakeLock][T][T][a:java/net/HttpURLConnection], Stack: [a:java/io/IOException]
-        - [232] Var: ..., Stack: (empty)
-        - [242] Var: -3, Stack: (empty)
-        - [248] Var: [a:de/anneundsebp/ondemand/c][a:[B][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][a:java/io/FileOutputStream][a:java/net/HttpURLConnection][i][i][T][T][T][T][l], Stack: 
-        - [286] Var: ..., Stack: (empty)
-        - [295] Var: [a:de/anneundsebp/ondemand/c][a:[B][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][a:java/io/FileOutputStream][a:java/net/HttpURLConnection][i][T][T][T][T][T][l], Stack: 
-        - [354] Var: [T][T][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][a:java/io/FileOutputStream][a:java/net/HttpURLConnection], Stack: [a:java/lang/Exception]
-        - [371] Var: [T][a:java/lang/String][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][T][a:java/net/HttpURLConnection], Stack: 
-        - [382] Var: [T][a:java/lang/String][a:android/os/PowerManager$WakeLock][T][T][a:java/net/HttpURLConnection], Stack: [a:java/io/IOException]
-        - [383] Var: ..., Stack: (empty)
-        - [393] Var: -3, Stack: (empty)
-        - [399] Var: [T][T][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][a:java/io/FileOutputStream][a:java/net/HttpURLConnection], Stack: [a:java/lang/Throwable]
-        - [410] Var: [T][a:java/lang/Throwable][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][T][a:java/net/HttpURLConnection], Stack: 
-        - [421] Var: [T][a:java/lang/Throwable][a:android/os/PowerManager$WakeLock][T][T][a:java/net/HttpURLConnection], Stack: [a:java/io/IOException]
-        - [422] Var: ..., Stack: (empty)
-        - [432] Var: -3, Stack: (empty)
-        - [434] Var: [T][T][a:android/os/PowerManager$WakeLock][a:java/io/InputStream][a:java/io/FileOutputStream][a:java/net/HttpURLConnection], Stack: 
-        - [450] Var: [T][T][a:android/os/PowerManager$WakeLock][T][T][a:java/net/HttpURLConnection], Stack: [a:java/io/IOException]
-        - [451] Var: ..., Stack: (empty)
-        - [464] Var: [T][T][a:android/os/PowerManager$WakeLock], Stack: [a:java/lang/Throwable]
-        - [471] Var: ..., Stack: (empty)
-  - Method:       onPreExecute()V
-    Access flags: 0x14
-      = protected final void onPreExecute()
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 12, locals = 1, stack = 1):
-      [0] aload_0 v0
-      [1] invokespecial #54
-        - Methodref [android/os/AsyncTask.onPreExecute ()V]
-      [4] aload_0 v0
-      [5] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [8] invokevirtual #50
-        - Methodref [android/app/ProgressDialog.show ()V]
-      [11] return
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 0):
-  - Method:       onPostExecute(Ljava/lang/Object;)V
-    Access flags: 0x1014
-      = protected final synthetic void onPostExecute(java.lang.Object)
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 60, locals = 3, stack = 4):
-      [0] aload_0 v0
-      [1] aload_1 v1
-      [2] checkcast #32
-        - Class [java/lang/String]
-      [5] astore_2 v2
-      [6] dup
-      [7] astore_1 v1
-      [8] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [11] invokevirtual #45
-        - Methodref [android/app/ProgressDialog.dismiss ()V]
-      [14] aload_2 v2
-      [15] ifnull +31 (target=46)
-      [18] aload_1 v1
-      [19] getfield #43
-        - Fieldref [de/anneundsebp/ondemand/c.b Landroid/content/Context;]
-      [22] new #33
-        - Class [java/lang/StringBuilder]
-      [25] dup
-      [26] ldc #2
-        - String [Download error: ]
-      [28] invokespecial #77
-        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [31] aload_2 v2
-      [32] invokevirtual #79
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [35] invokevirtual #80
-        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [38] iconst_1
-      [39] invokestatic #60
-        - Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
-      [42] invokevirtual #61
-        - Methodref [android/widget/Toast.show ()V]
-      [45] return
-      [46] aload_1 v1
-      [47] getfield #43
-        - Fieldref [de/anneundsebp/ondemand/c.b Landroid/content/Context;]
-      [50] ldc #3
-        - String [File downloaded]
-      [52] iconst_0
-      [53] invokestatic #60
-        - Methodref [android/widget/Toast.makeText (Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;]
-      [56] invokevirtual #61
-        - Methodref [android/widget/Toast.show ()V]
-      [59] return
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 1):
-        - [46] Var: [T][a:de/anneundsebp/ondemand/c], Stack: 
-  - Method:       doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    Access flags: 0x1094
-      = protected final varargs synthetic java.lang.Object doInBackground(java.lang.Object[])
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 9, locals = 2, stack = 2):
-      [0] aload_0 v0
-      [1] aload_1 v1
-      [2] checkcast #10
-        - Class [[Lde/anneundsebp/ondemand/a/a;]
-      [5] invokespecial #62
-        - Methodref [de/anneundsebp/ondemand/c.a ([Lde/anneundsebp/ondemand/a/a;)Ljava/lang/String;]
-      [8] areturn
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 0):
-  - Method:       onProgressUpdate([Ljava/lang/Object;)V
-    Access flags: 0x1094
-      = protected final varargs synthetic void onProgressUpdate(java.lang.Object[])
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 98, locals = 3, stack = 4):
-      [0] aload_0 v0
-      [1] aload_1 v1
-      [2] checkcast #11
-        - Class [[Ljava/lang/Integer;]
-      [5] astore_2 v2
-      [6] dup
-      [7] astore_1 v1
-      [8] aload_2 v2
-      [9] invokespecial #55
-        - Methodref [android/os/AsyncTask.onProgressUpdate ([Ljava/lang/Object;)V]
-      [12] aload_2 v2
-      [13] iconst_0
-      [14] aaload
-      [15] invokevirtual #74
-        - Methodref [java/lang/Integer.intValue ()I]
-      [18] bipush 101
-      [20] ificmpge +60 (target=80)
-      [23] aload_1 v1
-      [24] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [27] new #33
-        - Class [java/lang/StringBuilder]
-      [30] dup
-      [31] ldc #4
-        - String [Saving to ]
-      [33] invokespecial #77
-        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [36] aload_1 v1
-      [37] getfield #44
-        - Fieldref [de/anneundsebp/ondemand/c.c Ljava/lang/String;]
-      [40] invokevirtual #79
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [43] invokevirtual #80
-        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [46] invokevirtual #48
-        - Methodref [android/app/ProgressDialog.setMessage (Ljava/lang/CharSequence;)V]
-      [49] aload_1 v1
-      [50] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [53] iconst_0
-      [54] invokevirtual #46
-        - Methodref [android/app/ProgressDialog.setIndeterminate (Z)V]
-      [57] aload_1 v1
-      [58] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [61] bipush 100
-      [63] invokevirtual #47
-        - Methodref [android/app/ProgressDialog.setMax (I)V]
-      [66] aload_1 v1
-      [67] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [70] aload_2 v2
-      [71] iconst_0
-      [72] aaload
-      [73] invokevirtual #74
-        - Methodref [java/lang/Integer.intValue ()I]
-      [76] invokevirtual #49
-        - Methodref [android/app/ProgressDialog.setProgress (I)V]
-      [79] return
-      [80] aload_1 v1
-      [81] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [84] ldc #6
-        - String [Updating Music Library]
-      [86] invokevirtual #48
-        - Methodref [android/app/ProgressDialog.setMessage (Ljava/lang/CharSequence;)V]
-      [89] aload_1 v1
-      [90] getfield #42
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [93] iconst_1
-      [94] invokevirtual #46
-        - Methodref [android/app/ProgressDialog.setIndeterminate (Z)V]
-      [97] return
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 1):
-        - [80] Var: [T][a:de/anneundsebp/ondemand/c], Stack: 
-
-Class file attributes (count = 0):
-
-_____________________________________________________________________
 - Program class: de/anneundsebp/ondemand/MainActivity
   Superclass:    android/app/ListActivity
   Major version: 0x32
@@ -1382,10 +534,10 @@ Interfaces (count = 6):
   - Class [android/media/MediaPlayer$OnCompletionListener]
   - Class [android/view/View$OnClickListener]
   - Class [android/widget/MediaController$MediaPlayerControl]
-  - Class [de/anneundsebp/ondemand/f]
-  - Class [de/anneundsebp/ondemand/i]
+  - Class [de/anneundsebp/ondemand/d]
+  - Class [de/anneundsebp/ondemand/g]
 
-Constant Pool (count = 408):
+Constant Pool (count = 365):
   - Integer [2130903040]
   - Integer [2131165184]
   - Integer [2131230721]
@@ -1393,14 +545,10 @@ Constant Pool (count = 408):
   - Integer [2131230723]
   - Integer [2131230724]
   - Integer [2131230727]
-  - Integer [2131230728]
   - String [Connecting...]
-  - String [Downloading ]
   - String [Downloading...]
-  - String [FM4]
   - String [Now Playing]
   - String [com.example.com.action.PLAY]
-  - String [http://fm4.orf.at/v2static/images/fm4_logo.jpg]
   - Class [android/app/ListActivity]
   - Class [android/app/ProgressDialog]
   - Class [android/content/Intent]
@@ -1423,7 +571,6 @@ Constant Pool (count = 408):
   - Class [de/anneundsebp/ondemand/a]
   - Class [de/anneundsebp/ondemand/a/a]
   - Class [de/anneundsebp/ondemand/a/a/a]
-  - Class [de/anneundsebp/ondemand/a/a/b]
   - Class [de/anneundsebp/ondemand/a/b]
   - Class [de/anneundsebp/ondemand/a/c]
   - Class [de/anneundsebp/ondemand/a/d]
@@ -1433,12 +580,9 @@ Constant Pool (count = 408):
   - Class [de/anneundsebp/ondemand/e]
   - Class [de/anneundsebp/ondemand/f]
   - Class [de/anneundsebp/ondemand/g]
-  - Class [de/anneundsebp/ondemand/h]
-  - Class [de/anneundsebp/ondemand/i]
   - Class [java/lang/Integer]
   - Class [java/lang/Object]
   - Class [java/lang/String]
-  - Class [java/lang/StringBuilder]
   - Class [java/util/ArrayList]
   - Class [java/util/Iterator]
   - Class [java/util/List]
@@ -1453,15 +597,13 @@ Constant Pool (count = 408):
   - Fieldref [de/anneundsebp/ondemand/MainActivity.i Landroid/os/Handler;]
   - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
   - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.b Lde/anneundsebp/ondemand/a/a;]
-  - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/f;]
+  - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/d;]
   - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
   - Fieldref [de/anneundsebp/ondemand/a/c.a Ljava/lang/String;]
-  - Fieldref [de/anneundsebp/ondemand/a/c.b Ljava/util/List;]
   - Fieldref [de/anneundsebp/ondemand/a/c.d I]
   - Fieldref [de/anneundsebp/ondemand/a/c.f Ljava/lang/String;]
   - Fieldref [de/anneundsebp/ondemand/a/d.a Ljava/util/List;]
   - Fieldref [de/anneundsebp/ondemand/a/d.b Ljava/util/List;]
-  - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
   - Methodref [android/app/ListActivity.<init> ()V]
   - Methodref [android/app/ListActivity.onBackPressed ()V]
   - Methodref [android/app/ListActivity.onCreate (Landroid/os/Bundle;)V]
@@ -1472,7 +614,6 @@ Constant Pool (count = 408):
   - Methodref [android/app/ProgressDialog.setCancelable (Z)V]
   - Methodref [android/app/ProgressDialog.setIndeterminate (Z)V]
   - Methodref [android/app/ProgressDialog.setMessage (Ljava/lang/CharSequence;)V]
-  - Methodref [android/app/ProgressDialog.setOnCancelListener (Landroid/content/DialogInterface$OnCancelListener;)V]
   - Methodref [android/app/ProgressDialog.setProgressStyle (I)V]
   - Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
   - Methodref [android/content/Intent.<init> (Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V]
@@ -1510,28 +651,19 @@ Constant Pool (count = 408):
   - Methodref [de/anneundsebp/ondemand/a.add (Ljava/lang/Object;)V]
   - Methodref [de/anneundsebp/ondemand/a.clear ()V]
   - Methodref [de/anneundsebp/ondemand/a/a/a.<init> ()V]
-  - Methodref [de/anneundsebp/ondemand/a/a/b.<init> ()V]
-  - Methodref [de/anneundsebp/ondemand/a/c.<init> ()V]
   - Methodref [de/anneundsebp/ondemand/b.<init> (Landroid/app/Activity;)V]
   - Methodref [de/anneundsebp/ondemand/b.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
-  - Methodref [de/anneundsebp/ondemand/c.<init> (Landroid/content/Context;)V]
-  - Methodref [de/anneundsebp/ondemand/c.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
-  - Methodref [de/anneundsebp/ondemand/d.<init> (Lde/anneundsebp/ondemand/MainActivity;Lde/anneundsebp/ondemand/c;)V]
-  - Methodref [de/anneundsebp/ondemand/e.<init> (Lde/anneundsebp/ondemand/MainActivity;)V]
-  - Methodref [de/anneundsebp/ondemand/g.<init> (Lde/anneundsebp/ondemand/i;)V]
-  - Methodref [de/anneundsebp/ondemand/g.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
-  - Methodref [de/anneundsebp/ondemand/h.<init> (Lde/anneundsebp/ondemand/i;)V]
-  - Methodref [de/anneundsebp/ondemand/h.a (Lde/anneundsebp/ondemand/a/b;)V]
-  - Methodref [de/anneundsebp/ondemand/h.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+  - Methodref [de/anneundsebp/ondemand/c.<init> (Lde/anneundsebp/ondemand/MainActivity;)V]
+  - Methodref [de/anneundsebp/ondemand/e.<init> (Lde/anneundsebp/ondemand/g;)V]
+  - Methodref [de/anneundsebp/ondemand/e.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+  - Methodref [de/anneundsebp/ondemand/f.<init> (Lde/anneundsebp/ondemand/g;)V]
+  - Methodref [de/anneundsebp/ondemand/f.a (Lde/anneundsebp/ondemand/a/b;)V]
+  - Methodref [de/anneundsebp/ondemand/f.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
   - Methodref [java/lang/Integer.intValue ()I]
-  - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-  - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
   - Methodref [java/util/ArrayList.<init> ()V]
   - InterfaceMethodref [android/view/MenuItem.getItemId ()I]
   - InterfaceMethodref [java/util/Iterator.hasNext ()Z]
   - InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
-  - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
   - InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
   - InterfaceMethodref [java/util/List.isEmpty ()Z]
   - InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
@@ -1543,24 +675,19 @@ Constant Pool (count = 408):
   - NameAndType [<init> (Landroid/content/Context;Ljava/util/List;)V]
   - NameAndType [<init> (Landroid/content/Context;Z)V]
   - NameAndType [<init> (Lde/anneundsebp/ondemand/MainActivity;)V]
-  - NameAndType [<init> (Lde/anneundsebp/ondemand/MainActivity;Lde/anneundsebp/ondemand/c;)V]
-  - NameAndType [<init> (Lde/anneundsebp/ondemand/i;)V]
-  - NameAndType [<init> (Ljava/lang/String;)V]
+  - NameAndType [<init> (Lde/anneundsebp/ondemand/g;)V]
   - NameAndType [<init> (Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V]
   - NameAndType [a (Lde/anneundsebp/ondemand/a/a;)V]
   - NameAndType [a (Lde/anneundsebp/ondemand/a/b;)V]
-  - NameAndType [a Landroid/app/ProgressDialog;]
   - NameAndType [a Landroid/media/MediaPlayer;]
   - NameAndType [a Landroid/widget/MediaController;]
   - NameAndType [a Ljava/lang/String;]
   - NameAndType [a Ljava/util/List;]
   - NameAndType [add (Ljava/lang/Object;)V]
-  - NameAndType [add (Ljava/lang/Object;)Z]
-  - NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
   - NameAndType [b Lde/anneundsebp/ondemand/a/a;]
   - NameAndType [b Lde/anneundsebp/ondemand/a/c;]
   - NameAndType [b Ljava/util/List;]
-  - NameAndType [c Lde/anneundsebp/ondemand/f;]
+  - NameAndType [c Lde/anneundsebp/ondemand/d;]
   - NameAndType [c Ljava/util/List;]
   - NameAndType [clear ()V]
   - NameAndType [d I]
@@ -1607,7 +734,6 @@ Constant Pool (count = 408):
   - NameAndType [setMediaPlayer (Landroid/widget/MediaController$MediaPlayerControl;)V]
   - NameAndType [setMessage (Ljava/lang/CharSequence;)V]
   - NameAndType [setOnBufferingUpdateListener (Landroid/media/MediaPlayer$OnBufferingUpdateListener;)V]
-  - NameAndType [setOnCancelListener (Landroid/content/DialogInterface$OnCancelListener;)V]
   - NameAndType [setOnClickListener (Landroid/view/View$OnClickListener;)V]
   - NameAndType [setOnCompletionListener (Landroid/media/MediaPlayer$OnCompletionListener;)V]
   - NameAndType [setProgressStyle (I)V]
@@ -1617,11 +743,9 @@ Constant Pool (count = 408):
   - NameAndType [start ()V]
   - NameAndType [startService (Landroid/content/Intent;)Landroid/content/ComponentName;]
   - NameAndType [stopService (Landroid/content/Intent;)Z]
-  - NameAndType [toString ()Ljava/lang/String;]
   - Utf8 [()I]
   - Utf8 [()Landroid/view/MenuInflater;]
   - Utf8 [()Ljava/lang/Object;]
-  - Utf8 [()Ljava/lang/String;]
   - Utf8 [()Ljava/util/Iterator;]
   - Utf8 [()V]
   - Utf8 [()Z]
@@ -1634,7 +758,6 @@ Constant Pool (count = 408):
   - Utf8 [(Landroid/content/Context;Ljava/lang/Class;)V]
   - Utf8 [(Landroid/content/Context;Ljava/util/List;)V]
   - Utf8 [(Landroid/content/Context;Z)V]
-  - Utf8 [(Landroid/content/DialogInterface$OnCancelListener;)V]
   - Utf8 [(Landroid/content/Intent;)Landroid/content/ComponentName;]
   - Utf8 [(Landroid/content/Intent;)Z]
   - Utf8 [(Landroid/media/MediaPlayer$OnBufferingUpdateListener;)V]
@@ -1650,26 +773,20 @@ Constant Pool (count = 408):
   - Utf8 [(Landroid/widget/ListView;Landroid/view/View;IJ)V]
   - Utf8 [(Landroid/widget/MediaController$MediaPlayerControl;)V]
   - Utf8 [(Lde/anneundsebp/ondemand/MainActivity;)V]
-  - Utf8 [(Lde/anneundsebp/ondemand/MainActivity;Lde/anneundsebp/ondemand/c;)V]
   - Utf8 [(Lde/anneundsebp/ondemand/a/a;)V]
   - Utf8 [(Lde/anneundsebp/ondemand/a/b;)V]
   - Utf8 [(Lde/anneundsebp/ondemand/a/d;)V]
-  - Utf8 [(Lde/anneundsebp/ondemand/i;)V]
+  - Utf8 [(Lde/anneundsebp/ondemand/g;)V]
   - Utf8 [(Ljava/lang/CharSequence;)V]
   - Utf8 [(Ljava/lang/Object;)V]
-  - Utf8 [(Ljava/lang/Object;)Z]
   - Utf8 [(Ljava/lang/Runnable;)Z]
-  - Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - Utf8 [(Ljava/lang/String;)V]
   - Utf8 [(Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V]
   - Utf8 [(Z)V]
   - Utf8 [([Ljava/lang/Object;)Landroid/os/AsyncTask;]
   - Utf8 [<init>]
   - Utf8 [Code]
   - Utf8 [Connecting...]
-  - Utf8 [Downloading ]
   - Utf8 [Downloading...]
-  - Utf8 [FM4]
   - Utf8 [I]
   - Utf8 [Landroid/app/ProgressDialog;]
   - Utf8 [Landroid/media/MediaPlayer;]
@@ -1678,7 +795,7 @@ Constant Pool (count = 408):
   - Utf8 [Lde/anneundsebp/ondemand/a/a;]
   - Utf8 [Lde/anneundsebp/ondemand/a/c;]
   - Utf8 [Lde/anneundsebp/ondemand/a;]
-  - Utf8 [Lde/anneundsebp/ondemand/f;]
+  - Utf8 [Lde/anneundsebp/ondemand/d;]
   - Utf8 [Ljava/lang/String;]
   - Utf8 [Ljava/util/List;]
   - Utf8 [Now Playing]
@@ -1702,7 +819,6 @@ Constant Pool (count = 408):
   - Utf8 [android/widget/MediaController]
   - Utf8 [android/widget/MediaController$MediaPlayerControl]
   - Utf8 [android/widget/TextView]
-  - Utf8 [append]
   - Utf8 [b]
   - Utf8 [c]
   - Utf8 [canPause]
@@ -1716,7 +832,6 @@ Constant Pool (count = 408):
   - Utf8 [de/anneundsebp/ondemand/a]
   - Utf8 [de/anneundsebp/ondemand/a/a]
   - Utf8 [de/anneundsebp/ondemand/a/a/a]
-  - Utf8 [de/anneundsebp/ondemand/a/a/b]
   - Utf8 [de/anneundsebp/ondemand/a/b]
   - Utf8 [de/anneundsebp/ondemand/a/c]
   - Utf8 [de/anneundsebp/ondemand/a/d]
@@ -1726,8 +841,6 @@ Constant Pool (count = 408):
   - Utf8 [de/anneundsebp/ondemand/e]
   - Utf8 [de/anneundsebp/ondemand/f]
   - Utf8 [de/anneundsebp/ondemand/g]
-  - Utf8 [de/anneundsebp/ondemand/h]
-  - Utf8 [de/anneundsebp/ondemand/i]
   - Utf8 [e]
   - Utf8 [execute]
   - Utf8 [f]
@@ -1745,7 +858,6 @@ Constant Pool (count = 408):
   - Utf8 [getTag]
   - Utf8 [h]
   - Utf8 [hasNext]
-  - Utf8 [http://fm4.orf.at/v2static/images/fm4_logo.jpg]
   - Utf8 [i]
   - Utf8 [inflate]
   - Utf8 [intValue]
@@ -1755,7 +867,6 @@ Constant Pool (count = 408):
   - Utf8 [java/lang/Integer]
   - Utf8 [java/lang/Object]
   - Utf8 [java/lang/String]
-  - Utf8 [java/lang/StringBuilder]
   - Utf8 [java/util/ArrayList]
   - Utf8 [java/util/Iterator]
   - Utf8 [java/util/List]
@@ -1782,7 +893,6 @@ Constant Pool (count = 408):
   - Utf8 [setMediaPlayer]
   - Utf8 [setMessage]
   - Utf8 [setOnBufferingUpdateListener]
-  - Utf8 [setOnCancelListener]
   - Utf8 [setOnClickListener]
   - Utf8 [setOnCompletionListener]
   - Utf8 [setProgressStyle]
@@ -1792,7 +902,6 @@ Constant Pool (count = 408):
   - Utf8 [start]
   - Utf8 [startService]
   - Utf8 [stopService]
-  - Utf8 [toString]
 
 Fields (count = 9):
   - Field:        b Lde/anneundsebp/ondemand/a/c;
@@ -1828,79 +937,39 @@ Methods (count = 24):
     Access flags: 0x1
       = public MainActivity()
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 97, locals = 3, stack = 4):
+    - Code attribute instructions (code length = 42, locals = 1, stack = 3):
       [0] aload_0 v0
-      [1] invokespecial #77
+      [1] invokespecial #67
         - Methodref [android/app/ListActivity.<init> ()V]
       [4] aload_0 v0
-      [5] new #40
-        - Class [de/anneundsebp/ondemand/a/c]
-      [8] dup
-      [9] invokespecial #126
-        - Methodref [de/anneundsebp/ondemand/a/c.<init> ()V]
-      [12] dup
-      [13] astore_1 v1
-      [14] ldc #12
-        - String [FM4]
-      [16] putfield #70
-        - Fieldref [de/anneundsebp/ondemand/a/c.a Ljava/lang/String;]
-      [19] aload_1 v1
-      [20] ldc #15
-        - String [http://fm4.orf.at/v2static/images/fm4_logo.jpg]
-      [22] putfield #73
-        - Fieldref [de/anneundsebp/ondemand/a/c.f Ljava/lang/String;]
-      [25] new #54
-        - Class [java/util/ArrayList]
-      [28] dup
-      [29] invokespecial #142
-        - Methodref [java/util/ArrayList.<init> ()V]
-      [32] dup
-      [33] astore_2 v2
-      [34] new #37
+      [5] new #33
         - Class [de/anneundsebp/ondemand/a/a/a]
-      [37] dup
-      [38] invokespecial #124
+      [8] dup
+      [9] invokespecial #113
         - Methodref [de/anneundsebp/ondemand/a/a/a.<init> ()V]
-      [41] invokeinterface #146
-        - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
-      [46] pop
-      [47] aload_2 v2
-      [48] new #38
-        - Class [de/anneundsebp/ondemand/a/a/b]
-      [51] dup
-      [52] invokespecial #125
-        - Methodref [de/anneundsebp/ondemand/a/a/b.<init> ()V]
-      [55] invokeinterface #146
-        - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
-      [60] pop
-      [61] aload_1 v1
-      [62] aload_2 v2
-      [63] putfield #71
-        - Fieldref [de/anneundsebp/ondemand/a/c.b Ljava/util/List;]
-      [66] aload_1 v1
-      [67] putfield #58
+      [12] putfield #50
         - Fieldref [de/anneundsebp/ondemand/MainActivity.b Lde/anneundsebp/ondemand/a/c;]
-      [70] aload_0 v0
-      [71] iconst_0
-      [72] putfield #61
+      [15] aload_0 v0
+      [16] iconst_0
+      [17] putfield #53
         - Fieldref [de/anneundsebp/ondemand/MainActivity.e I]
-      [75] aload_0 v0
-      [76] iconst_m1
-      [77] putfield #62
+      [20] aload_0 v0
+      [21] iconst_m1
+      [22] putfield #54
         - Fieldref [de/anneundsebp/ondemand/MainActivity.f I]
-      [80] aload_0 v0
-      [81] aconst_null
-      [82] putfield #63
+      [25] aload_0 v0
+      [26] aconst_null
+      [27] putfield #55
         - Fieldref [de/anneundsebp/ondemand/MainActivity.g Ljava/util/List;]
-      [85] aload_0 v0
-      [86] new #23
+      [30] aload_0 v0
+      [31] new #19
         - Class [android/os/Handler]
-      [89] dup
-      [90] invokespecial #100
+      [34] dup
+      [35] invokespecial #89
         - Methodref [android/os/Handler.<init> ()V]
-      [93] putfield #65
+      [38] putfield #57
         - Fieldref [de/anneundsebp/ondemand/MainActivity.i Landroid/os/Handler;]
-      [96] return
+      [41] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
   - Method:       onBackPressed()V
@@ -1909,34 +978,34 @@ Methods (count = 24):
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 41, locals = 2, stack = 5):
       [0] aload_0 v0
-      [1] getfield #58
+      [1] getfield #50
         - Fieldref [de/anneundsebp/ondemand/MainActivity.b Lde/anneundsebp/ondemand/a/c;]
-      [4] getfield #72
+      [4] getfield #63
         - Fieldref [de/anneundsebp/ondemand/a/c.d I]
       [7] ifle +29 (target=36)
-      [10] new #47
-        - Class [de/anneundsebp/ondemand/g]
+      [10] new #40
+        - Class [de/anneundsebp/ondemand/e]
       [13] dup
       [14] aload_0 v0
-      [15] invokespecial #133
-        - Methodref [de/anneundsebp/ondemand/g.<init> (Lde/anneundsebp/ondemand/i;)V]
+      [15] invokespecial #117
+        - Methodref [de/anneundsebp/ondemand/e.<init> (Lde/anneundsebp/ondemand/g;)V]
       [18] dup
       [19] astore_1 v1
       [20] iconst_1
-      [21] anewarray #40
+      [21] anewarray #35
         - Class [de/anneundsebp/ondemand/a/c]
       [24] dup
       [25] iconst_0
       [26] aload_0 v0
-      [27] getfield #58
+      [27] getfield #50
         - Fieldref [de/anneundsebp/ondemand/MainActivity.b Lde/anneundsebp/ondemand/a/c;]
       [30] aastore
-      [31] invokevirtual #134
-        - Methodref [de/anneundsebp/ondemand/g.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+      [31] invokevirtual #118
+        - Methodref [de/anneundsebp/ondemand/e.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
       [34] pop
       [35] return
       [36] aload_0 v0
-      [37] invokespecial #78
+      [37] invokespecial #68
         - Methodref [android/app/ListActivity.onBackPressed ()V]
       [40] return
       Code attribute exceptions (count = 0):
@@ -1950,230 +1019,230 @@ Methods (count = 24):
     - Code attribute instructions (code length = 301, locals = 2, stack = 5):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] invokespecial #79
+      [2] invokespecial #69
         - Methodref [android/app/ListActivity.onCreate (Landroid/os/Bundle;)V]
       [5] aload_0 v0
       [6] ldc #1
         - Integer [2130903040]
-      [8] invokevirtual #117
+      [8] invokevirtual #106
         - Methodref [de/anneundsebp/ondemand/MainActivity.setContentView (I)V]
       [11] aload_0 v0
       [12] ldc #3
         - Integer [2131230721]
-      [14] invokevirtual #114
+      [14] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [17] checkcast #28
+      [17] checkcast #24
         - Class [android/widget/ImageButton]
       [20] aload_0 v0
-      [21] getfield #58
+      [21] getfield #50
         - Fieldref [de/anneundsebp/ondemand/MainActivity.b Lde/anneundsebp/ondemand/a/c;]
-      [24] getfield #70
+      [24] getfield #62
         - Fieldref [de/anneundsebp/ondemand/a/c.a Ljava/lang/String;]
-      [27] invokevirtual #106
+      [27] invokevirtual #95
         - Methodref [android/widget/ImageButton.setContentDescription (Ljava/lang/CharSequence;)V]
-      [30] new #42
+      [30] new #37
         - Class [de/anneundsebp/ondemand/b]
       [33] dup
       [34] aload_0 v0
-      [35] invokespecial #127
+      [35] invokespecial #114
         - Methodref [de/anneundsebp/ondemand/b.<init> (Landroid/app/Activity;)V]
       [38] dup
       [39] astore_1 v1
       [40] iconst_1
-      [41] anewarray #52
+      [41] anewarray #45
         - Class [java/lang/String]
       [44] dup
       [45] iconst_0
       [46] aload_0 v0
-      [47] getfield #58
+      [47] getfield #50
         - Fieldref [de/anneundsebp/ondemand/MainActivity.b Lde/anneundsebp/ondemand/a/c;]
-      [50] getfield #73
+      [50] getfield #64
         - Fieldref [de/anneundsebp/ondemand/a/c.f Ljava/lang/String;]
       [53] aastore
-      [54] invokevirtual #128
+      [54] invokevirtual #115
         - Methodref [de/anneundsebp/ondemand/b.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
       [57] pop
-      [58] new #48
-        - Class [de/anneundsebp/ondemand/h]
+      [58] new #41
+        - Class [de/anneundsebp/ondemand/f]
       [61] dup
       [62] aload_0 v0
-      [63] invokespecial #135
-        - Methodref [de/anneundsebp/ondemand/h.<init> (Lde/anneundsebp/ondemand/i;)V]
+      [63] invokespecial #119
+        - Methodref [de/anneundsebp/ondemand/f.<init> (Lde/anneundsebp/ondemand/g;)V]
       [66] dup
       [67] astore_1 v1
       [68] iconst_1
-      [69] anewarray #40
+      [69] anewarray #35
         - Class [de/anneundsebp/ondemand/a/c]
       [72] dup
       [73] iconst_0
       [74] aload_0 v0
-      [75] getfield #58
+      [75] getfield #50
         - Fieldref [de/anneundsebp/ondemand/MainActivity.b Lde/anneundsebp/ondemand/a/c;]
       [78] aastore
-      [79] invokevirtual #137
-        - Methodref [de/anneundsebp/ondemand/h.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+      [79] invokevirtual #121
+        - Methodref [de/anneundsebp/ondemand/f.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
       [82] pop
       [83] aload_0 v0
-      [84] new #54
+      [84] new #46
         - Class [java/util/ArrayList]
       [87] dup
-      [88] invokespecial #142
+      [88] invokespecial #123
         - Methodref [java/util/ArrayList.<init> ()V]
-      [91] putfield #59
+      [91] putfield #51
         - Fieldref [de/anneundsebp/ondemand/MainActivity.c Ljava/util/List;]
       [94] aload_0 v0
-      [95] new #35
+      [95] new #31
         - Class [de/anneundsebp/ondemand/a]
       [98] dup
       [99] aload_0 v0
       [100] aload_0 v0
-      [101] getfield #59
+      [101] getfield #51
         - Fieldref [de/anneundsebp/ondemand/MainActivity.c Ljava/util/List;]
-      [104] invokespecial #121
+      [104] invokespecial #110
         - Methodref [de/anneundsebp/ondemand/a.<init> (Landroid/content/Context;Ljava/util/List;)V]
-      [107] putfield #60
+      [107] putfield #52
         - Fieldref [de/anneundsebp/ondemand/MainActivity.d Lde/anneundsebp/ondemand/a;]
       [110] aload_0 v0
       [111] aload_0 v0
-      [112] getfield #60
+      [112] getfield #52
         - Fieldref [de/anneundsebp/ondemand/MainActivity.d Lde/anneundsebp/ondemand/a;]
-      [115] invokevirtual #118
+      [115] invokevirtual #107
         - Methodref [de/anneundsebp/ondemand/MainActivity.setListAdapter (Landroid/widget/ListAdapter;)V]
       [118] aload_0 v0
-      [119] new #17
+      [119] new #13
         - Class [android/app/ProgressDialog]
       [122] dup
       [123] aload_0 v0
-      [124] invokespecial #83
+      [124] invokespecial #73
         - Methodref [android/app/ProgressDialog.<init> (Landroid/content/Context;)V]
-      [127] putfield #64
+      [127] putfield #56
         - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
       [130] aload_0 v0
-      [131] getfield #64
+      [131] getfield #56
         - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
-      [134] ldc #11
+      [134] ldc #9
         - String [Downloading...]
-      [136] invokevirtual #86
+      [136] invokevirtual #76
         - Methodref [android/app/ProgressDialog.setMessage (Ljava/lang/CharSequence;)V]
       [139] aload_0 v0
-      [140] getfield #64
+      [140] getfield #56
         - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
       [143] iconst_1
-      [144] invokevirtual #85
+      [144] invokevirtual #75
         - Methodref [android/app/ProgressDialog.setIndeterminate (Z)V]
       [147] aload_0 v0
-      [148] getfield #64
+      [148] getfield #56
         - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
       [151] iconst_1
-      [152] invokevirtual #88
+      [152] invokevirtual #77
         - Methodref [android/app/ProgressDialog.setProgressStyle (I)V]
       [155] aload_0 v0
-      [156] getfield #64
+      [156] getfield #56
         - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
       [159] iconst_1
-      [160] invokevirtual #84
+      [160] invokevirtual #74
         - Methodref [android/app/ProgressDialog.setCancelable (Z)V]
       [163] aload_0 v0
-      [164] putstatic #68
-        - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/f;]
-      [167] getstatic #66
+      [164] putstatic #60
+        - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/d;]
+      [167] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
       [170] ifnull +90 (target=260)
       [173] aload_0 v0
-      [174] getfield #57
+      [174] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [177] ifnonnull +51 (target=228)
       [180] aload_0 v0
-      [181] new #30
+      [181] new #26
         - Class [android/widget/MediaController]
       [184] dup
       [185] aload_0 v0
       [186] iconst_0
-      [187] invokespecial #107
+      [187] invokespecial #96
         - Methodref [android/widget/MediaController.<init> (Landroid/content/Context;Z)V]
-      [190] putfield #57
+      [190] putfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [193] aload_0 v0
-      [194] getfield #57
+      [194] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [197] aload_0 v0
       [198] ldc #4
         - Integer [2131230722]
-      [200] invokevirtual #114
+      [200] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [203] invokevirtual #108
+      [203] invokevirtual #97
         - Methodref [android/widget/MediaController.setAnchorView (Landroid/view/View;)V]
       [206] aload_0 v0
-      [207] getfield #57
+      [207] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [210] aload_0 v0
-      [211] invokevirtual #110
+      [211] invokevirtual #99
         - Methodref [android/widget/MediaController.setMediaPlayer (Landroid/widget/MediaController$MediaPlayerControl;)V]
-      [214] getstatic #66
+      [214] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
       [217] aload_0 v0
-      [218] invokevirtual #97
+      [218] invokevirtual #86
         - Methodref [android/media/MediaPlayer.setOnBufferingUpdateListener (Landroid/media/MediaPlayer$OnBufferingUpdateListener;)V]
-      [221] getstatic #66
+      [221] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
       [224] aload_0 v0
-      [225] invokevirtual #98
+      [225] invokevirtual #87
         - Methodref [android/media/MediaPlayer.setOnCompletionListener (Landroid/media/MediaPlayer$OnCompletionListener;)V]
       [228] aload_0 v0
       [229] ldc #5
         - Integer [2131230723]
-      [231] invokevirtual #114
+      [231] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [234] checkcast #32
+      [234] checkcast #28
         - Class [android/widget/TextView]
-      [237] ldc #13
+      [237] ldc #10
         - String [Now Playing]
-      [239] invokevirtual #112
+      [239] invokevirtual #101
         - Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [242] aload_0 v0
       [243] ldc #6
         - Integer [2131230724]
-      [245] invokevirtual #114
+      [245] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [248] checkcast #32
+      [248] checkcast #28
         - Class [android/widget/TextView]
-      [251] getstatic #67
+      [251] getstatic #59
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.b Lde/anneundsebp/ondemand/a/a;]
-      [254] getfield #69
+      [254] getfield #61
         - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
-      [257] invokevirtual #112
+      [257] invokevirtual #101
         - Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [260] aload_0 v0
       [261] ldc #3
         - Integer [2131230721]
-      [263] invokevirtual #114
+      [263] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
       [266] aload_0 v0
-      [267] invokevirtual #105
+      [267] invokevirtual #94
         - Methodref [android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V]
       [270] aload_0 v0
       [271] ldc #4
         - Integer [2131230722]
-      [273] invokevirtual #114
+      [273] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
       [276] aload_0 v0
-      [277] invokevirtual #105
+      [277] invokevirtual #94
         - Methodref [android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V]
       [280] aload_0 v0
       [281] ldc #6
         - Integer [2131230724]
-      [283] invokevirtual #114
+      [283] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
       [286] aload_0 v0
-      [287] invokevirtual #105
+      [287] invokevirtual #94
         - Methodref [android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V]
       [290] aload_0 v0
       [291] ldc #5
         - Integer [2131230723]
-      [293] invokevirtual #114
+      [293] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
       [296] aload_0 v0
-      [297] invokevirtual #105
+      [297] invokevirtual #94
         - Methodref [android/view/View.setOnClickListener (Landroid/view/View$OnClickListener;)V]
       [300] return
       Code attribute exceptions (count = 0):
@@ -2187,12 +1256,12 @@ Methods (count = 24):
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 12, locals = 2, stack = 3):
       [0] aload_0 v0
-      [1] invokevirtual #116
+      [1] invokevirtual #105
         - Methodref [de/anneundsebp/ondemand/MainActivity.getMenuInflater ()Landroid/view/MenuInflater;]
       [4] ldc #2
         - Integer [2131165184]
       [6] aload_1 v1
-      [7] invokevirtual #102
+      [7] invokevirtual #91
         - Methodref [android/view/MenuInflater.inflate (ILandroid/view/Menu;)V]
       [10] iconst_1
       [11] ireturn
@@ -2204,31 +1273,31 @@ Methods (count = 24):
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 51, locals = 2, stack = 5):
       [0] aload_1 v1
-      [1] invokeinterface #143
+      [1] invokeinterface #124
         - InterfaceMethodref [android/view/MenuItem.getItemId ()I]
       [6] tableswitch (1 offsets, default=39) (target=45)
-        2131230729: offset = 18, target = 24
+        2131230728: offset = 18, target = 24
         default: offset = 39, target = 45
       [24] aload_0 v0
-      [25] new #18
+      [25] new #14
         - Class [android/content/Intent]
       [28] dup
       [29] aload_0 v0
-      [30] ldc #34
+      [30] ldc #30
         - Class [de/anneundsebp/ondemand/MediaPlayerService]
-      [32] invokespecial #89
+      [32] invokespecial #78
         - Methodref [android/content/Intent.<init> (Landroid/content/Context;Ljava/lang/Class;)V]
-      [35] invokevirtual #120
+      [35] invokevirtual #109
         - Methodref [de/anneundsebp/ondemand/MainActivity.stopService (Landroid/content/Intent;)Z]
       [38] pop
       [39] aload_0 v0
-      [40] invokevirtual #115
+      [40] invokevirtual #104
         - Methodref [de/anneundsebp/ondemand/MainActivity.finish ()V]
       [43] iconst_1
       [44] ireturn
       [45] aload_0 v0
       [46] aload_1 v1
-      [47] invokespecial #81
+      [47] invokespecial #71
         - Methodref [android/app/ListActivity.onOptionsItemSelected (Landroid/view/MenuItem;)Z]
       [50] ireturn
       Code attribute exceptions (count = 0):
@@ -2242,7 +1311,7 @@ Methods (count = 24):
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #82
+      [1] invokespecial #72
         - Methodref [android/app/ListActivity.onStop ()V]
       [4] return
       Code attribute exceptions (count = 0):
@@ -2257,49 +1326,49 @@ Methods (count = 24):
       [2] aload_2 v2
       [3] iload_3 v3
       [4] lload v4
-      [6] invokespecial #80
+      [6] invokespecial #70
         - Methodref [android/app/ListActivity.onListItemClick (Landroid/widget/ListView;Landroid/view/View;IJ)V]
       [9] aload_0 v0
-      [10] getfield #59
+      [10] getfield #51
         - Fieldref [de/anneundsebp/ondemand/MainActivity.c Ljava/util/List;]
       [13] iload_3 v3
-      [14] invokeinterface #147
+      [14] invokeinterface #127
         - InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
       [19] dup
       [20] astore_1 v1
-      [21] instanceof #39
+      [21] instanceof #34
         - Class [de/anneundsebp/ondemand/a/b]
       [24] ifeq +43 (target=67)
       [27] aload_0 v0
-      [28] getfield #60
+      [28] getfield #52
         - Fieldref [de/anneundsebp/ondemand/MainActivity.d Lde/anneundsebp/ondemand/a;]
-      [31] invokevirtual #123
+      [31] invokevirtual #112
         - Methodref [de/anneundsebp/ondemand/a.clear ()V]
-      [34] new #48
-        - Class [de/anneundsebp/ondemand/h]
+      [34] new #41
+        - Class [de/anneundsebp/ondemand/f]
       [37] dup
       [38] aload_0 v0
-      [39] invokespecial #135
-        - Methodref [de/anneundsebp/ondemand/h.<init> (Lde/anneundsebp/ondemand/i;)V]
+      [39] invokespecial #119
+        - Methodref [de/anneundsebp/ondemand/f.<init> (Lde/anneundsebp/ondemand/g;)V]
       [42] dup
       [43] astore_2 v2
       [44] aload_1 v1
-      [45] checkcast #39
+      [45] checkcast #34
         - Class [de/anneundsebp/ondemand/a/b]
-      [48] invokevirtual #136
-        - Methodref [de/anneundsebp/ondemand/h.a (Lde/anneundsebp/ondemand/a/b;)V]
+      [48] invokevirtual #120
+        - Methodref [de/anneundsebp/ondemand/f.a (Lde/anneundsebp/ondemand/a/b;)V]
       [51] aload_2 v2
       [52] iconst_1
-      [53] anewarray #40
+      [53] anewarray #35
         - Class [de/anneundsebp/ondemand/a/c]
       [56] dup
       [57] iconst_0
       [58] aload_0 v0
-      [59] getfield #58
+      [59] getfield #50
         - Fieldref [de/anneundsebp/ondemand/MainActivity.b Lde/anneundsebp/ondemand/a/c;]
       [62] aastore
-      [63] invokevirtual #137
-        - Methodref [de/anneundsebp/ondemand/h.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
+      [63] invokevirtual #121
+        - Methodref [de/anneundsebp/ondemand/f.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
       [66] pop
       [67] return
       Code attribute exceptions (count = 0):
@@ -2314,56 +1383,56 @@ Methods (count = 24):
       [0] aload_0 v0
       [1] ldc #5
         - Integer [2131230723]
-      [3] invokevirtual #114
+      [3] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [6] checkcast #32
+      [6] checkcast #28
         - Class [android/widget/TextView]
-      [9] ldc #9
+      [9] ldc #8
         - String [Connecting...]
-      [11] invokevirtual #112
+      [11] invokevirtual #101
         - Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [14] aload_0 v0
       [15] ldc #6
         - Integer [2131230724]
-      [17] invokevirtual #114
+      [17] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [20] checkcast #32
+      [20] checkcast #28
         - Class [android/widget/TextView]
       [23] aload_1 v1
-      [24] getfield #69
+      [24] getfield #61
         - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
-      [27] invokevirtual #112
+      [27] invokevirtual #101
         - Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [30] aload_0 v0
       [31] iconst_0
-      [32] putfield #61
+      [32] putfield #53
         - Fieldref [de/anneundsebp/ondemand/MainActivity.e I]
       [35] aload_0 v0
-      [36] getfield #57
+      [36] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [39] ifnull +11 (target=50)
       [42] aload_0 v0
-      [43] getfield #57
+      [43] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [46] iconst_0
-      [47] invokevirtual #109
+      [47] invokevirtual #98
         - Methodref [android/widget/MediaController.setEnabled (Z)V]
       [50] aload_1 v1
-      [51] putstatic #67
+      [51] putstatic #59
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.b Lde/anneundsebp/ondemand/a/a;]
       [54] aload_0 v0
-      [55] new #18
+      [55] new #14
         - Class [android/content/Intent]
       [58] dup
-      [59] ldc #14
+      [59] ldc #11
         - String [com.example.com.action.PLAY]
       [61] aconst_null
       [62] aload_0 v0
-      [63] ldc #34
+      [63] ldc #30
         - Class [de/anneundsebp/ondemand/MediaPlayerService]
-      [65] invokespecial #90
+      [65] invokespecial #79
         - Methodref [android/content/Intent.<init> (Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V]
-      [68] invokevirtual #119
+      [68] invokevirtual #108
         - Methodref [de/anneundsebp/ondemand/MainActivity.startService (Landroid/content/Intent;)Landroid/content/ComponentName;]
       [71] pop
       [72] return
@@ -2403,9 +1472,9 @@ Methods (count = 24):
       = public int getAudioSessionId()
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 7, locals = 1, stack = 1):
-      [0] getstatic #66
+      [0] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
-      [3] invokevirtual #91
+      [3] invokevirtual #80
         - Methodref [android/media/MediaPlayer.getAudioSessionId ()I]
       [6] ireturn
       Code attribute exceptions (count = 0):
@@ -2416,7 +1485,7 @@ Methods (count = 24):
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] getfield #61
+      [1] getfield #53
         - Fieldref [de/anneundsebp/ondemand/MainActivity.e I]
       [4] ireturn
       Code attribute exceptions (count = 0):
@@ -2426,9 +1495,9 @@ Methods (count = 24):
       = public int getCurrentPosition()
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 7, locals = 1, stack = 1):
-      [0] getstatic #66
+      [0] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
-      [3] invokevirtual #92
+      [3] invokevirtual #81
         - Methodref [android/media/MediaPlayer.getCurrentPosition ()I]
       [6] ireturn
       Code attribute exceptions (count = 0):
@@ -2438,9 +1507,9 @@ Methods (count = 24):
       = public int getDuration()
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 7, locals = 1, stack = 1):
-      [0] getstatic #66
+      [0] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
-      [3] invokevirtual #93
+      [3] invokevirtual #82
         - Methodref [android/media/MediaPlayer.getDuration ()I]
       [6] ireturn
       Code attribute exceptions (count = 0):
@@ -2450,9 +1519,9 @@ Methods (count = 24):
       = public boolean isPlaying()
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 7, locals = 1, stack = 1):
-      [0] getstatic #66
+      [0] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
-      [3] invokevirtual #94
+      [3] invokevirtual #83
         - Methodref [android/media/MediaPlayer.isPlaying ()Z]
       [6] ireturn
       Code attribute exceptions (count = 0):
@@ -2462,9 +1531,9 @@ Methods (count = 24):
       = public void pause()
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 7, locals = 1, stack = 1):
-      [0] getstatic #66
+      [0] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
-      [3] invokevirtual #95
+      [3] invokevirtual #84
         - Methodref [android/media/MediaPlayer.pause ()V]
       [6] return
       Code attribute exceptions (count = 0):
@@ -2474,10 +1543,10 @@ Methods (count = 24):
       = public void seekTo(int)
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 8, locals = 2, stack = 2):
-      [0] getstatic #66
+      [0] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
       [3] iload_1 v1
-      [4] invokevirtual #96
+      [4] invokevirtual #85
         - Methodref [android/media/MediaPlayer.seekTo (I)V]
       [7] return
       Code attribute exceptions (count = 0):
@@ -2487,9 +1556,9 @@ Methods (count = 24):
       = public void start()
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 7, locals = 1, stack = 1):
-      [0] getstatic #66
+      [0] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
-      [3] invokevirtual #99
+      [3] invokevirtual #88
         - Methodref [android/media/MediaPlayer.start ()V]
       [6] return
       Code attribute exceptions (count = 0):
@@ -2498,229 +1567,157 @@ Methods (count = 24):
     Access flags: 0x1
       = public void onClick(android.view.View)
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 192, locals = 4, stack = 5):
+    - Code attribute instructions (code length = 85, locals = 2, stack = 3):
       [0] aload_1 v1
-      [1] invokevirtual #103
+      [1] invokevirtual #92
         - Methodref [android/view/View.getId ()I]
-      [4] ldc #8
-        - Integer [2131230728]
-      [6] ificmpne +101 (target=107)
-      [9] aload_0 v0
-      [10] aload_0 v0
-      [11] getfield #59
-        - Fieldref [de/anneundsebp/ondemand/MainActivity.c Ljava/util/List;]
-      [14] aload_1 v1
-      [15] invokevirtual #104
-        - Methodref [android/view/View.getTag ()Ljava/lang/Object;]
-      [18] checkcast #50
-        - Class [java/lang/Integer]
-      [21] invokevirtual #138
-        - Methodref [java/lang/Integer.intValue ()I]
-      [24] invokeinterface #147
-        - InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
-      [29] checkcast #36
-        - Class [de/anneundsebp/ondemand/a/a]
-      [32] astore_2 v2
-      [33] astore_1 v1
-      [34] new #43
-        - Class [de/anneundsebp/ondemand/c]
-      [37] dup
-      [38] aload_1 v1
-      [39] invokespecial #129
-        - Methodref [de/anneundsebp/ondemand/c.<init> (Landroid/content/Context;)V]
-      [42] astore_3 v3
-      [43] aload_1 v1
-      [44] getfield #64
-        - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
-      [47] new #53
-        - Class [java/lang/StringBuilder]
-      [50] dup
-      [51] ldc #10
-        - String [Downloading ]
-      [53] invokespecial #139
-        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [56] aload_2 v2
-      [57] getfield #69
-        - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
-      [60] invokevirtual #140
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [63] invokevirtual #141
-        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [66] invokevirtual #86
-        - Methodref [android/app/ProgressDialog.setMessage (Ljava/lang/CharSequence;)V]
-      [69] aload_3 v3
-      [70] aload_1 v1
-      [71] getfield #64
-        - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
-      [74] putfield #76
-        - Fieldref [de/anneundsebp/ondemand/c.a Landroid/app/ProgressDialog;]
-      [77] aload_3 v3
-      [78] iconst_1
-      [79] anewarray #36
-        - Class [de/anneundsebp/ondemand/a/a]
-      [82] dup
-      [83] iconst_0
-      [84] aload_2 v2
-      [85] aastore
-      [86] invokevirtual #130
-        - Methodref [de/anneundsebp/ondemand/c.execute ([Ljava/lang/Object;)Landroid/os/AsyncTask;]
-      [89] pop
-      [90] aload_1 v1
-      [91] getfield #64
-        - Fieldref [de/anneundsebp/ondemand/MainActivity.h Landroid/app/ProgressDialog;]
-      [94] new #44
-        - Class [de/anneundsebp/ondemand/d]
-      [97] dup
-      [98] aload_1 v1
-      [99] aload_3 v3
-      [100] invokespecial #131
-        - Methodref [de/anneundsebp/ondemand/d.<init> (Lde/anneundsebp/ondemand/MainActivity;Lde/anneundsebp/ondemand/c;)V]
-      [103] invokevirtual #87
-        - Methodref [android/app/ProgressDialog.setOnCancelListener (Landroid/content/DialogInterface$OnCancelListener;)V]
-      [106] return
-      [107] aload_1 v1
-      [108] invokevirtual #103
-        - Methodref [android/view/View.getId ()I]
-      [111] ldc #7
+      [4] ldc #7
         - Integer [2131230727]
-      [113] ificmpne +46 (target=159)
-      [116] aload_0 v0
-      [117] aload_1 v1
-      [118] invokevirtual #104
+      [6] ificmpne +46 (target=52)
+      [9] aload_0 v0
+      [10] aload_1 v1
+      [11] invokevirtual #93
         - Methodref [android/view/View.getTag ()Ljava/lang/Object;]
-      [121] checkcast #50
+      [14] checkcast #43
         - Class [java/lang/Integer]
-      [124] invokevirtual #138
+      [17] invokevirtual #122
         - Methodref [java/lang/Integer.intValue ()I]
-      [127] putfield #62
+      [20] putfield #54
         - Fieldref [de/anneundsebp/ondemand/MainActivity.f I]
-      [130] aload_0 v0
-      [131] aload_0 v0
-      [132] getfield #59
+      [23] aload_0 v0
+      [24] aload_0 v0
+      [25] getfield #51
         - Fieldref [de/anneundsebp/ondemand/MainActivity.c Ljava/util/List;]
-      [135] putfield #63
+      [28] putfield #55
         - Fieldref [de/anneundsebp/ondemand/MainActivity.g Ljava/util/List;]
-      [138] aload_0 v0
-      [139] aload_0 v0
-      [140] getfield #59
+      [31] aload_0 v0
+      [32] aload_0 v0
+      [33] getfield #51
         - Fieldref [de/anneundsebp/ondemand/MainActivity.c Ljava/util/List;]
-      [143] aload_0 v0
-      [144] getfield #62
+      [36] aload_0 v0
+      [37] getfield #54
         - Fieldref [de/anneundsebp/ondemand/MainActivity.f I]
-      [147] invokeinterface #147
+      [40] invokeinterface #127
         - InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
-      [152] checkcast #36
+      [45] checkcast #32
         - Class [de/anneundsebp/ondemand/a/a]
-      [155] invokespecial #113
+      [48] invokespecial #102
         - Methodref [de/anneundsebp/ondemand/MainActivity.a (Lde/anneundsebp/ondemand/a/a;)V]
-      [158] return
-      [159] aload_1 v1
-      [160] invokevirtual #103
+      [51] return
+      [52] aload_1 v1
+      [53] invokevirtual #92
         - Methodref [android/view/View.getId ()I]
-      [163] ldc #5
+      [56] ldc #5
         - Integer [2131230723]
-      [165] ificmpeq +12 (target=177)
-      [168] aload_1 v1
-      [169] invokevirtual #103
+      [58] ificmpeq +12 (target=70)
+      [61] aload_1 v1
+      [62] invokevirtual #92
         - Methodref [android/view/View.getId ()I]
-      [172] ldc #6
+      [65] ldc #6
         - Integer [2131230724]
-      [174] ificmpne +17 (target=191)
-      [177] aload_0 v0
-      [178] getfield #57
+      [67] ificmpne +17 (target=84)
+      [70] aload_0 v0
+      [71] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
-      [181] ifnull +10 (target=191)
-      [184] aload_0 v0
-      [185] getfield #57
+      [74] ifnull +10 (target=84)
+      [77] aload_0 v0
+      [78] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
-      [188] invokevirtual #111
+      [81] invokevirtual #100
         - Methodref [android/widget/MediaController.show ()V]
-      [191] return
+      [84] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 4):
-        - [107] Var: ..., Stack: (empty)
-        - [159] Var: ..., Stack: (empty)
-        - [177] Var: -1, Stack: (empty)
-        - [191] Var: -1, Stack: (empty)
+      - Stack map table attribute (count = 3):
+        - [52] Var: ..., Stack: (empty)
+        - [70] Var: -1, Stack: (empty)
+        - [84] Var: -1, Stack: (empty)
   - Method:       a(Lde/anneundsebp/ondemand/a/d;)V
     Access flags: 0x11
       = public final void a(de.anneundsebp.ondemand.a.d)
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 112, locals = 4, stack = 2):
+    - Code attribute instructions (code length = 126, locals = 4, stack = 2):
       [0] aload_0 v0
-      [1] getfield #60
+      [1] getfield #52
         - Fieldref [de/anneundsebp/ondemand/MainActivity.d Lde/anneundsebp/ondemand/a;]
-      [4] invokevirtual #123
+      [4] invokevirtual #112
         - Methodref [de/anneundsebp/ondemand/a.clear ()V]
       [7] aload_1 v1
-      [8] getfield #74
+      [8] getfield #65
         - Fieldref [de/anneundsebp/ondemand/a/d.a Ljava/util/List;]
-      [11] invokeinterface #148
+      [11] ifnull +55 (target=66)
+      [14] aload_1 v1
+      [15] getfield #65
+        - Fieldref [de/anneundsebp/ondemand/a/d.a Ljava/util/List;]
+      [18] invokeinterface #128
         - InterfaceMethodref [java/util/List.isEmpty ()Z]
-      [16] ifne +43 (target=59)
-      [19] aload_1 v1
-      [20] getfield #74
+      [23] ifne +43 (target=66)
+      [26] aload_1 v1
+      [27] getfield #65
         - Fieldref [de/anneundsebp/ondemand/a/d.a Ljava/util/List;]
-      [23] invokeinterface #149
+      [30] invokeinterface #129
         - InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
-      [28] astore_3 v3
-      [29] goto +21 (target=50)
-      [32] aload_3 v3
-      [33] invokeinterface #145
+      [35] astore_3 v3
+      [36] goto +21 (target=57)
+      [39] aload_3 v3
+      [40] invokeinterface #126
         - InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
-      [38] checkcast #39
+      [45] checkcast #34
         - Class [de/anneundsebp/ondemand/a/b]
-      [41] astore_2 v2
-      [42] aload_0 v0
-      [43] getfield #60
+      [48] astore_2 v2
+      [49] aload_0 v0
+      [50] getfield #52
         - Fieldref [de/anneundsebp/ondemand/MainActivity.d Lde/anneundsebp/ondemand/a;]
-      [46] aload_2 v2
-      [47] invokevirtual #122
+      [53] aload_2 v2
+      [54] invokevirtual #111
         - Methodref [de/anneundsebp/ondemand/a.add (Ljava/lang/Object;)V]
-      [50] aload_3 v3
-      [51] invokeinterface #144
+      [57] aload_3 v3
+      [58] invokeinterface #125
         - InterfaceMethodref [java/util/Iterator.hasNext ()Z]
-      [56] ifne -24 (target=32)
-      [59] aload_1 v1
-      [60] getfield #75
+      [63] ifne -24 (target=39)
+      [66] aload_1 v1
+      [67] getfield #66
         - Fieldref [de/anneundsebp/ondemand/a/d.b Ljava/util/List;]
-      [63] invokeinterface #148
+      [70] ifnull +55 (target=125)
+      [73] aload_1 v1
+      [74] getfield #66
+        - Fieldref [de/anneundsebp/ondemand/a/d.b Ljava/util/List;]
+      [77] invokeinterface #128
         - InterfaceMethodref [java/util/List.isEmpty ()Z]
-      [68] ifne +43 (target=111)
-      [71] aload_1 v1
-      [72] getfield #75
+      [82] ifne +43 (target=125)
+      [85] aload_1 v1
+      [86] getfield #66
         - Fieldref [de/anneundsebp/ondemand/a/d.b Ljava/util/List;]
-      [75] invokeinterface #149
+      [89] invokeinterface #129
         - InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
-      [80] astore_3 v3
-      [81] goto +21 (target=102)
-      [84] aload_3 v3
-      [85] invokeinterface #145
+      [94] astore_3 v3
+      [95] goto +21 (target=116)
+      [98] aload_3 v3
+      [99] invokeinterface #126
         - InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
-      [90] checkcast #36
+      [104] checkcast #32
         - Class [de/anneundsebp/ondemand/a/a]
-      [93] astore_2 v2
-      [94] aload_0 v0
-      [95] getfield #60
+      [107] astore_2 v2
+      [108] aload_0 v0
+      [109] getfield #52
         - Fieldref [de/anneundsebp/ondemand/MainActivity.d Lde/anneundsebp/ondemand/a;]
-      [98] aload_2 v2
-      [99] invokevirtual #122
+      [112] aload_2 v2
+      [113] invokevirtual #111
         - Methodref [de/anneundsebp/ondemand/a.add (Ljava/lang/Object;)V]
-      [102] aload_3 v3
-      [103] invokeinterface #144
+      [116] aload_3 v3
+      [117] invokeinterface #125
         - InterfaceMethodref [java/util/Iterator.hasNext ()Z]
-      [108] ifne -24 (target=84)
-      [111] return
+      [122] ifne -24 (target=98)
+      [125] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
       - Stack map table attribute (count = 6):
-        - [32] Var: ...[T][a:java/util/Iterator], Stack: (empty)
-        - [50] Var: ..., Stack: (empty)
-        - [59] Var: -2, Stack: (empty)
-        - [84] Var: [a:de/anneundsebp/ondemand/MainActivity][T][T][a:java/util/Iterator], Stack: 
-        - [102] Var: ..., Stack: (empty)
-        - [111] Var: , Stack: 
+        - [39] Var: ...[T][a:java/util/Iterator], Stack: (empty)
+        - [57] Var: ..., Stack: (empty)
+        - [66] Var: -2, Stack: (empty)
+        - [98] Var: [a:de/anneundsebp/ondemand/MainActivity][T][T][a:java/util/Iterator], Stack: 
+        - [116] Var: ..., Stack: (empty)
+        - [125] Var: , Stack: 
   - Method:       a()V
     Access flags: 0x11
       = public final void a()
@@ -2729,64 +1726,64 @@ Methods (count = 24):
       [0] aload_0 v0
       [1] ldc #5
         - Integer [2131230723]
-      [3] invokevirtual #114
+      [3] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [6] checkcast #32
+      [6] checkcast #28
         - Class [android/widget/TextView]
-      [9] ldc #13
+      [9] ldc #10
         - String [Now Playing]
-      [11] invokevirtual #112
+      [11] invokevirtual #101
         - Methodref [android/widget/TextView.setText (Ljava/lang/CharSequence;)V]
       [14] aload_0 v0
-      [15] getfield #57
+      [15] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [18] ifnonnull +51 (target=69)
       [21] aload_0 v0
-      [22] new #30
+      [22] new #26
         - Class [android/widget/MediaController]
       [25] dup
       [26] aload_0 v0
       [27] iconst_0
-      [28] invokespecial #107
+      [28] invokespecial #96
         - Methodref [android/widget/MediaController.<init> (Landroid/content/Context;Z)V]
-      [31] putfield #57
+      [31] putfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [34] aload_0 v0
-      [35] getfield #57
+      [35] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [38] aload_0 v0
       [39] ldc #4
         - Integer [2131230722]
-      [41] invokevirtual #114
+      [41] invokevirtual #103
         - Methodref [de/anneundsebp/ondemand/MainActivity.findViewById (I)Landroid/view/View;]
-      [44] invokevirtual #108
+      [44] invokevirtual #97
         - Methodref [android/widget/MediaController.setAnchorView (Landroid/view/View;)V]
       [47] aload_0 v0
-      [48] getfield #57
+      [48] getfield #49
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [51] aload_0 v0
-      [52] invokevirtual #110
+      [52] invokevirtual #99
         - Methodref [android/widget/MediaController.setMediaPlayer (Landroid/widget/MediaController$MediaPlayerControl;)V]
-      [55] getstatic #66
+      [55] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
       [58] aload_0 v0
-      [59] invokevirtual #97
+      [59] invokevirtual #86
         - Methodref [android/media/MediaPlayer.setOnBufferingUpdateListener (Landroid/media/MediaPlayer$OnBufferingUpdateListener;)V]
-      [62] getstatic #66
+      [62] getstatic #58
         - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
       [65] aload_0 v0
-      [66] invokevirtual #98
+      [66] invokevirtual #87
         - Methodref [android/media/MediaPlayer.setOnCompletionListener (Landroid/media/MediaPlayer$OnCompletionListener;)V]
       [69] aload_0 v0
-      [70] getfield #65
+      [70] getfield #57
         - Fieldref [de/anneundsebp/ondemand/MainActivity.i Landroid/os/Handler;]
-      [73] new #45
-        - Class [de/anneundsebp/ondemand/e]
+      [73] new #38
+        - Class [de/anneundsebp/ondemand/c]
       [76] dup
       [77] aload_0 v0
-      [78] invokespecial #132
-        - Methodref [de/anneundsebp/ondemand/e.<init> (Lde/anneundsebp/ondemand/MainActivity;)V]
-      [81] invokevirtual #101
+      [78] invokespecial #116
+        - Methodref [de/anneundsebp/ondemand/c.<init> (Lde/anneundsebp/ondemand/MainActivity;)V]
+      [81] invokevirtual #90
         - Methodref [android/os/Handler.post (Ljava/lang/Runnable;)Z]
       [84] pop
       [85] return
@@ -2801,7 +1798,7 @@ Methods (count = 24):
     - Code attribute instructions (code length = 6, locals = 3, stack = 2):
       [0] aload_0 v0
       [1] iload_2 v2
-      [2] putfield #61
+      [2] putfield #53
         - Fieldref [de/anneundsebp/ondemand/MainActivity.e I]
       [5] return
       Code attribute exceptions (count = 0):
@@ -2812,48 +1809,48 @@ Methods (count = 24):
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 67, locals = 2, stack = 3):
       [0] aload_0 v0
-      [1] getfield #63
+      [1] getfield #55
         - Fieldref [de/anneundsebp/ondemand/MainActivity.g Ljava/util/List;]
       [4] ifnull +62 (target=66)
       [7] aload_0 v0
-      [8] getfield #62
+      [8] getfield #54
         - Fieldref [de/anneundsebp/ondemand/MainActivity.f I]
       [11] aload_0 v0
-      [12] getfield #63
+      [12] getfield #55
         - Fieldref [de/anneundsebp/ondemand/MainActivity.g Ljava/util/List;]
-      [15] invokeinterface #150
+      [15] invokeinterface #130
         - InterfaceMethodref [java/util/List.size ()I]
       [20] iconst_1
       [21] isub
       [22] ificmpge +44 (target=66)
       [25] aload_0 v0
-      [26] getfield #63
+      [26] getfield #55
         - Fieldref [de/anneundsebp/ondemand/MainActivity.g Ljava/util/List;]
       [29] aload_0 v0
-      [30] getfield #62
+      [30] getfield #54
         - Fieldref [de/anneundsebp/ondemand/MainActivity.f I]
       [33] iconst_1
       [34] iadd
-      [35] invokeinterface #147
+      [35] invokeinterface #127
         - InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
       [40] dup
       [41] astore_1 v1
-      [42] instanceof #36
+      [42] instanceof #32
         - Class [de/anneundsebp/ondemand/a/a]
       [45] ifeq +21 (target=66)
       [48] aload_0 v0
       [49] dup
-      [50] getfield #62
+      [50] getfield #54
         - Fieldref [de/anneundsebp/ondemand/MainActivity.f I]
       [53] iconst_1
       [54] iadd
-      [55] putfield #62
+      [55] putfield #54
         - Fieldref [de/anneundsebp/ondemand/MainActivity.f I]
       [58] aload_0 v0
       [59] aload_1 v1
-      [60] checkcast #36
+      [60] checkcast #32
         - Class [de/anneundsebp/ondemand/a/a]
-      [63] invokespecial #113
+      [63] invokespecial #102
         - Methodref [de/anneundsebp/ondemand/MainActivity.a (Lde/anneundsebp/ondemand/a/a;)V]
       [66] return
       Code attribute exceptions (count = 0):
@@ -2864,88 +1861,12 @@ Methods (count = 24):
 Class file attributes (count = 0):
 
 _____________________________________________________________________
-- Program class: de/anneundsebp/ondemand/d
+- Program class: de/anneundsebp/ondemand/c
   Superclass:    java/lang/Object
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x30
-    = final class de.anneundsebp.ondemand.d extends java.lang.Object
-
-Interfaces (count = 1):
-  - Class [android/content/DialogInterface$OnCancelListener]
-
-Constant Pool (count = 25):
-  - Class [android/content/DialogInterface$OnCancelListener]
-  - Class [de/anneundsebp/ondemand/c]
-  - Class [de/anneundsebp/ondemand/d]
-  - Class [java/lang/Object]
-  - Fieldref [de/anneundsebp/ondemand/d.a Lde/anneundsebp/ondemand/c;]
-  - Methodref [de/anneundsebp/ondemand/c.cancel (Z)Z]
-  - Methodref [java/lang/Object.<init> ()V]
-  - NameAndType [<init> ()V]
-  - NameAndType [a Lde/anneundsebp/ondemand/c;]
-  - NameAndType [cancel (Z)Z]
-  - Utf8 [()V]
-  - Utf8 [(Landroid/content/DialogInterface;)V]
-  - Utf8 [(Lde/anneundsebp/ondemand/MainActivity;Lde/anneundsebp/ondemand/c;)V]
-  - Utf8 [(Z)Z]
-  - Utf8 [<init>]
-  - Utf8 [Code]
-  - Utf8 [Lde/anneundsebp/ondemand/c;]
-  - Utf8 [a]
-  - Utf8 [android/content/DialogInterface$OnCancelListener]
-  - Utf8 [cancel]
-  - Utf8 [de/anneundsebp/ondemand/c]
-  - Utf8 [de/anneundsebp/ondemand/d]
-  - Utf8 [java/lang/Object]
-  - Utf8 [onCancel]
-
-Fields (count = 1):
-  - Field:        a Lde/anneundsebp/ondemand/c;
-    Access flags: 0x1012
-      = private final synthetic de.anneundsebp.ondemand.c a
-
-Methods (count = 2):
-  - Method:       <init>(Lde/anneundsebp/ondemand/MainActivity;Lde/anneundsebp/ondemand/c;)V
-    Access flags: 0x0
-      = d(de.anneundsebp.ondemand.MainActivity,de.anneundsebp.ondemand.c)
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 10, locals = 3, stack = 2):
-      [0] aload_0 v0
-      [1] aload_2 v2
-      [2] putfield #5
-        - Fieldref [de/anneundsebp/ondemand/d.a Lde/anneundsebp/ondemand/c;]
-      [5] aload_0 v0
-      [6] invokespecial #7
-        - Methodref [java/lang/Object.<init> ()V]
-      [9] return
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 0):
-  - Method:       onCancel(Landroid/content/DialogInterface;)V
-    Access flags: 0x11
-      = public final void onCancel(android.content.DialogInterface)
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 10, locals = 2, stack = 2):
-      [0] aload_0 v0
-      [1] getfield #5
-        - Fieldref [de/anneundsebp/ondemand/d.a Lde/anneundsebp/ondemand/c;]
-      [4] iconst_1
-      [5] invokevirtual #6
-        - Methodref [de/anneundsebp/ondemand/c.cancel (Z)Z]
-      [8] pop
-      [9] return
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 0):
-
-Class file attributes (count = 0):
-
-_____________________________________________________________________
-- Program class: de/anneundsebp/ondemand/e
-  Superclass:    java/lang/Object
-  Major version: 0x32
-  Minor version: 0x0
-  Access flags:  0x30
-    = final class de.anneundsebp.ondemand.e extends java.lang.Object
+    = final class de.anneundsebp.ondemand.c extends java.lang.Object
 
 Interfaces (count = 1):
   - Class [java/lang/Runnable]
@@ -2953,11 +1874,11 @@ Interfaces (count = 1):
 Constant Pool (count = 32):
   - Class [android/widget/MediaController]
   - Class [de/anneundsebp/ondemand/MainActivity]
-  - Class [de/anneundsebp/ondemand/e]
+  - Class [de/anneundsebp/ondemand/c]
   - Class [java/lang/Object]
   - Class [java/lang/Runnable]
   - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
-  - Fieldref [de/anneundsebp/ondemand/e.a Lde/anneundsebp/ondemand/MainActivity;]
+  - Fieldref [de/anneundsebp/ondemand/c.a Lde/anneundsebp/ondemand/MainActivity;]
   - Methodref [android/widget/MediaController.setEnabled (Z)V]
   - Methodref [android/widget/MediaController.show ()V]
   - Methodref [java/lang/Object.<init> ()V]
@@ -2976,7 +1897,7 @@ Constant Pool (count = 32):
   - Utf8 [a]
   - Utf8 [android/widget/MediaController]
   - Utf8 [de/anneundsebp/ondemand/MainActivity]
-  - Utf8 [de/anneundsebp/ondemand/e]
+  - Utf8 [de/anneundsebp/ondemand/c]
   - Utf8 [java/lang/Object]
   - Utf8 [java/lang/Runnable]
   - Utf8 [run]
@@ -2991,13 +1912,13 @@ Fields (count = 1):
 Methods (count = 2):
   - Method:       <init>(Lde/anneundsebp/ondemand/MainActivity;)V
     Access flags: 0x0
-      = e(de.anneundsebp.ondemand.MainActivity)
+      = c(de.anneundsebp.ondemand.MainActivity)
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 10, locals = 2, stack = 2):
       [0] aload_0 v0
       [1] aload_1 v1
       [2] putfield #7
-        - Fieldref [de/anneundsebp/ondemand/e.a Lde/anneundsebp/ondemand/MainActivity;]
+        - Fieldref [de/anneundsebp/ondemand/c.a Lde/anneundsebp/ondemand/MainActivity;]
       [5] aload_0 v0
       [6] invokespecial #10
         - Methodref [java/lang/Object.<init> ()V]
@@ -3011,7 +1932,7 @@ Methods (count = 2):
     - Code attribute instructions (code length = 22, locals = 1, stack = 2):
       [0] aload_0 v0
       [1] getfield #7
-        - Fieldref [de/anneundsebp/ondemand/e.a Lde/anneundsebp/ondemand/MainActivity;]
+        - Fieldref [de/anneundsebp/ondemand/c.a Lde/anneundsebp/ondemand/MainActivity;]
       [4] getfield #6
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [7] iconst_1
@@ -3019,7 +1940,7 @@ Methods (count = 2):
         - Methodref [android/widget/MediaController.setEnabled (Z)V]
       [11] aload_0 v0
       [12] getfield #7
-        - Fieldref [de/anneundsebp/ondemand/e.a Lde/anneundsebp/ondemand/MainActivity;]
+        - Fieldref [de/anneundsebp/ondemand/c.a Lde/anneundsebp/ondemand/MainActivity;]
       [15] getfield #6
         - Fieldref [de/anneundsebp/ondemand/MainActivity.a Landroid/widget/MediaController;]
       [18] invokevirtual #9
@@ -3031,21 +1952,21 @@ Methods (count = 2):
 Class file attributes (count = 0):
 
 _____________________________________________________________________
-- Program class: de/anneundsebp/ondemand/f
+- Program class: de/anneundsebp/ondemand/d
   Superclass:    java/lang/Object
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x601
-    = public interface de.anneundsebp.ondemand.f extends java.lang.Object
+    = public interface de.anneundsebp.ondemand.d extends java.lang.Object
 
 Interfaces (count = 0):
 
 Constant Pool (count = 7):
-  - Class [de/anneundsebp/ondemand/f]
+  - Class [de/anneundsebp/ondemand/d]
   - Class [java/lang/Object]
   - Utf8 [()V]
   - Utf8 [a]
-  - Utf8 [de/anneundsebp/ondemand/f]
+  - Utf8 [de/anneundsebp/ondemand/d]
   - Utf8 [java/lang/Object]
 
 Fields (count = 0):
@@ -3088,7 +2009,7 @@ Constant Pool (count = 195):
   - Class [de/anneundsebp/ondemand/MainActivity]
   - Class [de/anneundsebp/ondemand/MediaPlayerService]
   - Class [de/anneundsebp/ondemand/a/a]
-  - Class [de/anneundsebp/ondemand/f]
+  - Class [de/anneundsebp/ondemand/d]
   - Class [java/io/IOException]
   - Class [java/lang/IllegalArgumentException]
   - Class [java/lang/IllegalStateException]
@@ -3100,7 +2021,7 @@ Constant Pool (count = 195):
   - Fieldref [android/app/Notification.tickerText Ljava/lang/CharSequence;]
   - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.a Landroid/media/MediaPlayer;]
   - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.b Lde/anneundsebp/ondemand/a/a;]
-  - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/f;]
+  - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/d;]
   - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.d Landroid/net/wifi/WifiManager$WifiLock;]
   - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
   - Fieldref [de/anneundsebp/ondemand/a/a.b Ljava/lang/String;]
@@ -3138,7 +2059,7 @@ Constant Pool (count = 195):
   - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
   - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
   - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-  - InterfaceMethodref [de/anneundsebp/ondemand/f.a ()V]
+  - InterfaceMethodref [de/anneundsebp/ondemand/d.a ()V]
   - NameAndType [<init> ()V]
   - NameAndType [<init> (Landroid/content/Context;Ljava/lang/Class;)V]
   - NameAndType [<init> (Ljava/lang/String;)V]
@@ -3149,7 +2070,7 @@ Constant Pool (count = 195):
   - NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
   - NameAndType [b Lde/anneundsebp/ondemand/a/a;]
   - NameAndType [b Ljava/lang/String;]
-  - NameAndType [c Lde/anneundsebp/ondemand/f;]
+  - NameAndType [c Lde/anneundsebp/ondemand/d;]
   - NameAndType [createWifiLock (ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;]
   - NameAndType [d Landroid/net/wifi/WifiManager$WifiLock;]
   - NameAndType [equals (Ljava/lang/Object;)Z]
@@ -3203,7 +2124,7 @@ Constant Pool (count = 195):
   - Utf8 [Landroid/media/MediaPlayer;]
   - Utf8 [Landroid/net/wifi/WifiManager$WifiLock;]
   - Utf8 [Lde/anneundsebp/ondemand/a/a;]
-  - Utf8 [Lde/anneundsebp/ondemand/f;]
+  - Utf8 [Lde/anneundsebp/ondemand/d;]
   - Utf8 [Ljava/lang/CharSequence;]
   - Utf8 [Ljava/lang/String;]
   - Utf8 [Playing: ]
@@ -3228,7 +2149,7 @@ Constant Pool (count = 195):
   - Utf8 [de/anneundsebp/ondemand/MainActivity]
   - Utf8 [de/anneundsebp/ondemand/MediaPlayerService]
   - Utf8 [de/anneundsebp/ondemand/a/a]
-  - Utf8 [de/anneundsebp/ondemand/f]
+  - Utf8 [de/anneundsebp/ondemand/d]
   - Utf8 [equals]
   - Utf8 [flags]
   - Utf8 [getAction]
@@ -3274,9 +2195,9 @@ Fields (count = 4):
   - Field:        b Lde/anneundsebp/ondemand/a/a;
     Access flags: 0x9
       = public static de.anneundsebp.ondemand.a.a b
-  - Field:        c Lde/anneundsebp/ondemand/f;
+  - Field:        c Lde/anneundsebp/ondemand/d;
     Access flags: 0x9
-      = public static de.anneundsebp.ondemand.f c
+      = public static de.anneundsebp.ondemand.d c
 
 Methods (count = 7):
   - Method:       <clinit>()V
@@ -3354,12 +2275,12 @@ Methods (count = 7):
       [1] invokevirtual #52
         - Methodref [android/media/MediaPlayer.start ()V]
       [4] getstatic #32
-        - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/f;]
+        - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/d;]
       [7] ifnull +11 (target=18)
       [10] getstatic #32
-        - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/f;]
+        - Fieldref [de/anneundsebp/ondemand/MediaPlayerService.c Lde/anneundsebp/ondemand/d;]
       [13] invokeinterface #70
-        - InterfaceMethodref [de/anneundsebp/ondemand/f.a ()V]
+        - InterfaceMethodref [de/anneundsebp/ondemand/d.a ()V]
       [18] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
@@ -3619,12 +2540,12 @@ Methods (count = 7):
 Class file attributes (count = 0):
 
 _____________________________________________________________________
-- Program class: de/anneundsebp/ondemand/g
+- Program class: de/anneundsebp/ondemand/e
   Superclass:    android/os/AsyncTask
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x31
-    = public final class de.anneundsebp.ondemand.g extends android.os.AsyncTask
+    = public final class de.anneundsebp.ondemand.e extends android.os.AsyncTask
 
 Interfaces (count = 0):
 
@@ -3635,25 +2556,25 @@ Constant Pool (count = 68):
   - Class [de/anneundsebp/ondemand/a/b]
   - Class [de/anneundsebp/ondemand/a/c]
   - Class [de/anneundsebp/ondemand/a/d]
+  - Class [de/anneundsebp/ondemand/e]
   - Class [de/anneundsebp/ondemand/g]
-  - Class [de/anneundsebp/ondemand/i]
   - Class [java/util/List]
   - Class [java/util/Stack]
   - Fieldref [de/anneundsebp/ondemand/a/c.b Ljava/util/List;]
   - Fieldref [de/anneundsebp/ondemand/a/c.c Ljava/util/Map;]
   - Fieldref [de/anneundsebp/ondemand/a/c.d I]
   - Fieldref [de/anneundsebp/ondemand/a/c.e Ljava/util/Stack;]
-  - Fieldref [de/anneundsebp/ondemand/g.a Lde/anneundsebp/ondemand/i;]
+  - Fieldref [de/anneundsebp/ondemand/e.a Lde/anneundsebp/ondemand/g;]
   - Methodref [android/os/AsyncTask.<init> ()V]
   - Methodref [android/os/AsyncTask.onPostExecute (Ljava/lang/Object;)V]
   - Methodref [de/anneundsebp/ondemand/a/d.a (Lde/anneundsebp/ondemand/a/b;)V]
   - Methodref [java/util/Stack.pop ()Ljava/lang/Object;]
-  - InterfaceMethodref [de/anneundsebp/ondemand/i.a (Lde/anneundsebp/ondemand/a/d;)V]
+  - InterfaceMethodref [de/anneundsebp/ondemand/g.a (Lde/anneundsebp/ondemand/a/d;)V]
   - InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
   - NameAndType [<init> ()V]
   - NameAndType [a (Lde/anneundsebp/ondemand/a/b;)V]
   - NameAndType [a (Lde/anneundsebp/ondemand/a/d;)V]
-  - NameAndType [a Lde/anneundsebp/ondemand/i;]
+  - NameAndType [a Lde/anneundsebp/ondemand/g;]
   - NameAndType [b Ljava/util/List;]
   - NameAndType [c Ljava/util/Map;]
   - NameAndType [d I]
@@ -3666,13 +2587,13 @@ Constant Pool (count = 68):
   - Utf8 [(I)Ljava/lang/Object;]
   - Utf8 [(Lde/anneundsebp/ondemand/a/b;)V]
   - Utf8 [(Lde/anneundsebp/ondemand/a/d;)V]
-  - Utf8 [(Lde/anneundsebp/ondemand/i;)V]
+  - Utf8 [(Lde/anneundsebp/ondemand/g;)V]
   - Utf8 [(Ljava/lang/Object;)V]
   - Utf8 [([Ljava/lang/Object;)Ljava/lang/Object;]
   - Utf8 [<init>]
   - Utf8 [Code]
   - Utf8 [I]
-  - Utf8 [Lde/anneundsebp/ondemand/i;]
+  - Utf8 [Lde/anneundsebp/ondemand/g;]
   - Utf8 [Ljava/util/List;]
   - Utf8 [Ljava/util/Map;]
   - Utf8 [Ljava/util/Stack;]
@@ -3687,8 +2608,8 @@ Constant Pool (count = 68):
   - Utf8 [de/anneundsebp/ondemand/a/b]
   - Utf8 [de/anneundsebp/ondemand/a/c]
   - Utf8 [de/anneundsebp/ondemand/a/d]
+  - Utf8 [de/anneundsebp/ondemand/e]
   - Utf8 [de/anneundsebp/ondemand/g]
-  - Utf8 [de/anneundsebp/ondemand/i]
   - Utf8 [doInBackground]
   - Utf8 [e]
   - Utf8 [get]
@@ -3698,14 +2619,14 @@ Constant Pool (count = 68):
   - Utf8 [pop]
 
 Fields (count = 1):
-  - Field:        a Lde/anneundsebp/ondemand/i;
+  - Field:        a Lde/anneundsebp/ondemand/g;
     Access flags: 0x2
-      = private de.anneundsebp.ondemand.i a
+      = private de.anneundsebp.ondemand.g a
 
 Methods (count = 3):
-  - Method:       <init>(Lde/anneundsebp/ondemand/i;)V
+  - Method:       <init>(Lde/anneundsebp/ondemand/g;)V
     Access flags: 0x1
-      = public g(de.anneundsebp.ondemand.i)
+      = public e(de.anneundsebp.ondemand.g)
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 10, locals = 2, stack = 2):
       [0] aload_0 v0
@@ -3714,7 +2635,7 @@ Methods (count = 3):
       [4] aload_0 v0
       [5] aload_1 v1
       [6] putfield #15
-        - Fieldref [de/anneundsebp/ondemand/g.a Lde/anneundsebp/ondemand/i;]
+        - Fieldref [de/anneundsebp/ondemand/e.a Lde/anneundsebp/ondemand/g;]
       [9] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
@@ -3735,10 +2656,10 @@ Methods (count = 3):
         - Methodref [android/os/AsyncTask.onPostExecute (Ljava/lang/Object;)V]
       [12] aload_1 v1
       [13] getfield #15
-        - Fieldref [de/anneundsebp/ondemand/g.a Lde/anneundsebp/ondemand/i;]
+        - Fieldref [de/anneundsebp/ondemand/e.a Lde/anneundsebp/ondemand/g;]
       [16] aload_2 v2
       [17] invokeinterface #20
-        - InterfaceMethodref [de/anneundsebp/ondemand/i.a (Lde/anneundsebp/ondemand/a/d;)V]
+        - InterfaceMethodref [de/anneundsebp/ondemand/g.a (Lde/anneundsebp/ondemand/a/d;)V]
       [22] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
@@ -3811,12 +2732,12 @@ Methods (count = 3):
 Class file attributes (count = 0):
 
 _____________________________________________________________________
-- Program class: de/anneundsebp/ondemand/h
+- Program class: de/anneundsebp/ondemand/f
   Superclass:    android/os/AsyncTask
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x31
-    = public final class de.anneundsebp.ondemand.h extends android.os.AsyncTask
+    = public final class de.anneundsebp.ondemand.f extends android.os.AsyncTask
 
 Interfaces (count = 0):
 
@@ -3827,27 +2748,27 @@ Constant Pool (count = 75):
   - Class [de/anneundsebp/ondemand/a/b]
   - Class [de/anneundsebp/ondemand/a/c]
   - Class [de/anneundsebp/ondemand/a/d]
-  - Class [de/anneundsebp/ondemand/h]
-  - Class [de/anneundsebp/ondemand/i]
+  - Class [de/anneundsebp/ondemand/f]
+  - Class [de/anneundsebp/ondemand/g]
   - Class [java/util/List]
   - Class [java/util/Stack]
   - Fieldref [de/anneundsebp/ondemand/a/c.b Ljava/util/List;]
   - Fieldref [de/anneundsebp/ondemand/a/c.c Ljava/util/Map;]
   - Fieldref [de/anneundsebp/ondemand/a/c.d I]
   - Fieldref [de/anneundsebp/ondemand/a/c.e Ljava/util/Stack;]
-  - Fieldref [de/anneundsebp/ondemand/h.a Lde/anneundsebp/ondemand/i;]
-  - Fieldref [de/anneundsebp/ondemand/h.b Lde/anneundsebp/ondemand/a/b;]
+  - Fieldref [de/anneundsebp/ondemand/f.a Lde/anneundsebp/ondemand/g;]
+  - Fieldref [de/anneundsebp/ondemand/f.b Lde/anneundsebp/ondemand/a/b;]
   - Methodref [android/os/AsyncTask.<init> ()V]
   - Methodref [android/os/AsyncTask.onPostExecute (Ljava/lang/Object;)V]
   - Methodref [de/anneundsebp/ondemand/a/d.a (Lde/anneundsebp/ondemand/a/b;)V]
   - Methodref [java/util/Stack.push (Ljava/lang/Object;)Ljava/lang/Object;]
-  - InterfaceMethodref [de/anneundsebp/ondemand/i.a (Lde/anneundsebp/ondemand/a/d;)V]
+  - InterfaceMethodref [de/anneundsebp/ondemand/g.a (Lde/anneundsebp/ondemand/a/d;)V]
   - InterfaceMethodref [java/util/List.get (I)Ljava/lang/Object;]
   - InterfaceMethodref [java/util/List.size ()I]
   - NameAndType [<init> ()V]
   - NameAndType [a (Lde/anneundsebp/ondemand/a/b;)V]
   - NameAndType [a (Lde/anneundsebp/ondemand/a/d;)V]
-  - NameAndType [a Lde/anneundsebp/ondemand/i;]
+  - NameAndType [a Lde/anneundsebp/ondemand/g;]
   - NameAndType [b Lde/anneundsebp/ondemand/a/b;]
   - NameAndType [b Ljava/util/List;]
   - NameAndType [c Ljava/util/Map;]
@@ -3862,7 +2783,7 @@ Constant Pool (count = 75):
   - Utf8 [(I)Ljava/lang/Object;]
   - Utf8 [(Lde/anneundsebp/ondemand/a/b;)V]
   - Utf8 [(Lde/anneundsebp/ondemand/a/d;)V]
-  - Utf8 [(Lde/anneundsebp/ondemand/i;)V]
+  - Utf8 [(Lde/anneundsebp/ondemand/g;)V]
   - Utf8 [(Ljava/lang/Object;)Ljava/lang/Object;]
   - Utf8 [(Ljava/lang/Object;)V]
   - Utf8 [([Ljava/lang/Object;)Ljava/lang/Object;]
@@ -3870,7 +2791,7 @@ Constant Pool (count = 75):
   - Utf8 [Code]
   - Utf8 [I]
   - Utf8 [Lde/anneundsebp/ondemand/a/b;]
-  - Utf8 [Lde/anneundsebp/ondemand/i;]
+  - Utf8 [Lde/anneundsebp/ondemand/g;]
   - Utf8 [Ljava/util/List;]
   - Utf8 [Ljava/util/Map;]
   - Utf8 [Ljava/util/Stack;]
@@ -3885,8 +2806,8 @@ Constant Pool (count = 75):
   - Utf8 [de/anneundsebp/ondemand/a/b]
   - Utf8 [de/anneundsebp/ondemand/a/c]
   - Utf8 [de/anneundsebp/ondemand/a/d]
-  - Utf8 [de/anneundsebp/ondemand/h]
-  - Utf8 [de/anneundsebp/ondemand/i]
+  - Utf8 [de/anneundsebp/ondemand/f]
+  - Utf8 [de/anneundsebp/ondemand/g]
   - Utf8 [doInBackground]
   - Utf8 [e]
   - Utf8 [get]
@@ -3897,17 +2818,17 @@ Constant Pool (count = 75):
   - Utf8 [size]
 
 Fields (count = 2):
-  - Field:        a Lde/anneundsebp/ondemand/i;
+  - Field:        a Lde/anneundsebp/ondemand/g;
     Access flags: 0x2
-      = private de.anneundsebp.ondemand.i a
+      = private de.anneundsebp.ondemand.g a
   - Field:        b Lde/anneundsebp/ondemand/a/b;
     Access flags: 0x2
       = private de.anneundsebp.ondemand.a.b b
 
 Methods (count = 4):
-  - Method:       <init>(Lde/anneundsebp/ondemand/i;)V
+  - Method:       <init>(Lde/anneundsebp/ondemand/g;)V
     Access flags: 0x1
-      = public h(de.anneundsebp.ondemand.i)
+      = public f(de.anneundsebp.ondemand.g)
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 15, locals = 2, stack = 2):
       [0] aload_0 v0
@@ -3916,11 +2837,11 @@ Methods (count = 4):
       [4] aload_0 v0
       [5] aconst_null
       [6] putfield #16
-        - Fieldref [de/anneundsebp/ondemand/h.b Lde/anneundsebp/ondemand/a/b;]
+        - Fieldref [de/anneundsebp/ondemand/f.b Lde/anneundsebp/ondemand/a/b;]
       [9] aload_0 v0
       [10] aload_1 v1
       [11] putfield #15
-        - Fieldref [de/anneundsebp/ondemand/h.a Lde/anneundsebp/ondemand/i;]
+        - Fieldref [de/anneundsebp/ondemand/f.a Lde/anneundsebp/ondemand/g;]
       [14] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
@@ -3932,7 +2853,7 @@ Methods (count = 4):
       [0] aload_0 v0
       [1] aload_1 v1
       [2] putfield #16
-        - Fieldref [de/anneundsebp/ondemand/h.b Lde/anneundsebp/ondemand/a/b;]
+        - Fieldref [de/anneundsebp/ondemand/f.b Lde/anneundsebp/ondemand/a/b;]
       [5] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
@@ -3953,10 +2874,10 @@ Methods (count = 4):
         - Methodref [android/os/AsyncTask.onPostExecute (Ljava/lang/Object;)V]
       [12] aload_1 v1
       [13] getfield #15
-        - Fieldref [de/anneundsebp/ondemand/h.a Lde/anneundsebp/ondemand/i;]
+        - Fieldref [de/anneundsebp/ondemand/f.a Lde/anneundsebp/ondemand/g;]
       [16] aload_2 v2
       [17] invokeinterface #21
-        - InterfaceMethodref [de/anneundsebp/ondemand/i.a (Lde/anneundsebp/ondemand/a/d;)V]
+        - InterfaceMethodref [de/anneundsebp/ondemand/g.a (Lde/anneundsebp/ondemand/a/d;)V]
       [22] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
@@ -3976,7 +2897,7 @@ Methods (count = 4):
       [9] aaload
       [10] aload_1 v1
       [11] getfield #16
-        - Fieldref [de/anneundsebp/ondemand/h.b Lde/anneundsebp/ondemand/a/b;]
+        - Fieldref [de/anneundsebp/ondemand/f.b Lde/anneundsebp/ondemand/a/b;]
       [14] astore_2 v2
       [15] dup
       [16] astore_1 v1
@@ -4041,21 +2962,21 @@ Methods (count = 4):
 Class file attributes (count = 0):
 
 _____________________________________________________________________
-- Program class: de/anneundsebp/ondemand/i
+- Program class: de/anneundsebp/ondemand/g
   Superclass:    java/lang/Object
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x601
-    = public interface de.anneundsebp.ondemand.i extends java.lang.Object
+    = public interface de.anneundsebp.ondemand.g extends java.lang.Object
 
 Interfaces (count = 0):
 
 Constant Pool (count = 7):
-  - Class [de/anneundsebp/ondemand/i]
+  - Class [de/anneundsebp/ondemand/g]
   - Class [java/lang/Object]
   - Utf8 [(Lde/anneundsebp/ondemand/a/d;)V]
   - Utf8 [a]
-  - Utf8 [de/anneundsebp/ondemand/i]
+  - Utf8 [de/anneundsebp/ondemand/g]
   - Utf8 [java/lang/Object]
 
 Fields (count = 0):
@@ -4417,17 +3338,11 @@ _____________________________________________________________________
 
 Interfaces (count = 0):
 
-Constant Pool (count = 21):
+Constant Pool (count = 14):
   - Class [de/anneundsebp/ondemand/a/d]
   - Class [java/lang/Object]
-  - Class [java/util/ArrayList]
-  - Fieldref [de/anneundsebp/ondemand/a/d.a Ljava/util/List;]
-  - Fieldref [de/anneundsebp/ondemand/a/d.b Ljava/util/List;]
   - Methodref [java/lang/Object.<init> ()V]
-  - Methodref [java/util/ArrayList.<init> ()V]
   - NameAndType [<init> ()V]
-  - NameAndType [a Ljava/util/List;]
-  - NameAndType [b Ljava/util/List;]
   - Utf8 [()V]
   - Utf8 [(Lde/anneundsebp/ondemand/a/b;)V]
   - Utf8 [<init>]
@@ -4437,7 +3352,6 @@ Constant Pool (count = 21):
   - Utf8 [b]
   - Utf8 [de/anneundsebp/ondemand/a/d]
   - Utf8 [java/lang/Object]
-  - Utf8 [java/util/ArrayList]
 
 Fields (count = 2):
   - Field:        a Ljava/util/List;
@@ -4452,27 +3366,11 @@ Methods (count = 2):
     Access flags: 0x1
       = public d()
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 27, locals = 1, stack = 3):
+    - Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #6
+      [1] invokespecial #3
         - Methodref [java/lang/Object.<init> ()V]
-      [4] aload_0 v0
-      [5] new #3
-        - Class [java/util/ArrayList]
-      [8] dup
-      [9] invokespecial #7
-        - Methodref [java/util/ArrayList.<init> ()V]
-      [12] putfield #4
-        - Fieldref [de/anneundsebp/ondemand/a/d.a Ljava/util/List;]
-      [15] aload_0 v0
-      [16] new #3
-        - Class [java/util/ArrayList]
-      [19] dup
-      [20] invokespecial #7
-        - Methodref [java/util/ArrayList.<init> ()V]
-      [23] putfield #5
-        - Fieldref [de/anneundsebp/ondemand/a/d.b Ljava/util/List;]
-      [26] return
+      [4] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
   - Method:       a(Lde/anneundsebp/ondemand/a/b;)V
@@ -4483,401 +3381,107 @@ Class file attributes (count = 0):
 
 _____________________________________________________________________
 - Program class: de/anneundsebp/ondemand/a/a/a
-  Superclass:    de/anneundsebp/ondemand/a/d
+  Superclass:    de/anneundsebp/ondemand/a/c
   Major version: 0x32
   Minor version: 0x0
   Access flags:  0x31
-    = public final class de.anneundsebp.ondemand.a.a.a extends de.anneundsebp.ondemand.a.d
+    = public final class de.anneundsebp.ondemand.a.a.a extends de.anneundsebp.ondemand.a.c
 
 Interfaces (count = 0):
 
-Constant Pool (count = 136):
-  - String ["]
-  - String [-->]
-  - String [<!--]
-  - String [<area.*?\/>]
-  - String [alt="]
-  - String [href="]
-  - String [http://fm4.orf.at/radio/stories/sendeschema]
+Constant Pool (count = 40):
+  - String [FM4]
+  - String [http://fm4.orf.at/v2static/images/fm4_logo.jpg]
   - Class [de/anneundsebp/ondemand/a/a/a]
-  - Class [de/anneundsebp/ondemand/a/b]
+  - Class [de/anneundsebp/ondemand/a/a/b]
+  - Class [de/anneundsebp/ondemand/a/a/c]
   - Class [de/anneundsebp/ondemand/a/c]
-  - Class [de/anneundsebp/ondemand/a/d]
-  - Class [java/lang/String]
-  - Class [java/lang/StringBuilder]
-  - Class [java/net/MalformedURLException]
   - Class [java/util/ArrayList]
-  - Class [java/util/Iterator]
   - Class [java/util/List]
-  - Class [java/util/regex/Matcher]
-  - Class [java/util/regex/Pattern]
-  - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/util/List;]
-  - Fieldref [de/anneundsebp/ondemand/a/b.a Ljava/lang/String;]
-  - Fieldref [de/anneundsebp/ondemand/a/b.b Ljava/lang/String;]
-  - Methodref [de/anneundsebp/ondemand/a/a/a.a ()Ljava/util/List;]
-  - Methodref [de/anneundsebp/ondemand/a/a/a.a (Ljava/util/List;Ljava/lang/String;)Z]
-  - Methodref [de/anneundsebp/ondemand/a/b.<init> ()V]
-  - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
-  - Methodref [de/anneundsebp/ondemand/a/d.<init> ()V]
-  - Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
-  - Methodref [java/lang/String.indexOf (Ljava/lang/String;)I]
-  - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-  - Methodref [java/lang/String.length ()I]
-  - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-  - Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-  - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-  - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-  - Methodref [java/net/MalformedURLException.printStackTrace ()V]
+  - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/lang/String;]
+  - Fieldref [de/anneundsebp/ondemand/a/a/a.b Ljava/util/List;]
+  - Fieldref [de/anneundsebp/ondemand/a/a/a.f Ljava/lang/String;]
+  - Methodref [de/anneundsebp/ondemand/a/a/b.<init> ()V]
+  - Methodref [de/anneundsebp/ondemand/a/a/c.<init> ()V]
+  - Methodref [de/anneundsebp/ondemand/a/c.<init> ()V]
   - Methodref [java/util/ArrayList.<init> ()V]
-  - Methodref [java/util/regex/Matcher.find ()Z]
-  - Methodref [java/util/regex/Matcher.group ()Ljava/lang/String;]
-  - Methodref [java/util/regex/Pattern.compile (Ljava/lang/String;)Ljava/util/regex/Pattern;]
-  - Methodref [java/util/regex/Pattern.matcher (Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;]
-  - InterfaceMethodref [java/util/Iterator.hasNext ()Z]
-  - InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
   - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
-  - InterfaceMethodref [java/util/List.isEmpty ()Z]
-  - InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
   - NameAndType [<init> ()V]
-  - NameAndType [<init> (Ljava/lang/String;)V]
-  - NameAndType [a ()Ljava/util/List;]
-  - NameAndType [a (Ljava/lang/String;)Ljava/lang/String;]
-  - NameAndType [a (Ljava/util/List;Ljava/lang/String;)Z]
   - NameAndType [a Ljava/lang/String;]
-  - NameAndType [a Ljava/util/List;]
   - NameAndType [add (Ljava/lang/Object;)Z]
-  - NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - NameAndType [b Ljava/lang/String;]
-  - NameAndType [compile (Ljava/lang/String;)Ljava/util/regex/Pattern;]
-  - NameAndType [equals (Ljava/lang/Object;)Z]
-  - NameAndType [find ()Z]
-  - NameAndType [group ()Ljava/lang/String;]
-  - NameAndType [hasNext ()Z]
-  - NameAndType [indexOf (Ljava/lang/String;)I]
-  - NameAndType [indexOf (Ljava/lang/String;I)I]
-  - NameAndType [isEmpty ()Z]
-  - NameAndType [iterator ()Ljava/util/Iterator;]
-  - NameAndType [length ()I]
-  - NameAndType [matcher (Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;]
-  - NameAndType [next ()Ljava/lang/Object;]
-  - NameAndType [printStackTrace ()V]
-  - NameAndType [substring (II)Ljava/lang/String;]
-  - NameAndType [toString ()Ljava/lang/String;]
-  - NameAndType [valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-  - Utf8 ["]
-  - Utf8 [()I]
-  - Utf8 [()Ljava/lang/Object;]
-  - Utf8 [()Ljava/lang/String;]
-  - Utf8 [()Ljava/util/Iterator;]
-  - Utf8 [()Ljava/util/List;]
+  - NameAndType [b Ljava/util/List;]
+  - NameAndType [f Ljava/lang/String;]
   - Utf8 [()V]
-  - Utf8 [()Z]
-  - Utf8 [(II)Ljava/lang/String;]
-  - Utf8 [(Lde/anneundsebp/ondemand/a/b;)V]
-  - Utf8 [(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;]
-  - Utf8 [(Ljava/lang/Object;)Ljava/lang/String;]
   - Utf8 [(Ljava/lang/Object;)Z]
-  - Utf8 [(Ljava/lang/String;)I]
-  - Utf8 [(Ljava/lang/String;)Ljava/lang/String;]
-  - Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
-  - Utf8 [(Ljava/lang/String;)Ljava/util/regex/Pattern;]
-  - Utf8 [(Ljava/lang/String;)V]
-  - Utf8 [(Ljava/lang/String;I)I]
-  - Utf8 [(Ljava/util/List;Ljava/lang/String;)Z]
-  - Utf8 [-->]
-  - Utf8 [<!--]
-  - Utf8 [<area.*?\/>]
   - Utf8 [<init>]
   - Utf8 [Code]
+  - Utf8 [FM4]
   - Utf8 [Ljava/lang/String;]
   - Utf8 [Ljava/util/List;]
-  - Utf8 [StackMapTable]
   - Utf8 [a]
   - Utf8 [add]
-  - Utf8 [alt="]
-  - Utf8 [append]
   - Utf8 [b]
-  - Utf8 [compile]
   - Utf8 [de/anneundsebp/ondemand/a/a/a]
-  - Utf8 [de/anneundsebp/ondemand/a/b]
+  - Utf8 [de/anneundsebp/ondemand/a/a/b]
+  - Utf8 [de/anneundsebp/ondemand/a/a/c]
   - Utf8 [de/anneundsebp/ondemand/a/c]
-  - Utf8 [de/anneundsebp/ondemand/a/d]
-  - Utf8 [equals]
-  - Utf8 [find]
-  - Utf8 [group]
-  - Utf8 [hasNext]
-  - Utf8 [href="]
-  - Utf8 [http://fm4.orf.at/radio/stories/sendeschema]
-  - Utf8 [indexOf]
-  - Utf8 [isEmpty]
-  - Utf8 [iterator]
-  - Utf8 [java/lang/String]
-  - Utf8 [java/lang/StringBuilder]
-  - Utf8 [java/net/MalformedURLException]
+  - Utf8 [f]
+  - Utf8 [http://fm4.orf.at/v2static/images/fm4_logo.jpg]
   - Utf8 [java/util/ArrayList]
-  - Utf8 [java/util/Iterator]
   - Utf8 [java/util/List]
-  - Utf8 [java/util/regex/Matcher]
-  - Utf8 [java/util/regex/Pattern]
-  - Utf8 [length]
-  - Utf8 [matcher]
-  - Utf8 [next]
-  - Utf8 [printStackTrace]
-  - Utf8 [substring]
-  - Utf8 [toString]
-  - Utf8 [valueOf]
 
 Fields (count = 0):
 
-Methods (count = 4):
+Methods (count = 1):
   - Method:       <init>()V
     Access flags: 0x1
       = public a()
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 5, locals = 1, stack = 1):
+    - Code attribute instructions (code length = 58, locals = 2, stack = 3):
       [0] aload_0 v0
-      [1] invokespecial #27
-        - Methodref [de/anneundsebp/ondemand/a/d.<init> ()V]
-      [4] return
+      [1] invokespecial #14
+        - Methodref [de/anneundsebp/ondemand/a/c.<init> ()V]
+      [4] aload_0 v0
+      [5] ldc #1
+        - String [FM4]
+      [7] putfield #9
+        - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/lang/String;]
+      [10] aload_0 v0
+      [11] ldc #2
+        - String [http://fm4.orf.at/v2static/images/fm4_logo.jpg]
+      [13] putfield #11
+        - Fieldref [de/anneundsebp/ondemand/a/a/a.f Ljava/lang/String;]
+      [16] new #7
+        - Class [java/util/ArrayList]
+      [19] dup
+      [20] invokespecial #15
+        - Methodref [java/util/ArrayList.<init> ()V]
+      [23] dup
+      [24] astore_1 v1
+      [25] new #4
+        - Class [de/anneundsebp/ondemand/a/a/b]
+      [28] dup
+      [29] invokespecial #12
+        - Methodref [de/anneundsebp/ondemand/a/a/b.<init> ()V]
+      [32] invokeinterface #16
+        - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [37] pop
+      [38] aload_1 v1
+      [39] new #5
+        - Class [de/anneundsebp/ondemand/a/a/c]
+      [42] dup
+      [43] invokespecial #13
+        - Methodref [de/anneundsebp/ondemand/a/a/c.<init> ()V]
+      [46] invokeinterface #16
+        - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [51] pop
+      [52] aload_0 v0
+      [53] aload_1 v1
+      [54] putfield #10
+        - Fieldref [de/anneundsebp/ondemand/a/a/a.b Ljava/util/List;]
+      [57] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
-  - Method:       a()Ljava/util/List;
-    Access flags: 0x2
-      = private java.util.List a()
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 226, locals = 6, stack = 6):
-      [0] ldc #7
-        - String [http://fm4.orf.at/radio/stories/sendeschema]
-      [2] invokestatic #26
-        - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
-      [5] astore_1 v1
-      [6] aload_0 v0
-      [7] aload_1 v1
-      [8] astore_2 v2
-      [9] astore_1 v1
-      [10] aload_2 v2
-      [11] astore_2 v2
-      [12] goto +49 (target=61)
-      [15] aload_2 v2
-      [16] ldc #2
-        - String [-->]
-      [18] iload_3 v3
-      [19] invokevirtual #30
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [22] istore v4
-      [24] aload_2 v2
-      [25] iconst_0
-      [26] iload_3 v3
-      [27] invokevirtual #32
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [30] astore_3 v3
-      [31] new #13
-        - Class [java/lang/StringBuilder]
-      [34] dup
-      [35] aload_3 v3
-      [36] invokestatic #33
-        - Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-      [39] invokespecial #34
-        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [42] aload_2 v2
-      [43] iload v4
-      [45] iconst_3
-      [46] iadd
-      [47] aload_2 v2
-      [48] invokevirtual #31
-        - Methodref [java/lang/String.length ()I]
-      [51] invokevirtual #32
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [54] invokevirtual #35
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [57] invokevirtual #36
-        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [60] astore_2 v2
-      [61] aload_2 v2
-      [62] ldc #3
-        - String [<!--]
-      [64] invokevirtual #29
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;)I]
-      [67] dup
-      [68] istore_3 v3
-      [69] iconst_m1
-      [70] ificmpne -55 (target=15)
-      [73] aload_2 v2
-      [74] astore_2 v2
-      [75] ldc #4
-        - String [<area.*?\/>]
-      [77] invokestatic #41
-        - Methodref [java/util/regex/Pattern.compile (Ljava/lang/String;)Ljava/util/regex/Pattern;]
-      [80] astore_3 v3
-      [81] aload_1 v1
-      [82] new #15
-        - Class [java/util/ArrayList]
-      [85] dup
-      [86] invokespecial #38
-        - Methodref [java/util/ArrayList.<init> ()V]
-      [89] putfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/util/List;]
-      [92] aload_3 v3
-      [93] aload_2 v2
-      [94] invokevirtual #42
-        - Methodref [java/util/regex/Pattern.matcher (Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;]
-      [97] astore_2 v2
-      [98] goto +109 (target=207)
-      [101] aload_2 v2
-      [102] invokevirtual #40
-        - Methodref [java/util/regex/Matcher.group ()Ljava/lang/String;]
-      [105] dup
-      [106] astore_3 v3
-      [107] ldc #6
-        - String [href="]
-      [109] invokevirtual #29
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;)I]
-      [112] istore v4
-      [114] aload_3 v3
-      [115] iload v4
-      [117] bipush 6
-      [119] iadd
-      [120] aload_3 v3
-      [121] ldc #1
-        - String ["]
-      [123] iload v4
-      [125] bipush 6
-      [127] iadd
-      [128] invokevirtual #30
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [131] invokevirtual #32
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [134] astore v5
-      [136] aload_3 v3
-      [137] ldc #5
-        - String [alt="]
-      [139] invokevirtual #29
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;)I]
-      [142] istore v4
-      [144] aload_3 v3
-      [145] iload v4
-      [147] iconst_5
-      [148] iadd
-      [149] aload_3 v3
-      [150] ldc #1
-        - String ["]
-      [152] iload v4
-      [154] iconst_5
-      [155] iadd
-      [156] invokevirtual #30
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [159] invokevirtual #32
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [162] astore_3 v3
-      [163] aload_1 v1
-      [164] getfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/util/List;]
-      [167] aload_3 v3
-      [168] invokestatic #24
-        - Methodref [de/anneundsebp/ondemand/a/a/a.a (Ljava/util/List;Ljava/lang/String;)Z]
-      [171] ifne +36 (target=207)
-      [174] new #9
-        - Class [de/anneundsebp/ondemand/a/b]
-      [177] dup
-      [178] invokespecial #25
-        - Methodref [de/anneundsebp/ondemand/a/b.<init> ()V]
-      [181] dup
-      [182] astore v4
-      [184] aload v5
-      [186] putfield #22
-        - Fieldref [de/anneundsebp/ondemand/a/b.b Ljava/lang/String;]
-      [189] aload v4
-      [191] aload_3 v3
-      [192] putfield #21
-        - Fieldref [de/anneundsebp/ondemand/a/b.a Ljava/lang/String;]
-      [195] aload_1 v1
-      [196] getfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/util/List;]
-      [199] aload v4
-      [201] invokeinterface #45
-        - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
-      [206] pop
-      [207] aload_2 v2
-      [208] invokevirtual #39
-        - Methodref [java/util/regex/Matcher.find ()Z]
-      [211] ifne -110 (target=101)
-      [214] aload_1 v1
-      [215] getfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/util/List;]
-      [218] areturn
-      [219] dup
-      [220] astore_1 v1
-      [221] invokevirtual #37
-        - Methodref [java/net/MalformedURLException.printStackTrace ()V]
-      [224] aconst_null
-      [225] areturn
-      Code attribute exceptions (count = 1):
-      - ExceptionInfo (0 -> 218: 219):
-      - Class [java/net/MalformedURLException]
-      Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 5):
-        - [15] Var: [T][a:de/anneundsebp/ondemand/a/a/a][a:java/lang/String][i], Stack: 
-        - [61] Var: -1, Stack: (empty)
-        - [101] Var: [T][a:de/anneundsebp/ondemand/a/a/a][a:java/util/regex/Matcher], Stack: 
-        - [207] Var: ..., Stack: (empty)
-        - [219] Var: , Stack: [a:java/net/MalformedURLException]
-  - Method:       a(Ljava/util/List;Ljava/lang/String;)Z
-    Access flags: 0xa
-      = private static boolean a(java.util.List,java.lang.String)
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 44, locals = 3, stack = 2):
-      [0] aload_0 v0
-      [1] invokeinterface #47
-        - InterfaceMethodref [java/util/List.iterator ()Ljava/util/Iterator;]
-      [6] astore_2 v2
-      [7] goto +26 (target=33)
-      [10] aload_2 v2
-      [11] invokeinterface #44
-        - InterfaceMethodref [java/util/Iterator.next ()Ljava/lang/Object;]
-      [16] checkcast #9
-        - Class [de/anneundsebp/ondemand/a/b]
-      [19] dup
-      [20] astore_0 v0
-      [21] getfield #21
-        - Fieldref [de/anneundsebp/ondemand/a/b.a Ljava/lang/String;]
-      [24] aload_1 v1
-      [25] invokevirtual #28
-        - Methodref [java/lang/String.equals (Ljava/lang/Object;)Z]
-      [28] ifeq +5 (target=33)
-      [31] iconst_1
-      [32] ireturn
-      [33] aload_2 v2
-      [34] invokeinterface #43
-        - InterfaceMethodref [java/util/Iterator.hasNext ()Z]
-      [39] ifne -29 (target=10)
-      [42] iconst_0
-      [43] ireturn
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 2):
-        - [10] Var: [T][a:java/lang/String][a:java/util/Iterator], Stack: 
-        - [33] Var: ..., Stack: (empty)
-  - Method:       a(Lde/anneundsebp/ondemand/a/b;)V
-    Access flags: 0x11
-      = public final void a(de.anneundsebp.ondemand.a.b)
-    Class member attributes (count = 1):
-    - Code attribute instructions (code length = 18, locals = 2, stack = 1):
-      [0] aload_0 v0
-      [1] getfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/a.a Ljava/util/List;]
-      [4] invokeinterface #46
-        - InterfaceMethodref [java/util/List.isEmpty ()Z]
-      [9] ifeq +8 (target=17)
-      [12] aload_0 v0
-      [13] invokespecial #23
-        - Methodref [de/anneundsebp/ondemand/a/a/a.a ()Ljava/util/List;]
-      [16] pop
-      [17] return
-      Code attribute exceptions (count = 0):
-      Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 1):
-        - [17] Var: -2, Stack: (empty)
 
 Class file attributes (count = 0):
 
@@ -4891,16 +3495,328 @@ _____________________________________________________________________
 
 Interfaces (count = 0):
 
-Constant Pool (count = 96):
-  - String ["]
-  - String [_]
-  - String [data-id]
-  - String [http://audioapi.orf.at/fm4/json/2.0/playlist/]
-  - String [http://fm4.orf.at/]
-  - String [http://loopstream01.apa.at/?channel=fm4&ua=flash&id=]
-  - String [loopStreamId":]
-  - Class [de/anneundsebp/ondemand/a/a]
+Constant Pool (count = 118):
+  - String [date]
+  - String [day]
+  - String [http://audioapi.orf.at/fm4/json/2.0/broadcasts]
+  - String [http://audioapi.orf.at/fm4/json/2.0/broadcasts/]
   - Class [de/anneundsebp/ondemand/a/a/b]
+  - Class [de/anneundsebp/ondemand/a/b]
+  - Class [de/anneundsebp/ondemand/a/c]
+  - Class [de/anneundsebp/ondemand/a/d]
+  - Class [java/lang/Long]
+  - Class [java/lang/String]
+  - Class [java/lang/StringBuilder]
+  - Class [java/net/MalformedURLException]
+  - Class [java/text/DateFormat]
+  - Class [java/util/ArrayList]
+  - Class [java/util/Date]
+  - Class [java/util/List]
+  - Class [org/json/JSONArray]
+  - Class [org/json/JSONException]
+  - Class [org/json/JSONObject]
+  - Fieldref [de/anneundsebp/ondemand/a/a/b.a Ljava/util/List;]
+  - Fieldref [de/anneundsebp/ondemand/a/a/b.c Ljava/text/DateFormat;]
+  - Fieldref [de/anneundsebp/ondemand/a/b.a Ljava/lang/String;]
+  - Fieldref [de/anneundsebp/ondemand/a/b.b Ljava/lang/String;]
+  - Methodref [de/anneundsebp/ondemand/a/a/b.a ()Ljava/util/List;]
+  - Methodref [de/anneundsebp/ondemand/a/a/b.a (Ljava/lang/String;)Ljava/util/List;]
+  - Methodref [de/anneundsebp/ondemand/a/b.<init> ()V]
+  - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
+  - Methodref [de/anneundsebp/ondemand/a/d.<init> ()V]
+  - Methodref [java/lang/Long.parseLong (Ljava/lang/String;)J]
+  - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+  - Methodref [java/net/MalformedURLException.printStackTrace ()V]
+  - Methodref [java/text/DateFormat.format (Ljava/util/Date;)Ljava/lang/String;]
+  - Methodref [java/text/DateFormat.getDateInstance (I)Ljava/text/DateFormat;]
+  - Methodref [java/util/ArrayList.<init> ()V]
+  - Methodref [java/util/Date.<init> (J)V]
+  - Methodref [org/json/JSONArray.<init> (Ljava/lang/String;)V]
+  - Methodref [org/json/JSONArray.getJSONObject (I)Lorg/json/JSONObject;]
+  - Methodref [org/json/JSONArray.length ()I]
+  - Methodref [org/json/JSONException.printStackTrace ()V]
+  - Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+  - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+  - NameAndType [<init> ()V]
+  - NameAndType [<init> (J)V]
+  - NameAndType [<init> (Ljava/lang/String;)V]
+  - NameAndType [a ()Ljava/util/List;]
+  - NameAndType [a (Ljava/lang/String;)Ljava/lang/String;]
+  - NameAndType [a (Ljava/lang/String;)Ljava/util/List;]
+  - NameAndType [a Ljava/lang/String;]
+  - NameAndType [a Ljava/util/List;]
+  - NameAndType [add (Ljava/lang/Object;)Z]
+  - NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  - NameAndType [b Ljava/lang/String;]
+  - NameAndType [c Ljava/text/DateFormat;]
+  - NameAndType [format (Ljava/util/Date;)Ljava/lang/String;]
+  - NameAndType [getDateInstance (I)Ljava/text/DateFormat;]
+  - NameAndType [getJSONObject (I)Lorg/json/JSONObject;]
+  - NameAndType [getString (Ljava/lang/String;)Ljava/lang/String;]
+  - NameAndType [length ()I]
+  - NameAndType [parseLong (Ljava/lang/String;)J]
+  - NameAndType [printStackTrace ()V]
+  - NameAndType [toString ()Ljava/lang/String;]
+  - Utf8 [()I]
+  - Utf8 [()Ljava/lang/String;]
+  - Utf8 [()Ljava/util/List;]
+  - Utf8 [()V]
+  - Utf8 [(I)Ljava/text/DateFormat;]
+  - Utf8 [(I)Lorg/json/JSONObject;]
+  - Utf8 [(J)V]
+  - Utf8 [(Lde/anneundsebp/ondemand/a/b;)V]
+  - Utf8 [(Ljava/lang/Object;)Z]
+  - Utf8 [(Ljava/lang/String;)J]
+  - Utf8 [(Ljava/lang/String;)Ljava/lang/String;]
+  - Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
+  - Utf8 [(Ljava/lang/String;)Ljava/util/List;]
+  - Utf8 [(Ljava/lang/String;)V]
+  - Utf8 [(Ljava/util/Date;)Ljava/lang/String;]
+  - Utf8 [<clinit>]
+  - Utf8 [<init>]
+  - Utf8 [Code]
+  - Utf8 [Ljava/lang/String;]
+  - Utf8 [Ljava/text/DateFormat;]
+  - Utf8 [Ljava/util/List;]
+  - Utf8 [StackMapTable]
+  - Utf8 [a]
+  - Utf8 [add]
+  - Utf8 [append]
+  - Utf8 [b]
+  - Utf8 [c]
+  - Utf8 [date]
+  - Utf8 [day]
+  - Utf8 [de/anneundsebp/ondemand/a/a/b]
+  - Utf8 [de/anneundsebp/ondemand/a/b]
+  - Utf8 [de/anneundsebp/ondemand/a/c]
+  - Utf8 [de/anneundsebp/ondemand/a/d]
+  - Utf8 [format]
+  - Utf8 [getDateInstance]
+  - Utf8 [getJSONObject]
+  - Utf8 [getString]
+  - Utf8 [http://audioapi.orf.at/fm4/json/2.0/broadcasts]
+  - Utf8 [http://audioapi.orf.at/fm4/json/2.0/broadcasts/]
+  - Utf8 [java/lang/Long]
+  - Utf8 [java/lang/String]
+  - Utf8 [java/lang/StringBuilder]
+  - Utf8 [java/net/MalformedURLException]
+  - Utf8 [java/text/DateFormat]
+  - Utf8 [java/util/ArrayList]
+  - Utf8 [java/util/Date]
+  - Utf8 [java/util/List]
+  - Utf8 [length]
+  - Utf8 [org/json/JSONArray]
+  - Utf8 [org/json/JSONException]
+  - Utf8 [org/json/JSONObject]
+  - Utf8 [parseLong]
+  - Utf8 [printStackTrace]
+  - Utf8 [toString]
+
+Fields (count = 1):
+  - Field:        c Ljava/text/DateFormat;
+    Access flags: 0xa
+      = private static java.text.DateFormat c
+
+Methods (count = 5):
+  - Method:       <clinit>()V
+    Access flags: 0x8
+      = static void <clinit>()
+    Class member attributes (count = 1):
+    - Code attribute instructions (code length = 8, locals = 0, stack = 1):
+      [0] iconst_0
+      [1] invokestatic #35
+        - Methodref [java/text/DateFormat.getDateInstance (I)Ljava/text/DateFormat;]
+      [4] putstatic #21
+        - Fieldref [de/anneundsebp/ondemand/a/a/b.c Ljava/text/DateFormat;]
+      [7] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       <init>()V
+    Access flags: 0x1
+      = public b()
+    Class member attributes (count = 1):
+    - Code attribute instructions (code length = 5, locals = 1, stack = 1):
+      [0] aload_0 v0
+      [1] invokespecial #28
+        - Methodref [de/anneundsebp/ondemand/a/d.<init> ()V]
+      [4] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 0):
+  - Method:       a()Ljava/util/List;
+    Access flags: 0x2
+      = private java.util.List a()
+    Class member attributes (count = 1):
+    - Code attribute instructions (code length = 19, locals = 2, stack = 2):
+      [0] ldc #3
+        - String [http://audioapi.orf.at/fm4/json/2.0/broadcasts]
+      [2] invokestatic #27
+        - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
+      [5] astore_1 v1
+      [6] aload_0 v0
+      [7] aload_1 v1
+      [8] invokespecial #25
+        - Methodref [de/anneundsebp/ondemand/a/a/b.a (Ljava/lang/String;)Ljava/util/List;]
+      [11] areturn
+      [12] dup
+      [13] astore_1 v1
+      [14] invokevirtual #33
+        - Methodref [java/net/MalformedURLException.printStackTrace ()V]
+      [17] aconst_null
+      [18] areturn
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (0 -> 11: 12):
+      - Class [java/net/MalformedURLException]
+      Code attribute attributes (attribute count = 1):
+      - Stack map table attribute (count = 1):
+        - [12] Var: , Stack: [a:java/net/MalformedURLException]
+  - Method:       a(Ljava/lang/String;)Ljava/util/List;
+    Access flags: 0x2
+      = private java.util.List a(java.lang.String)
+    Class member attributes (count = 1):
+    - Code attribute instructions (code length = 129, locals = 5, stack = 6):
+      [0] aload_0 v0
+      [1] new #14
+        - Class [java/util/ArrayList]
+      [4] dup
+      [5] invokespecial #36
+        - Methodref [java/util/ArrayList.<init> ()V]
+      [8] putfield #20
+        - Fieldref [de/anneundsebp/ondemand/a/a/b.a Ljava/util/List;]
+      [11] new #17
+        - Class [org/json/JSONArray]
+      [14] dup
+      [15] aload_1 v1
+      [16] invokespecial #38
+        - Methodref [org/json/JSONArray.<init> (Ljava/lang/String;)V]
+      [19] dup
+      [20] astore_1 v1
+      [21] invokevirtual #40
+        - Methodref [org/json/JSONArray.length ()I]
+      [24] iconst_1
+      [25] isub
+      [26] istore_2 v2
+      [27] goto +85 (target=112)
+      [30] new #6
+        - Class [de/anneundsebp/ondemand/a/b]
+      [33] dup
+      [34] invokespecial #26
+        - Methodref [de/anneundsebp/ondemand/a/b.<init> ()V]
+      [37] astore_3 v3
+      [38] aload_1 v1
+      [39] iload_2 v2
+      [40] invokevirtual #39
+        - Methodref [org/json/JSONArray.getJSONObject (I)Lorg/json/JSONObject;]
+      [43] astore v4
+      [45] aload_3 v3
+      [46] getstatic #21
+        - Fieldref [de/anneundsebp/ondemand/a/a/b.c Ljava/text/DateFormat;]
+      [49] new #15
+        - Class [java/util/Date]
+      [52] dup
+      [53] aload v4
+      [55] ldc #1
+        - String [date]
+      [57] invokevirtual #42
+        - Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [60] invokestatic #29
+        - Methodref [java/lang/Long.parseLong (Ljava/lang/String;)J]
+      [63] invokespecial #37
+        - Methodref [java/util/Date.<init> (J)V]
+      [66] invokevirtual #34
+        - Methodref [java/text/DateFormat.format (Ljava/util/Date;)Ljava/lang/String;]
+      [69] putfield #22
+        - Fieldref [de/anneundsebp/ondemand/a/b.a Ljava/lang/String;]
+      [72] aload_3 v3
+      [73] new #11
+        - Class [java/lang/StringBuilder]
+      [76] dup
+      [77] ldc #4
+        - String [http://audioapi.orf.at/fm4/json/2.0/broadcasts/]
+      [79] invokespecial #30
+        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [82] aload v4
+      [84] ldc #2
+        - String [day]
+      [86] invokevirtual #42
+        - Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [89] invokevirtual #31
+        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [92] invokevirtual #32
+        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [95] putfield #23
+        - Fieldref [de/anneundsebp/ondemand/a/b.b Ljava/lang/String;]
+      [98] aload_0 v0
+      [99] getfield #20
+        - Fieldref [de/anneundsebp/ondemand/a/a/b.a Ljava/util/List;]
+      [102] aload_3 v3
+      [103] invokeinterface #43
+        - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
+      [108] pop
+      [109] iinc v2, -1
+      [112] iload_2 v2
+      [113] ifge -83 (target=30)
+      [116] goto +8 (target=124)
+      [119] dup
+      [120] astore_1 v1
+      [121] invokevirtual #41
+        - Methodref [org/json/JSONException.printStackTrace ()V]
+      [124] aload_0 v0
+      [125] getfield #20
+        - Fieldref [de/anneundsebp/ondemand/a/a/b.a Ljava/util/List;]
+      [128] areturn
+      Code attribute exceptions (count = 1):
+      - ExceptionInfo (11 -> 116: 119):
+      - Class [org/json/JSONException]
+      Code attribute attributes (attribute count = 1):
+      - Stack map table attribute (count = 4):
+        - [30] Var: [a:de/anneundsebp/ondemand/a/a/b][a:org/json/JSONArray][i], Stack: 
+        - [112] Var: ..., Stack: (empty)
+        - [119] Var: [a:de/anneundsebp/ondemand/a/a/b], Stack: [a:org/json/JSONException]
+        - [124] Var: ..., Stack: (empty)
+  - Method:       a(Lde/anneundsebp/ondemand/a/b;)V
+    Access flags: 0x11
+      = public final void a(de.anneundsebp.ondemand.a.b)
+    Class member attributes (count = 1):
+    - Code attribute instructions (code length = 13, locals = 2, stack = 1):
+      [0] aload_0 v0
+      [1] getfield #20
+        - Fieldref [de/anneundsebp/ondemand/a/a/b.a Ljava/util/List;]
+      [4] ifnonnull +8 (target=12)
+      [7] aload_0 v0
+      [8] invokespecial #24
+        - Methodref [de/anneundsebp/ondemand/a/a/b.a ()Ljava/util/List;]
+      [11] pop
+      [12] return
+      Code attribute exceptions (count = 0):
+      Code attribute attributes (attribute count = 1):
+      - Stack map table attribute (count = 1):
+        - [12] Var: -2, Stack: (empty)
+
+Class file attributes (count = 0):
+
+_____________________________________________________________________
+- Program class: de/anneundsebp/ondemand/a/a/c
+  Superclass:    de/anneundsebp/ondemand/a/d
+  Major version: 0x32
+  Minor version: 0x0
+  Access flags:  0x31
+    = public final class de.anneundsebp.ondemand.a.a.c extends de.anneundsebp.ondemand.a.d
+
+Interfaces (count = 0):
+
+Constant Pool (count = 116):
+  - String [ ]
+  - String [&offset=0]
+  - String [/]
+  - String [http://loopstream01.apa.at/?channel=fm4&id=]
+  - String [loopStreamId]
+  - String [programKey]
+  - String [streams]
+  - String [title]
+  - Class [de/anneundsebp/ondemand/a/a]
+  - Class [de/anneundsebp/ondemand/a/a/c]
   - Class [de/anneundsebp/ondemand/a/b]
   - Class [de/anneundsebp/ondemand/a/c]
   - Class [de/anneundsebp/ondemand/a/d]
@@ -4909,24 +3825,32 @@ Constant Pool (count = 96):
   - Class [java/net/MalformedURLException]
   - Class [java/util/ArrayList]
   - Class [java/util/List]
+  - Class [org/json/JSONArray]
+  - Class [org/json/JSONException]
+  - Class [org/json/JSONObject]
   - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
   - Fieldref [de/anneundsebp/ondemand/a/a.b Ljava/lang/String;]
-  - Fieldref [de/anneundsebp/ondemand/a/a/b.b Ljava/util/List;]
-  - Fieldref [de/anneundsebp/ondemand/a/a/b.c Lde/anneundsebp/ondemand/a/b;]
-  - Fieldref [de/anneundsebp/ondemand/a/b.a Ljava/lang/String;]
+  - Fieldref [de/anneundsebp/ondemand/a/a/c.b Ljava/util/List;]
+  - Fieldref [de/anneundsebp/ondemand/a/a/c.c Lde/anneundsebp/ondemand/a/b;]
   - Fieldref [de/anneundsebp/ondemand/a/b.b Ljava/lang/String;]
   - Methodref [de/anneundsebp/ondemand/a/a.<init> ()V]
-  - Methodref [de/anneundsebp/ondemand/a/a/b.a (Ljava/lang/String;)Ljava/util/List;]
+  - Methodref [de/anneundsebp/ondemand/a/a/c.a (Ljava/lang/String;)Ljava/util/List;]
   - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
   - Methodref [de/anneundsebp/ondemand/a/d.<init> ()V]
-  - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-  - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
   - Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
   - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+  - Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
   - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
   - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
   - Methodref [java/net/MalformedURLException.printStackTrace ()V]
   - Methodref [java/util/ArrayList.<init> ()V]
+  - Methodref [org/json/JSONArray.<init> (Ljava/lang/String;)V]
+  - Methodref [org/json/JSONArray.getJSONObject (I)Lorg/json/JSONObject;]
+  - Methodref [org/json/JSONArray.length ()I]
+  - Methodref [org/json/JSONException.printStackTrace ()V]
+  - Methodref [org/json/JSONObject.<init> (Ljava/lang/String;)V]
+  - Methodref [org/json/JSONObject.getJSONArray (Ljava/lang/String;)Lorg/json/JSONArray;]
+  - Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
   - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
   - NameAndType [<init> ()V]
   - NameAndType [<init> (Ljava/lang/String;)V]
@@ -4934,57 +3858,68 @@ Constant Pool (count = 96):
   - NameAndType [a (Ljava/lang/String;)Ljava/util/List;]
   - NameAndType [a Ljava/lang/String;]
   - NameAndType [add (Ljava/lang/Object;)Z]
+  - NameAndType [append (I)Ljava/lang/StringBuilder;]
   - NameAndType [append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
   - NameAndType [b Ljava/lang/String;]
   - NameAndType [b Ljava/util/List;]
   - NameAndType [c Lde/anneundsebp/ondemand/a/b;]
-  - NameAndType [indexOf (Ljava/lang/String;I)I]
+  - NameAndType [getJSONArray (Ljava/lang/String;)Lorg/json/JSONArray;]
+  - NameAndType [getJSONObject (I)Lorg/json/JSONObject;]
+  - NameAndType [getString (Ljava/lang/String;)Ljava/lang/String;]
+  - NameAndType [length ()I]
   - NameAndType [printStackTrace ()V]
-  - NameAndType [substring (II)Ljava/lang/String;]
   - NameAndType [toString ()Ljava/lang/String;]
   - NameAndType [valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-  - Utf8 ["]
+  - Utf8 [ ]
+  - Utf8 [&offset=0]
+  - Utf8 [()I]
   - Utf8 [()Ljava/lang/String;]
   - Utf8 [()V]
-  - Utf8 [(II)Ljava/lang/String;]
+  - Utf8 [(I)Ljava/lang/StringBuilder;]
+  - Utf8 [(I)Lorg/json/JSONObject;]
   - Utf8 [(Lde/anneundsebp/ondemand/a/b;)V]
   - Utf8 [(Ljava/lang/Object;)Ljava/lang/String;]
   - Utf8 [(Ljava/lang/Object;)Z]
   - Utf8 [(Ljava/lang/String;)Ljava/lang/String;]
   - Utf8 [(Ljava/lang/String;)Ljava/lang/StringBuilder;]
   - Utf8 [(Ljava/lang/String;)Ljava/util/List;]
+  - Utf8 [(Ljava/lang/String;)Lorg/json/JSONArray;]
   - Utf8 [(Ljava/lang/String;)V]
-  - Utf8 [(Ljava/lang/String;I)I]
+  - Utf8 [/]
   - Utf8 [<init>]
   - Utf8 [Code]
   - Utf8 [Lde/anneundsebp/ondemand/a/b;]
   - Utf8 [Ljava/lang/String;]
   - Utf8 [Ljava/util/List;]
   - Utf8 [StackMapTable]
-  - Utf8 [_]
   - Utf8 [a]
   - Utf8 [add]
   - Utf8 [append]
   - Utf8 [b]
   - Utf8 [c]
-  - Utf8 [data-id]
   - Utf8 [de/anneundsebp/ondemand/a/a]
-  - Utf8 [de/anneundsebp/ondemand/a/a/b]
+  - Utf8 [de/anneundsebp/ondemand/a/a/c]
   - Utf8 [de/anneundsebp/ondemand/a/b]
   - Utf8 [de/anneundsebp/ondemand/a/c]
   - Utf8 [de/anneundsebp/ondemand/a/d]
-  - Utf8 [http://audioapi.orf.at/fm4/json/2.0/playlist/]
-  - Utf8 [http://fm4.orf.at/]
-  - Utf8 [http://loopstream01.apa.at/?channel=fm4&ua=flash&id=]
-  - Utf8 [indexOf]
+  - Utf8 [getJSONArray]
+  - Utf8 [getJSONObject]
+  - Utf8 [getString]
+  - Utf8 [http://loopstream01.apa.at/?channel=fm4&id=]
   - Utf8 [java/lang/String]
   - Utf8 [java/lang/StringBuilder]
   - Utf8 [java/net/MalformedURLException]
   - Utf8 [java/util/ArrayList]
   - Utf8 [java/util/List]
-  - Utf8 [loopStreamId":]
+  - Utf8 [length]
+  - Utf8 [loopStreamId]
+  - Utf8 [org/json/JSONArray]
+  - Utf8 [org/json/JSONException]
+  - Utf8 [org/json/JSONObject]
   - Utf8 [printStackTrace]
-  - Utf8 [substring]
+  - Utf8 [programKey]
+  - Utf8 [streams]
+  - Utf8 [title]
   - Utf8 [toString]
   - Utf8 [valueOf]
 
@@ -4996,11 +3931,11 @@ Fields (count = 1):
 Methods (count = 3):
   - Method:       <init>()V
     Access flags: 0x1
-      = public b()
+      = public c()
     Class member attributes (count = 1):
     - Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokespecial #27
+      [1] invokespecial #30
         - Methodref [de/anneundsebp/ondemand/a/d.<init> ()V]
       [4] return
       Code attribute exceptions (count = 0):
@@ -5009,288 +3944,228 @@ Methods (count = 3):
     Access flags: 0x11
       = public final void a(de.anneundsebp.ondemand.a.b)
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 41, locals = 2, stack = 3):
+    - Code attribute instructions (code length = 26, locals = 2, stack = 2):
       [0] aload_0 v0
       [1] aload_1 v1
-      [2] putfield #21
-        - Fieldref [de/anneundsebp/ondemand/a/a/b.c Lde/anneundsebp/ondemand/a/b;]
-      [5] new #14
-        - Class [java/lang/StringBuilder]
-      [8] dup
-      [9] ldc #5
-        - String [http://fm4.orf.at/]
-      [11] invokespecial #31
-        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [14] aload_1 v1
-      [15] getfield #23
+      [2] putfield #25
+        - Fieldref [de/anneundsebp/ondemand/a/a/c.c Lde/anneundsebp/ondemand/a/b;]
+      [5] aload_1 v1
+      [6] getfield #26
         - Fieldref [de/anneundsebp/ondemand/a/b.b Ljava/lang/String;]
-      [18] invokevirtual #32
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [21] invokevirtual #33
-        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [24] invokestatic #26
+      [9] invokestatic #29
         - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
-      [27] astore_1 v1
-      [28] aload_0 v0
-      [29] aload_1 v1
-      [30] invokespecial #25
-        - Methodref [de/anneundsebp/ondemand/a/a/b.a (Ljava/lang/String;)Ljava/util/List;]
-      [33] pop
-      [34] return
-      [35] dup
-      [36] astore_1 v1
-      [37] invokevirtual #34
+      [12] astore_1 v1
+      [13] aload_0 v0
+      [14] aload_1 v1
+      [15] invokespecial #28
+        - Methodref [de/anneundsebp/ondemand/a/a/c.a (Ljava/lang/String;)Ljava/util/List;]
+      [18] pop
+      [19] return
+      [20] dup
+      [21] astore_1 v1
+      [22] invokevirtual #36
         - Methodref [java/net/MalformedURLException.printStackTrace ()V]
-      [40] return
+      [25] return
       Code attribute exceptions (count = 1):
-      - ExceptionInfo (0 -> 34: 35):
+      - ExceptionInfo (0 -> 19: 20):
       - Class [java/net/MalformedURLException]
       Code attribute attributes (attribute count = 1):
       - Stack map table attribute (count = 1):
-        - [35] Var: , Stack: [a:java/net/MalformedURLException]
+        - [20] Var: , Stack: [a:java/net/MalformedURLException]
   - Method:       a(Ljava/lang/String;)Ljava/util/List;
     Access flags: 0x2
       = private java.util.List a(java.lang.String)
     Class member attributes (count = 1):
-    - Code attribute instructions (code length = 328, locals = 9, stack = 8):
-      [0] iconst_0
-      [1] istore_3 v3
-      [2] aload_0 v0
-      [3] new #16
+    - Code attribute instructions (code length = 251, locals = 7, stack = 4):
+      [0] aload_0 v0
+      [1] new #17
         - Class [java/util/ArrayList]
-      [6] dup
-      [7] invokespecial #35
+      [4] dup
+      [5] invokespecial #37
         - Methodref [java/util/ArrayList.<init> ()V]
-      [10] putfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/b.b Ljava/util/List;]
-      [13] goto +297 (target=310)
-      [16] iload_2 v2
-      [17] iconst_1
-      [18] iadd
-      [19] istore_3 v3
-      [20] aload_1 v1
-      [21] iload_2 v2
-      [22] bipush 9
-      [24] iadd
+      [8] putfield #24
+        - Fieldref [de/anneundsebp/ondemand/a/a/c.b Ljava/util/List;]
+      [11] new #19
+        - Class [org/json/JSONArray]
+      [14] dup
+      [15] aload_1 v1
+      [16] invokespecial #38
+        - Methodref [org/json/JSONArray.<init> (Ljava/lang/String;)V]
+      [19] astore_1 v1
+      [20] iconst_0
+      [21] istore_2 v2
+      [22] goto +200 (target=222)
       [25] aload_1 v1
-      [26] ldc #1
-        - String ["]
-      [28] iload_2 v2
-      [29] bipush 9
-      [31] iadd
-      [32] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [35] invokevirtual #29
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [38] astore_2 v2
-      [39] new #14
+      [26] iload_2 v2
+      [27] invokevirtual #39
+        - Methodref [org/json/JSONArray.getJSONObject (I)Lorg/json/JSONObject;]
+      [30] dup
+      [31] astore_3 v3
+      [32] ldc #8
+        - String [title]
+      [34] invokevirtual #44
+        - Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [37] astore v4
+      [39] new #15
         - Class [java/lang/StringBuilder]
       [42] dup
-      [43] ldc #4
-        - String [http://audioapi.orf.at/fm4/json/2.0/playlist/]
-      [45] invokespecial #31
-        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [48] aload_2 v2
-      [49] invokevirtual #32
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [52] invokevirtual #33
-        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [55] astore_2 v2
-      [56] aload_2 v2
-      [57] invokestatic #26
-        - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
-      [60] astore v4
-      [62] iconst_0
-      [63] istore v5
-      [65] goto +221 (target=286)
-      [68] iload_2 v2
-      [69] iconst_1
-      [70] iadd
-      [71] istore v5
-      [73] new #8
-        - Class [de/anneundsebp/ondemand/a/a]
-      [76] dup
-      [77] invokespecial #24
-        - Methodref [de/anneundsebp/ondemand/a/a.<init> ()V]
-      [80] astore v6
-      [82] aload v4
-      [84] ldc #1
-        - String ["]
-      [86] iload_2 v2
-      [87] bipush 15
-      [89] iadd
-      [90] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [93] istore v7
-      [95] aload v4
-      [97] ldc #2
-        - String [_]
-      [99] iload_2 v2
-      [100] bipush 25
-      [102] iadd
-      [103] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [106] istore v8
-      [108] aload v4
-      [110] ldc #2
-        - String [_]
-      [112] iload v8
-      [114] iconst_1
-      [115] iadd
-      [116] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [119] istore v8
-      [121] aload v4
-      [123] ldc #2
-        - String [_]
-      [125] iload v8
-      [127] iconst_1
-      [128] iadd
-      [129] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [132] istore v8
-      [134] aload v4
-      [136] ldc #2
-        - String [_]
-      [138] iload v8
-      [140] iconst_1
-      [141] iadd
-      [142] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [145] istore v8
-      [147] aload v4
-      [149] ldc #2
-        - String [_]
-      [151] iload v8
-      [153] iconst_1
-      [154] iadd
-      [155] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [158] istore v8
-      [160] aload v6
-      [162] new #14
-        - Class [java/lang/StringBuilder]
-      [165] dup
-      [166] aload_0 v0
-      [167] getfield #21
-        - Fieldref [de/anneundsebp/ondemand/a/a/b.c Lde/anneundsebp/ondemand/a/b;]
-      [170] getfield #22
-        - Fieldref [de/anneundsebp/ondemand/a/b.a Ljava/lang/String;]
-      [173] invokestatic #30
+      [43] aload_0 v0
+      [44] getfield #25
+        - Fieldref [de/anneundsebp/ondemand/a/a/c.c Lde/anneundsebp/ondemand/a/b;]
+      [47] getfield #26
+        - Fieldref [de/anneundsebp/ondemand/a/b.b Ljava/lang/String;]
+      [50] invokestatic #31
         - Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
-      [176] invokespecial #31
+      [53] invokespecial #32
         - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [179] ldc #2
-        - String [_]
-      [181] invokevirtual #32
+      [56] ldc #3
+        - String [/]
+      [58] invokevirtual #34
         - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [184] aload v4
-      [186] iload_2 v2
-      [187] bipush 15
-      [189] iadd
-      [190] iload_2 v2
-      [191] bipush 26
-      [193] iadd
-      [194] invokevirtual #29
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [197] invokevirtual #32
+      [61] aload_3 v3
+      [62] ldc #6
+        - String [programKey]
+      [64] invokevirtual #44
+        - Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [67] invokevirtual #34
         - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [200] aload v4
-      [202] iload v8
-      [204] iconst_1
-      [205] isub
-      [206] iload v8
-      [208] invokevirtual #29
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [211] invokevirtual #32
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [214] aload v4
-      [216] iload v7
-      [218] iconst_4
-      [219] isub
-      [220] iload v7
-      [222] invokevirtual #29
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [225] invokevirtual #32
-        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [228] invokevirtual #33
+      [70] invokevirtual #35
         - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [231] putfield #18
+      [73] dup
+      [74] astore_3 v3
+      [75] invokestatic #29
+        - Methodref [de/anneundsebp/ondemand/a/c.a (Ljava/lang/String;)Ljava/lang/String;]
+      [78] astore_3 v3
+      [79] new #21
+        - Class [org/json/JSONObject]
+      [82] dup
+      [83] aload_3 v3
+      [84] invokespecial #42
+        - Methodref [org/json/JSONObject.<init> (Ljava/lang/String;)V]
+      [87] dup
+      [88] astore_3 v3
+      [89] ldc #7
+        - String [streams]
+      [91] invokevirtual #43
+        - Methodref [org/json/JSONObject.getJSONArray (Ljava/lang/String;)Lorg/json/JSONArray;]
+      [94] astore_3 v3
+      [95] iconst_0
+      [96] istore v5
+      [98] goto +112 (target=210)
+      [101] new #9
+        - Class [de/anneundsebp/ondemand/a/a]
+      [104] dup
+      [105] invokespecial #27
+        - Methodref [de/anneundsebp/ondemand/a/a.<init> ()V]
+      [108] dup
+      [109] astore v6
+      [111] aload v4
+      [113] putfield #22
         - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
-      [234] aload v6
-      [236] new #14
+      [116] aload_3 v3
+      [117] invokevirtual #40
+        - Methodref [org/json/JSONArray.length ()I]
+      [120] iconst_1
+      [121] ificmple +38 (target=159)
+      [124] aload v6
+      [126] dup
+      [127] getfield #22
+        - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
+      [130] new #15
         - Class [java/lang/StringBuilder]
-      [239] dup
-      [240] ldc #6
-        - String [http://loopstream01.apa.at/?channel=fm4&ua=flash&id=]
-      [242] invokespecial #31
+      [133] dup_x1
+      [134] swap
+      [135] invokestatic #31
+        - Methodref [java/lang/String.valueOf (Ljava/lang/Object;)Ljava/lang/String;]
+      [138] invokespecial #32
         - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
-      [245] aload v4
-      [247] iload_2 v2
-      [248] bipush 15
-      [250] iadd
-      [251] aload v4
-      [253] ldc #1
-        - String ["]
-      [255] iload_2 v2
-      [256] bipush 15
-      [258] iadd
-      [259] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [262] invokevirtual #29
-        - Methodref [java/lang/String.substring (II)Ljava/lang/String;]
-      [265] invokevirtual #32
+      [141] ldc #1
+        - String [ ]
+      [143] invokevirtual #34
         - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
-      [268] invokevirtual #33
+      [146] iload v5
+      [148] iconst_1
+      [149] iadd
+      [150] invokevirtual #33
+        - Methodref [java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;]
+      [153] invokevirtual #35
         - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
-      [271] putfield #19
+      [156] putfield #22
+        - Fieldref [de/anneundsebp/ondemand/a/a.a Ljava/lang/String;]
+      [159] aload v6
+      [161] new #15
+        - Class [java/lang/StringBuilder]
+      [164] dup
+      [165] ldc #4
+        - String [http://loopstream01.apa.at/?channel=fm4&id=]
+      [167] invokespecial #32
+        - Methodref [java/lang/StringBuilder.<init> (Ljava/lang/String;)V]
+      [170] aload_3 v3
+      [171] iload v5
+      [173] invokevirtual #39
+        - Methodref [org/json/JSONArray.getJSONObject (I)Lorg/json/JSONObject;]
+      [176] ldc #5
+        - String [loopStreamId]
+      [178] invokevirtual #44
+        - Methodref [org/json/JSONObject.getString (Ljava/lang/String;)Ljava/lang/String;]
+      [181] invokevirtual #34
+        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [184] ldc #2
+        - String [&offset=0]
+      [186] invokevirtual #34
+        - Methodref [java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;]
+      [189] invokevirtual #35
+        - Methodref [java/lang/StringBuilder.toString ()Ljava/lang/String;]
+      [192] putfield #23
         - Fieldref [de/anneundsebp/ondemand/a/a.b Ljava/lang/String;]
-      [274] aload_0 v0
-      [275] getfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/b.b Ljava/util/List;]
-      [278] aload v6
-      [280] invokeinterface #36
+      [195] aload_0 v0
+      [196] getfield #24
+        - Fieldref [de/anneundsebp/ondemand/a/a/c.b Ljava/util/List;]
+      [199] aload v6
+      [201] invokeinterface #45
         - InterfaceMethodref [java/util/List.add (Ljava/lang/Object;)Z]
-      [285] pop
-      [286] aload v4
-      [288] ldc #7
-        - String [loopStreamId":]
-      [290] iload v5
-      [292] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [295] dup
-      [296] istore_2 v2
-      [297] iconst_m1
-      [298] ificmpne -230 (target=68)
-      [301] goto +9 (target=310)
-      [304] dup
-      [305] astore v4
-      [307] invokevirtual #34
+      [206] pop
+      [207] iinc v5, 1
+      [210] iload v5
+      [212] aload_3 v3
+      [213] invokevirtual #40
+        - Methodref [org/json/JSONArray.length ()I]
+      [216] ificmplt -115 (target=101)
+      [219] iinc v2, 1
+      [222] iload_2 v2
+      [223] aload_1 v1
+      [224] invokevirtual #40
+        - Methodref [org/json/JSONArray.length ()I]
+      [227] ificmplt -202 (target=25)
+      [230] goto +16 (target=246)
+      [233] dup
+      [234] astore_1 v1
+      [235] invokevirtual #41
+        - Methodref [org/json/JSONException.printStackTrace ()V]
+      [238] goto +8 (target=246)
+      [241] dup
+      [242] astore_1 v1
+      [243] invokevirtual #36
         - Methodref [java/net/MalformedURLException.printStackTrace ()V]
-      [310] aload_1 v1
-      [311] ldc #3
-        - String [data-id]
-      [313] iload_3 v3
-      [314] invokevirtual #28
-        - Methodref [java/lang/String.indexOf (Ljava/lang/String;I)I]
-      [317] dup
-      [318] istore_2 v2
-      [319] iconst_m1
-      [320] ificmpne -304 (target=16)
-      [323] aload_0 v0
-      [324] getfield #20
-        - Fieldref [de/anneundsebp/ondemand/a/a/b.b Ljava/util/List;]
-      [327] areturn
-      Code attribute exceptions (count = 1):
-      - ExceptionInfo (56 -> 301: 304):
+      [246] aload_0 v0
+      [247] getfield #24
+        - Fieldref [de/anneundsebp/ondemand/a/a/c.b Ljava/util/List;]
+      [250] areturn
+      Code attribute exceptions (count = 2):
+      - ExceptionInfo (11 -> 230: 233):
+      - Class [org/json/JSONException]
+      - ExceptionInfo (11 -> 230: 241):
       - Class [java/net/MalformedURLException]
       Code attribute attributes (attribute count = 1):
-      - Stack map table attribute (count = 5):
-        - [16] Var: ...[i], Stack: (empty)
-        - [68] Var: ...[i][a:java/lang/String], Stack: (empty)
-        - [286] Var: [a:de/anneundsebp/ondemand/a/a/b][a:java/lang/String][T][i][a:java/lang/String][i], Stack: 
-        - [304] Var: [a:de/anneundsebp/ondemand/a/a/b][a:java/lang/String][T][i], Stack: [a:java/net/MalformedURLException]
-        - [310] Var: ..., Stack: (empty)
+      - Stack map table attribute (count = 8):
+        - [25] Var: [a:de/anneundsebp/ondemand/a/a/c][a:org/json/JSONArray][i], Stack: 
+        - [101] Var: ...[a:org/json/JSONArray][a:java/lang/String][i], Stack: (empty)
+        - [159] Var: ...[a:de/anneundsebp/ondemand/a/a], Stack: (empty)
+        - [210] Var: -1, Stack: (empty)
+        - [222] Var: -3, Stack: (empty)
+        - [233] Var: [a:de/anneundsebp/ondemand/a/a/c], Stack: [a:org/json/JSONException]
+        - [241] Var: ..., Stack: [a:java/net/MalformedURLException]
+        - [246] Var: ..., Stack: (empty)
 
 Class file attributes (count = 0):
 

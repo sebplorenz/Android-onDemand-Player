@@ -25,12 +25,12 @@
         android:layout_marginTop="2dp"
         android:src="@drawable/av_play" />
 
-	<ImageButton
+	<!-- <ImageButton
         android:id="@+id/downloadButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="2dp"
-        android:src="@drawable/av_record" />
+        android:src="@drawable/av_record" /> -->
 
 </LinearLayout>
