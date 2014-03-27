@@ -28,13 +28,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
+import de.anneundsebp.ondemand.parser.Asset;
 import de.anneundsebp.ondemand.parser.Category;
 import de.anneundsebp.ondemand.parser.Step;
 import de.anneundsebp.ondemand.parser.Util;
 
 public class Step1 extends Step {
-	
+
 	static DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL);
 
 	List<Category> getCategories() {
@@ -48,16 +48,22 @@ public class Step1 extends Step {
 		}
 		return null;
 	}
+	
+	List<Category> getPodcasts() {
+		return null;
+	}
 
 	List<Category> parseCategories(String page) {
 		this.categories = new ArrayList<Category>();
 		try {
 			JSONArray array = new JSONArray(page);
-			for (int i=array.length()-1; i >= 0 ; i--) {
+			for (int i = array.length() - 1; i >= 0; i--) {
 				Category c = new Category();
 				JSONObject o = array.getJSONObject(i);
-				c.name = dateFormat.format(new Date(Long.parseLong(o.getString("date"))));
-				c.url = "http://audioapi.orf.at/fm4/json/2.0/broadcasts/" + o.getString("day");
+				c.name = dateFormat.format(new Date(Long.parseLong(o
+						.getString("date"))));
+				c.url = "http://audioapi.orf.at/fm4/json/2.0/broadcasts/"
+						+ o.getString("day");
 				categories.add(c);
 			}
 		} catch (JSONException e) {
@@ -77,7 +83,11 @@ public class Step1 extends Step {
 
 	@Override
 	public void process(Map<String, String> context, Category category) {
-		if (categories == null)
-			getCategories();
+		if (categories == null) {
+			if (category.url.equals("d"))
+				getCategories();
+			else if (category.url.equals("p"))
+				getPodcasts();
+		}
 	}
 }

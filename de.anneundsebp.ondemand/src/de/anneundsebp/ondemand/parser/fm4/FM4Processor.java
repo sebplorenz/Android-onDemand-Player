@@ -29,6 +29,7 @@ public class FM4Processor extends Processor {
 		this.name = "FM4";
 		this.channelLogoUrl = "http://fm4.orf.at/v2static/images/fm4_logo.jpg";
 		List<Step> steps = new ArrayList<Step>();
+		steps.add(new Step0());
 		steps.add(new Step1());
 		steps.add(new Step2());
 		this.steps = steps;

@@ -66,4 +66,9 @@ public class Processor {
 		steps.get(currentStep).process(context, currentCategory.pop());
 		return steps.get(currentStep);
 	}
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

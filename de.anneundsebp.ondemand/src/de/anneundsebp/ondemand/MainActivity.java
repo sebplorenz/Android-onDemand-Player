@@ -42,27 +42,39 @@ import de.anneundsebp.ondemand.parser.Asset;
 import de.anneundsebp.ondemand.parser.Category;
 import de.anneundsebp.ondemand.parser.Processor;
 import de.anneundsebp.ondemand.parser.Step;
+import de.anneundsebp.ondemand.parser.dradiowissen.DRadioWissenProcessor;
 import de.anneundsebp.ondemand.parser.fm4.FM4Processor;
 
 public class MainActivity extends ListActivity implements MediaPlayerControl,
-		OnClickListener, StepHandler, MediaListener, OnBufferingUpdateListener, OnCompletionListener {
+		OnClickListener, StepHandler, MediaListener, OnBufferingUpdateListener,
+		OnCompletionListener {
 
-	Processor p = new FM4Processor();
+	Processor currentProcessor;
 	List<Object> results;
 	CatalogAssetArrayAdapter adapter;
 	MediaController mcontroller;
 	int bufferPercentage = 0;
 	int playingPosition = -1;
 	List<Object> currentlyPlayingResults = null;
-	
+
 	ProgressDialog mProgressDialog;
 	private Handler handler = new Handler();
 
+	static Processor[] processors;
+
+	static {
+		processors = new Processor[] { new FM4Processor(), new DRadioWissenProcessor() };
+	}
+
 	@Override
 	public void onBackPressed() {
-		if (p.currentStep > 0) {
-			StepBackwardTask backward = new StepBackwardTask(this);
-			backward.execute(p);
+		if (currentProcessor != null && currentProcessor.currentStep > 0)
+			new StepBackwardTask(this).execute(currentProcessor);
+		else if (currentProcessor != null && currentProcessor.currentStep == 0) {
+			currentProcessor.currentStep--;
+			currentProcessor = null;
+			stepUpdate(null);
+//			((ImageButton) findViewById(R.id.imageButton_channelLogo))... channel logo setzen
 		} else
 			super.onBackPressed();
 	}
@@ -71,25 +83,20 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		((ImageButton) findViewById(R.id.imageButton_channelLogo))
-				.setContentDescription(p.name);
-		DownloadChannelLogoTask t = new DownloadChannelLogoTask(this);
-		t.execute(p.channelLogoUrl);
-		StepForwardTask forward = new StepForwardTask(this);
-		forward.execute(p);
-
 		results = new ArrayList<Object>();
 		adapter = new CatalogAssetArrayAdapter(this, results);
 		this.setListAdapter(adapter);
+		
+		stepUpdate(null);
 
 		mProgressDialog = new ProgressDialog(this);
 		mProgressDialog.setMessage("Downloading...");
 		mProgressDialog.setIndeterminate(true);
 		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 		mProgressDialog.setCancelable(true);
-		
+
 		MediaPlayerService.mediaListener = this;
-		
+
 		if (MediaPlayerService.mp != null) {
 			if (mcontroller == null) {
 				mcontroller = new MediaController(this, false);
@@ -98,10 +105,12 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 				MediaPlayerService.mp.setOnBufferingUpdateListener(this);
 				MediaPlayerService.mp.setOnCompletionListener(this);
 			}
-			((TextView)findViewById(R.id.textViewPlayingSub)).setText("Now Playing");
-			((TextView)findViewById(R.id.textViewPlayingSuper)).setText(MediaPlayerService.asset.name);
+			((TextView) findViewById(R.id.textViewPlayingSub))
+					.setText("Now Playing");
+			((TextView) findViewById(R.id.textViewPlayingSuper))
+					.setText(MediaPlayerService.asset.name);
 		}
-		
+
 		findViewById(R.id.imageButton_channelLogo).setOnClickListener(this);
 		findViewById(R.id.layoutPlaying).setOnClickListener(this);
 		findViewById(R.id.textViewPlayingSuper).setOnClickListener(this);
@@ -130,24 +139,45 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 	@Override
 	protected void onStop() {
 		super.onStop();
-//		stopService(new Intent(this, MediaPlayerService.class));
+		// stopService(new Intent(this, MediaPlayerService.class));
 	}
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		Object o = results.get(position);
-		if (o instanceof Category) {
+		if (o instanceof Processor) {
+			currentProcessor = (Processor) o;
+			showProcessDialog("Loading " + currentProcessor.name);
+			((ImageButton) findViewById(R.id.imageButton_channelLogo))
+					.setContentDescription(currentProcessor.name);
+			DownloadChannelLogoTask t = new DownloadChannelLogoTask(this);
+			t.execute(currentProcessor.channelLogoUrl);
+			StepForwardTask forward = new StepForwardTask(this);
+			forward.execute(currentProcessor);
+		} else if (o instanceof Category) {
+			Category c = (Category) o;
+			showProcessDialog("Loading " + c.name);
 			adapter.clear();
 			StepForwardTask forward = new StepForwardTask(this);
-			forward.setNextCategory((Category) o);
-			forward.execute(p);
+			forward.setNextCategory(c);
+			forward.execute(currentProcessor);
 		}
+	}
+	
+	void showProcessDialog(String message) {
+		mProgressDialog = new ProgressDialog(MainActivity.this);
+		mProgressDialog.setMessage(message);
+		mProgressDialog.setIndeterminate(true);
+		mProgressDialog.setCancelable(false);
+		mProgressDialog.show();
 	}
 
 	void play(Asset asset) {
-		((TextView)findViewById(R.id.textViewPlayingSub)).setText("Connecting...");
-		((TextView)findViewById(R.id.textViewPlayingSuper)).setText(asset.name);
+		((TextView) findViewById(R.id.textViewPlayingSub))
+				.setText("Connecting...");
+		((TextView) findViewById(R.id.textViewPlayingSuper))
+				.setText(asset.name);
 		bufferPercentage = 0;
 		if (mcontroller != null)
 			mcontroller.setEnabled(false);
@@ -228,38 +258,47 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 
 	@Override
 	public void onClick(View v) {
-//		if (v.getId() == R.id.downloadButton)
-//			download((Asset) results.get(((Integer) v.getTag()).intValue()));
-//		else 
-			if (v.getId() == R.id.playButton) {
+		// if (v.getId() == R.id.downloadButton)
+		// download((Asset) results.get(((Integer) v.getTag()).intValue()));
+		// else
+		if (v.getId() == R.id.playButton) {
 			playingPosition = ((Integer) v.getTag()).intValue();
 			currentlyPlayingResults = results;
 			play((Asset) results.get(playingPosition));
-		} 
-//		else if (v.getId() == R.id.imageButton_channelLogo)
-			// todo show web site
-//			if (mcontroller != null)
-//				mcontroller.show();
-		else if (v.getId() == R.id.textViewPlayingSub || v.getId() == R.id.textViewPlayingSuper)
+		}
+		// else if (v.getId() == R.id.imageButton_channelLogo)
+		// todo show web site
+		// if (mcontroller != null)
+		// mcontroller.show();
+		else if (v.getId() == R.id.textViewPlayingSub
+				|| v.getId() == R.id.textViewPlayingSuper)
 			if (mcontroller != null)
 				mcontroller.show();
-			
+
 	}
 
 	@Override
 	public void stepUpdate(Step step) {
+		if (this.mProgressDialog != null)
+			mProgressDialog.dismiss();
 		adapter.clear();
-		if (!(step.categories == null || step.categories.isEmpty()))
-			for (Category c : step.categories)
-				adapter.add(c);
-		if (!(step.assets == null || step.assets.isEmpty()))
-			for (Asset a : step.assets)
-				adapter.add(a);
+		if (step == null)
+			for (Processor processor : processors)
+				adapter.add(processor);
+		else {
+			if (!(step.categories == null || step.categories.isEmpty()))
+				for (Category category : step.categories)
+					adapter.add(category);
+			if (!(step.assets == null || step.assets.isEmpty()))
+				for (Asset asset : step.assets)
+					adapter.add(asset);
+		}
 	}
 
 	@Override
 	public void startPlaying() {
-		((TextView)findViewById(R.id.textViewPlayingSub)).setText("Now Playing");
+		((TextView) findViewById(R.id.textViewPlayingSub))
+				.setText("Now Playing");
 		if (mcontroller == null) {
 			mcontroller = new MediaController(this, false);
 			mcontroller.setAnchorView(findViewById(R.id.layoutPlaying));
@@ -268,13 +307,13 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 			MediaPlayerService.mp.setOnCompletionListener(this);
 		}
 		handler.post(new Runnable() {
-            public void run() {
-                mcontroller.setEnabled(true);
-                mcontroller.show();
-            }
-        });
+			public void run() {
+				mcontroller.setEnabled(true);
+				mcontroller.show();
+			}
+		});
 	}
-	
+
 	@Override
 	public void onBufferingUpdate(MediaPlayer mp, int percent) {
 		bufferPercentage = percent;
@@ -282,11 +321,12 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 
 	@Override
 	public void onCompletion(MediaPlayer mp) {
-		if (currentlyPlayingResults != null && playingPosition < currentlyPlayingResults.size()-1) {
-			Object o = currentlyPlayingResults.get(playingPosition+1);
+		if (currentlyPlayingResults != null
+				&& playingPosition < currentlyPlayingResults.size() - 1) {
+			Object o = currentlyPlayingResults.get(playingPosition + 1);
 			if (o instanceof Asset) {
 				playingPosition++;
-				play((Asset)o);
+				play((Asset) o);
 			}
 		}
 	}
