@@ -169,7 +169,7 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 		mProgressDialog = new ProgressDialog(MainActivity.this);
 		mProgressDialog.setMessage(message);
 		mProgressDialog.setIndeterminate(true);
-		mProgressDialog.setCancelable(false);
+		mProgressDialog.setCancelable(true);
 		mProgressDialog.show();
 	}
 
@@ -279,8 +279,8 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 
 	@Override
 	public void stepUpdate(Step step) {
-		if (this.mProgressDialog != null)
-			mProgressDialog.dismiss();
+		if (this.mProgressDialog != null && this.mProgressDialog.isShowing())
+			this.mProgressDialog.dismiss();
 		adapter.clear();
 		if (step == null)
 			for (Processor processor : processors)
@@ -329,6 +329,13 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 				play((Asset) o);
 			}
 		}
+	}
+	
+	@Override
+	protected void onPause() {
+		if (this.mProgressDialog != null && this.mProgressDialog.isShowing())
+			this.mProgressDialog.dismiss();
+		super.onPause();
 	}
 
 }

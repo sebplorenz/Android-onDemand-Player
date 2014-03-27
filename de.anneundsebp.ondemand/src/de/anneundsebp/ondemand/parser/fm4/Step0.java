@@ -8,7 +8,7 @@ import de.anneundsebp.ondemand.parser.Category;
 import de.anneundsebp.ondemand.parser.Step;
 
 public class Step0 extends Step {
-
+	
 	@Override
 	public void process(Map<String, String> context, Category category) {
 		if (this.assets == null) {
@@ -23,6 +23,7 @@ public class Step0 extends Step {
 			Category c = new Category();
 			c.name = "FM4 onDemand";
 			c.url = "d";
+			c.nextStep = Step1.class.getName();
 			this.categories.add(c);
 			
 //			c = new Category();

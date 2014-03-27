@@ -22,6 +22,9 @@ public class Category {
 	public String url;
 	public String imgurl;
 	
+	public String nextStep;
+	public Step next;
+	
 	@Override
 	public String toString() {
 		return this.name;

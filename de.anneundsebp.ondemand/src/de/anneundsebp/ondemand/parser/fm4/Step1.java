@@ -28,7 +28,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import de.anneundsebp.ondemand.parser.Asset;
 import de.anneundsebp.ondemand.parser.Category;
 import de.anneundsebp.ondemand.parser.Step;
 import de.anneundsebp.ondemand.parser.Util;
@@ -64,6 +63,7 @@ public class Step1 extends Step {
 						.getString("date"))));
 				c.url = "http://audioapi.orf.at/fm4/json/2.0/broadcasts/"
 						+ o.getString("day");
+				c.nextStep = Step2.class.getName();
 				categories.add(c);
 			}
 		} catch (JSONException e) {

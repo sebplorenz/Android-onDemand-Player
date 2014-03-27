@@ -27,6 +27,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.ImageButton;
 
@@ -62,9 +63,15 @@ public class DownloadChannelLogoTask extends AsyncTask<String, Integer, Bitmap> 
 	@Override
 	protected void onPostExecute(Bitmap result) {
 		if (result != null) {
+			DisplayMetrics dm = context.getResources()
+                    .getDisplayMetrics();
+			int width=dm.widthPixels;
+			int height=dm.heightPixels;
+			double dh = Math.max(width, height);
+			double ratio = dh / Integer.valueOf(result.getHeight()).doubleValue() * 0.1d;
 			result = Bitmap.createScaledBitmap(result,
-					(int) (result.getWidth() * 0.4),
-					(int) (result.getHeight() * 0.4), true);
+					(int) (result.getWidth() * ratio),
+					(int) (result.getHeight() * ratio), true);
 			((ImageButton) context.findViewById(R.id.imageButton_channelLogo))
 					.setImageBitmap(result);
 		}

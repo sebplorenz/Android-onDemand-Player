@@ -13,7 +13,7 @@ public class Step2 extends Step {
 
 	@Override
 	public void process(Map<String, String> context, Category category) {
-		if (this.categories == null) {
+		if (category != null && this.categories == null) {
 			try {
 				this.assets = new ArrayList<Asset>();
 				String nextPage = category.url;

@@ -1,12 +1,8 @@
 package de.anneundsebp.ondemand.parser.dradiowissen;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Map;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 
 import de.anneundsebp.ondemand.parser.Category;
 import de.anneundsebp.ondemand.parser.Step;
@@ -26,6 +22,7 @@ public class Step1 extends Step {
 					Category c = new Category();
 					c.url = page.substring(href + 6, page.indexOf("\"", href+7));
 					c.name = page.substring(page.indexOf(">", href)+1, page.indexOf("<", href));
+					c.nextStep = Step2.class.getName();
 					this.categories.add(c);
 				}
 			} catch (MalformedURLException e) {

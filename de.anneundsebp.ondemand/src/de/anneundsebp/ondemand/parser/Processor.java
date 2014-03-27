@@ -29,8 +29,8 @@ public class Processor {
 	public Map<String, String> context = new Hashtable<String, String>();
 	public int currentStep = -1;
 	public Stack<Category> currentCategory = new Stack<Category>();
-	
 	public String channelLogoUrl;
+	public Step firstStep;
 
 	public String getChannelLogoUrl() {
 		return channelLogoUrl;
@@ -49,13 +49,37 @@ public class Processor {
 	}
 
 	public Step forward(Category category) {
-		if (currentStep >= steps.size())
-			return null;
+		// if (currentStep >= steps.size())
+		// return null;
 
 		currentStep++;
 		currentCategory.push(category);
-		steps.get(currentStep).process(context, category);
-		return steps.get(currentStep);
+		// steps.get(currentStep).process(context, category);
+		// return steps.get(currentStep);
+
+		if (currentStep != 0) {
+			if (category.next == null)
+				try {
+					category.next = (Step) Class.forName(category.nextStep)
+							.newInstance();
+				} catch (InstantiationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			steps.add(category.next);
+			category.next.process(context, category);
+			return category.next;
+		}
+	
+		steps.add(this.firstStep);
+		this.firstStep.process(context, category);
+		return firstStep;
 	}
 
 	public Step backward() {
@@ -66,7 +90,7 @@ public class Processor {
 		steps.get(currentStep).process(context, currentCategory.pop());
 		return steps.get(currentStep);
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;
