@@ -21,6 +21,7 @@ public class Asset {
 	public String name;
 	public String url;
 	public String imgurl;
+	public boolean livestream = false;
 	
 	@Override
 	public String toString() {

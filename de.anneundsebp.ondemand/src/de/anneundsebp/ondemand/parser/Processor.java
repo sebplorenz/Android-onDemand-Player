@@ -58,7 +58,7 @@ public class Processor {
 		// return steps.get(currentStep);
 
 		if (currentStep != 0) {
-			if (category.next == null)
+			if (category != null && category.next == null)
 				try {
 					category.next = (Step) Class.forName(category.nextStep)
 							.newInstance();

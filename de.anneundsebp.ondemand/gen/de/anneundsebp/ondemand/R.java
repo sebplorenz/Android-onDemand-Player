@@ -28,11 +28,10 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080005;
-        public static final int action_exit=0x7f080008;
+        public static final int action_exit=0x7f080007;
         public static final int imageButton_channelLogo=0x7f080001;
         public static final int layoutPlaying=0x7f080002;
         public static final int mainlayout=0x7f080000;
-        public static final int playButton=0x7f080007;
         public static final int textViewPlayingSub=0x7f080003;
         public static final int textViewPlayingSuper=0x7f080004;
         public static final int title=0x7f080006;

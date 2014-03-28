@@ -17,6 +17,7 @@ public class Step0 extends Step {
 			Asset asset = new Asset();
 			asset.name = "FM4 Livestream";
 			asset.url = "http://mp3stream1.apasf.apa.at:8000";
+			asset.livestream = true;
 			this.assets.add(asset);
 			
 			this.categories = new ArrayList<Category>(2);
@@ -26,10 +27,11 @@ public class Step0 extends Step {
 			c.nextStep = Step1.class.getName();
 			this.categories.add(c);
 			
-//			c = new Category();
-//			c.name = "FM4 Podcasts";
-//			c.url = "p";
-//			this.categories.add(c);
+			c = new Category();
+			c.name = "FM4 Podcasts";
+			c.url = "p";
+			c.nextStep = Step_Podcast.class.getName();
+			this.categories.add(c);
 		}
 	}
 }

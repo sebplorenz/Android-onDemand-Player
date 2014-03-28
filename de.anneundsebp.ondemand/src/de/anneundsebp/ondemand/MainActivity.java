@@ -162,6 +162,8 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 			StepForwardTask forward = new StepForwardTask(this);
 			forward.setNextCategory(c);
 			forward.execute(currentProcessor);
+		} else if (o instanceof Asset) {
+			play((Asset) o);
 		}
 	}
 	
@@ -258,19 +260,20 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 
 	@Override
 	public void onClick(View v) {
-		// if (v.getId() == R.id.downloadButton)
-		// download((Asset) results.get(((Integer) v.getTag()).intValue()));
-		// else
-		if (v.getId() == R.id.playButton) {
-			playingPosition = ((Integer) v.getTag()).intValue();
-			currentlyPlayingResults = results;
-			play((Asset) results.get(playingPosition));
-		}
+//		if (v.getId() == R.id.downloadButton)
+//			download((Asset) results.get(((Integer) v.getTag()).intValue()));
+//		else
+//		if (v.getId() == R.id.playButton) {
+//			playingPosition = ((Integer) v.getTag()).intValue();
+//			currentlyPlayingResults = results;
+//			play((Asset) results.get(playingPosition));
+//		}
 		// else if (v.getId() == R.id.imageButton_channelLogo)
 		// todo show web site
 		// if (mcontroller != null)
 		// mcontroller.show();
-		else if (v.getId() == R.id.textViewPlayingSub
+//		else 
+		if (v.getId() == R.id.textViewPlayingSub
 				|| v.getId() == R.id.textViewPlayingSuper)
 			if (mcontroller != null)
 				mcontroller.show();
