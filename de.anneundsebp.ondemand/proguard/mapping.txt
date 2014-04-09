@@ -7,7 +7,7 @@ de.anneundsebp.ondemand.DownloadChannelLogoTask -> de.anneundsebp.ondemand.b:
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 de.anneundsebp.ondemand.MainActivity -> de.anneundsebp.ondemand.MainActivity:
-    de.anneundsebp.ondemand.parser.Processor p -> b
+    de.anneundsebp.ondemand.parser.Processor currentProcessor -> b
     java.util.List results -> c
     de.anneundsebp.ondemand.CatalogAssetArrayAdapter adapter -> d
     android.widget.MediaController mcontroller -> a
@@ -16,13 +16,14 @@ de.anneundsebp.ondemand.MainActivity -> de.anneundsebp.ondemand.MainActivity:
     java.util.List currentlyPlayingResults -> g
     android.app.ProgressDialog mProgressDialog -> h
     android.os.Handler handler -> i
+    de.anneundsebp.ondemand.parser.Processor[] processors -> j
     void onBackPressed() -> onBackPressed
     void onCreate(android.os.Bundle) -> onCreate
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     void onStop() -> onStop
     void onListItemClick(android.widget.ListView,android.view.View,int,long) -> onListItemClick
-    void play(de.anneundsebp.ondemand.parser.Asset) -> a
+    void showProcessDialog(java.lang.String) -> a
     boolean canPause() -> canPause
     boolean canSeekBackward() -> canSeekBackward
     boolean canSeekForward() -> canSeekForward
@@ -39,6 +40,7 @@ de.anneundsebp.ondemand.MainActivity -> de.anneundsebp.ondemand.MainActivity:
     void startPlaying() -> a
     void onBufferingUpdate(android.media.MediaPlayer,int) -> onBufferingUpdate
     void onCompletion(android.media.MediaPlayer) -> onCompletion
+    void onPause() -> onPause
 de.anneundsebp.ondemand.MainActivity$2 -> de.anneundsebp.ondemand.c:
     de.anneundsebp.ondemand.MainActivity this$0 -> a
     void run() -> run
@@ -49,11 +51,15 @@ de.anneundsebp.ondemand.MediaPlayerService -> de.anneundsebp.ondemand.MediaPlaye
     android.net.wifi.WifiManager$WifiLock wifiLock -> d
     de.anneundsebp.ondemand.parser.Asset asset -> b
     de.anneundsebp.ondemand.MediaListener mediaListener -> c
+    android.media.AudioManager am -> e
+    int normalVolume -> f
     void stopPlaying() -> a
     void onPrepared(android.media.MediaPlayer) -> onPrepared
     android.os.IBinder onBind(android.content.Intent) -> onBind
     int onStartCommand(android.content.Intent,int,int) -> onStartCommand
     void onDestroy() -> onDestroy
+    android.media.AudioManager getAudioManager() -> b
+    void onAudioFocusChange(int) -> onAudioFocusChange
 de.anneundsebp.ondemand.StepBackwardTask -> de.anneundsebp.ondemand.e:
     de.anneundsebp.ondemand.StepHandler stepHandler -> a
     void onPostExecute(java.lang.Object) -> onPostExecute
@@ -73,6 +79,8 @@ de.anneundsebp.ondemand.parser.Asset -> de.anneundsebp.ondemand.a.a:
 de.anneundsebp.ondemand.parser.Category -> de.anneundsebp.ondemand.a.b:
     java.lang.String name -> a
     java.lang.String url -> b
+    java.lang.String nextStep -> c
+    de.anneundsebp.ondemand.parser.Step next -> d
     java.lang.String toString() -> toString
 de.anneundsebp.ondemand.parser.Processor -> de.anneundsebp.ondemand.a.c:
     java.lang.String name -> a
@@ -81,18 +89,35 @@ de.anneundsebp.ondemand.parser.Processor -> de.anneundsebp.ondemand.a.c:
     int currentStep -> d
     java.util.Stack currentCategory -> e
     java.lang.String channelLogoUrl -> f
-    java.lang.String loadPage(java.lang.String) -> a
-de.anneundsebp.ondemand.parser.Step -> de.anneundsebp.ondemand.a.d:
+    de.anneundsebp.ondemand.parser.Step firstStep -> g
+    de.anneundsebp.ondemand.parser.Step forward(de.anneundsebp.ondemand.parser.Category) -> a
+    java.lang.String toString() -> toString
+de.anneundsebp.ondemand.parser.RssFeedStep -> de.anneundsebp.ondemand.a.d:
+    java.lang.String ns -> c
+    void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
+    void skip(org.xmlpull.v1.XmlPullParser) -> a
+de.anneundsebp.ondemand.parser.Step -> de.anneundsebp.ondemand.a.e:
     java.util.List categories -> a
     java.util.List assets -> b
     void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
-de.anneundsebp.ondemand.parser.fm4.FM4Processor -> de.anneundsebp.ondemand.a.a.a:
-de.anneundsebp.ondemand.parser.fm4.Step1 -> de.anneundsebp.ondemand.a.a.b:
+de.anneundsebp.ondemand.parser.Util -> de.anneundsebp.ondemand.a.f:
+    java.lang.String loadPage(java.lang.String) -> a
+de.anneundsebp.ondemand.parser.dradiowissen.DRadioWissenProcessor -> de.anneundsebp.ondemand.a.a.a:
+de.anneundsebp.ondemand.parser.dradiowissen.Step1 -> de.anneundsebp.ondemand.a.a.b:
+    void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
+de.anneundsebp.ondemand.parser.dradiowissen.Step2 -> de.anneundsebp.ondemand.a.a.c:
+    void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
+de.anneundsebp.ondemand.parser.fm4.FM4Processor -> de.anneundsebp.ondemand.a.b.a:
+de.anneundsebp.ondemand.parser.fm4.Step0 -> de.anneundsebp.ondemand.a.b.b:
+    void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
+de.anneundsebp.ondemand.parser.fm4.Step1 -> de.anneundsebp.ondemand.a.b.c:
     java.text.DateFormat dateFormat -> c
     java.util.List getCategories() -> a
     java.util.List parseCategories(java.lang.String) -> a
     void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
-de.anneundsebp.ondemand.parser.fm4.Step2 -> de.anneundsebp.ondemand.a.a.c:
+de.anneundsebp.ondemand.parser.fm4.Step2 -> de.anneundsebp.ondemand.a.b.d:
     de.anneundsebp.ondemand.parser.Category category -> c
     void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a
     java.util.List parseCategories(java.lang.String) -> a
+de.anneundsebp.ondemand.parser.fm4.Step_Podcast -> de.anneundsebp.ondemand.a.b.e:
+    void process$7dc7086e(de.anneundsebp.ondemand.parser.Category) -> a

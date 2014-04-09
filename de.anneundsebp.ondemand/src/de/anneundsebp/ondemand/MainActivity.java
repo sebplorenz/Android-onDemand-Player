@@ -56,7 +56,7 @@ public class MainActivity extends ListActivity implements MediaPlayerControl,
 	int bufferPercentage = 0;
 	int playingPosition = -1;
 	List<Object> currentlyPlayingResults = null;
-
+	
 	ProgressDialog mProgressDialog;
 	private Handler handler = new Handler();
 

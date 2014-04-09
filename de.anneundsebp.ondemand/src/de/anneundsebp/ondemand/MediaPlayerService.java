@@ -24,7 +24,9 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.WifiLock;
@@ -32,17 +34,22 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import de.anneundsebp.ondemand.parser.Asset;
 
-public class MediaPlayerService extends Service implements OnPreparedListener {
+public class MediaPlayerService extends Service implements OnPreparedListener,
+		OnAudioFocusChangeListener {
 
 	public static final String ACTION_PLAY = "com.example.com.action.PLAY";
 	public static final String ACTION_STOP = "com.example.com.action.STOP";
 
 	static MediaPlayer mp = null;
 	WifiLock wifiLock;
-	
+
 	public static Asset asset;
-	
+
 	public static MediaListener mediaListener;
+
+	AudioManager am;
+	
+	int normalVolume = -1;
 
 	public void stopPlaying() {
 		if (mp != null) {
@@ -53,6 +60,7 @@ public class MediaPlayerService extends Service implements OnPreparedListener {
 		}
 		if (wifiLock != null)
 			wifiLock.release();
+		getAudioManager().abandonAudioFocus(this);
 		stopForeground(true);
 	}
 
@@ -68,42 +76,48 @@ public class MediaPlayerService extends Service implements OnPreparedListener {
 			}
 			mp.reset();
 		}
-		try {
-			mp.setDataSource(asset.url);
-			mp.setOnPreparedListener(this);
-			mp.prepareAsync();
-			mp.setWakeMode(getApplicationContext(),
-					PowerManager.PARTIAL_WAKE_LOCK);
-			if (wifiLock == null) {
-				wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE))
-						.createWifiLock(WifiManager.WIFI_MODE_FULL, "mylock");
-				wifiLock.acquire();
+		int result = getAudioManager().requestAudioFocus(this,
+				AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
+		if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+			try {
+				// am.registerMediaButtonEventReceiver(RemoteControlReceiver);
+				mp.setDataSource(asset.url);
+				mp.setOnPreparedListener(this);
+				mp.prepareAsync();
+				mp.setWakeMode(getApplicationContext(),
+						PowerManager.PARTIAL_WAKE_LOCK);
+				if (wifiLock == null) {
+					wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE))
+							.createWifiLock(WifiManager.WIFI_MODE_FULL,
+									"mylock");
+					wifiLock.acquire();
+				}
+				PendingIntent pi = PendingIntent.getActivity(
+						getApplicationContext(), 0, new Intent(
+								getApplicationContext(), MainActivity.class),
+						PendingIntent.FLAG_UPDATE_CURRENT);
+
+				Notification notification = new Notification();
+				notification.tickerText = "onDemand Player";
+				notification.icon = R.drawable.launcher;
+				notification.flags |= Notification.FLAG_ONGOING_EVENT;
+				notification.setLatestEventInfo(getApplicationContext(),
+						"onDemand Player", "Playing: " + asset.name, pi);
+
+				startForeground(123, notification);
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			PendingIntent pi = PendingIntent.getActivity(
-					getApplicationContext(), 0, new Intent(
-							getApplicationContext(), MainActivity.class),
-					PendingIntent.FLAG_UPDATE_CURRENT);
-			
-			Notification notification = new Notification();
-			notification.tickerText = "FM4 onDemand Player";
-			notification.icon = R.drawable.launcher;
-			notification.flags |= Notification.FLAG_ONGOING_EVENT;
-			notification.setLatestEventInfo(getApplicationContext(),
-					"FM4 onDemand Player", "Playing: " + asset.name, pi);
-			
-			startForeground(123, notification);
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 
@@ -124,7 +138,7 @@ public class MediaPlayerService extends Service implements OnPreparedListener {
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		int i = super.onStartCommand(intent, flags, startId);
 		if (intent.getAction().equals(ACTION_PLAY)) {
-//			startPlaying(intent.getDataString());
+			// startPlaying(intent.getDataString());
 			startPlaying(asset);
 		}
 
@@ -139,6 +153,31 @@ public class MediaPlayerService extends Service implements OnPreparedListener {
 	public void onDestroy() {
 		super.onDestroy();
 		stopPlaying();
+	}
+
+	AudioManager getAudioManager() {
+		if (this.am == null)
+			this.am = (AudioManager) this.getApplicationContext()
+					.getSystemService(Context.AUDIO_SERVICE);
+		return this.am;
+	}
+
+	@Override
+	public void onAudioFocusChange(int focusChange) {
+		if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT) {
+			mp.pause();
+		} else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+			mp.start();
+		} else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+			stopPlaying();
+		} else if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+            normalVolume = getAudioManager().getStreamVolume(AudioManager.STREAM_MUSIC);
+            getAudioManager().setStreamVolume(AudioManager.STREAM_MUSIC, normalVolume / 4, 0);
+        } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+        	if (normalVolume != -1)
+        		getAudioManager().setStreamVolume(AudioManager.STREAM_MUSIC, normalVolume, 0);
+        }
+
 	}
 	
 }
